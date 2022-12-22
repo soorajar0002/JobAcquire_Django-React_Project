@@ -7,6 +7,8 @@ import { logInSchema } from '../../../Schemas';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../../Axios/axiosPrivate';
+import {useDispatch, useSelector} from 'react-redux';
+import { userData } from '../../../Redux/Reducers/AuthSlice';
 
 const initialValues = {
   email: '',
@@ -14,6 +16,8 @@ const initialValues = {
 };
 
 function UserLogin() {
+  const user = useSelector((state)=>state.user)
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
@@ -26,6 +30,8 @@ function UserLogin() {
             password: values.password,
           });
           if (response.status === 200 && response.data.is_seeker) {
+            dispatch(userData(response.data))
+            
             navigate('/dashboard');
           } else {
             alert('not valid credentials');
