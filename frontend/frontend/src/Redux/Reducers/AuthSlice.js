@@ -13,6 +13,7 @@ export const userSlice = createSlice({
     userData: (state, action) => {
       console.log("payload",action.payload);
       const user = {
+        id: action.payload.id,
         email: action.payload.email,
         firstname: action.payload.first_name,
         lastname: action.payload.last_name,

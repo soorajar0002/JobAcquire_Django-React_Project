@@ -12,6 +12,7 @@ const initialValues = {
   phone_number: "",
   password: "",
   confirm_password: "",
+  is_seeker:"",
 }
 const UserRegister = () => {
   const navigate = useNavigate()
@@ -21,15 +22,16 @@ const UserRegister = () => {
       validationSchema: signUpSchema,
       onSubmit: async (values, action) => {
         try {
-          const response = await axiosInstance.post(`user/register/`, {
+          const response = await axiosInstance.post(`register/`, {
             first_name: values.first_name,
             last_name: values.last_name,
             email: values.email,
             phone_number: values.phone_number,
             password: values.password,
             confirm_password: values.confirm_password,
+            is_seeker:true,
           })
-          if (response.status === 200) {
+          if (response.status === 201) {
             navigate("/login")
           } else {
             alert("not valid credentials")

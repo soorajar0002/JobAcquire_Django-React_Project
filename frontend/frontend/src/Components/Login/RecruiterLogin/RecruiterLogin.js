@@ -4,12 +4,15 @@ import './RecruiterLogin.css';
 import { logInSchema } from '../../../Schemas';
 import { useFormik } from 'formik';
 import axiosInstance from '../../../Axios/axiosPrivate'; 
+import {useDispatch} from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { userData } from '../../../Redux/Reducers/AuthSlice';
 const initialValues = {
   email: '',
   password: '',
 };
 const RecruiterLogin = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
@@ -22,6 +25,7 @@ const RecruiterLogin = () => {
             password: values.password,
           });
           if (response.status === 200 && response.data.is_recruiter) {
+            dispatch(userData(response.data))
             navigate('/dashboard');
           } else {
             alert('not valid credentials');

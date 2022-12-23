@@ -72,3 +72,32 @@ class Account(AbstractBaseUser):
 
     def has_module_perms(self, add_label):
         return True
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(Account, on_delete=models.CASCADE)
+    profile_picture = models.ImageField(blank=True, upload_to="userprofile")
+    resume = models.FileField(upload_to='resume')
+    skill = models.CharField(max_length=30)
+    desired_job = models.CharField(max_length=30)
+    desired_location = models.CharField(max_length=30)
+    degree = models.CharField(max_length=30,default=None)
+    college = models.CharField(max_length=50,default=None)
+    joining_year = models.IntegerField(default=None)
+    passout_year = models.IntegerField(default=None)
+    designation = models.CharField(max_length=30,default=None)
+    company = models.CharField(max_length=30,default=None)
+    start = models.IntegerField(default=None)
+    end = models.IntegerField(default=None)
+    description = models.TextField(default=None)
+    
+    def __str__(self):
+        return self.user.first_name
+    
+    
+   
+
+
+
+
+
+    

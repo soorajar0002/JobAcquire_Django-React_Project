@@ -7,6 +7,7 @@ import LoginPage from './Pages/LoginPage';
 import RecruiterLogin from './Pages/RecruiterLoginPage';
 import RecruiterRegister from './Pages/RecruiterRegisterPage';
 import RegisterPage from './Pages/RegisterPage';
+import UserProfilePage from './Pages/UserProfilePage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/admin_login" element={<AdminLoginPage/>}/>
           <Route path="/recruiter_register" element={<RecruiterRegister />} />
           <Route path="/dashboard" element={<DashBoardPage/>} />
+          <Route path="/user_profile" element={<UserProfilePage/>} />
           
         </Routes>
       </BrowserRouter>

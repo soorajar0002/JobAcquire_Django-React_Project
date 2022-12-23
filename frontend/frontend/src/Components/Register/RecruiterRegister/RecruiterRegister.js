@@ -13,6 +13,7 @@ const initialValues = {
   phone_number: "",
   password: "",
   confirm_password: "",
+  is_seeker:"",
 }
 const RecruiterRegister = () => {
   const navigate = useNavigate()
@@ -22,7 +23,7 @@ const RecruiterRegister = () => {
       validationSchema: signUpSchemaRec,
       onSubmit: async (values, action) => {
         try {
-          const response = await axiosInstance.post(`recruiter/register/`, {
+          const response = await axiosInstance.post(`register/`, {
             first_name: values.first_name,
             last_name: values.last_name,
             email: values.email,
@@ -30,9 +31,10 @@ const RecruiterRegister = () => {
             phone_number: values.phone_number,
             password: values.password,
             confirm_password: values.confirm_password,
+            is_seeker:false,
           })
-          if (response.status === 200) {
-            navigate("/recruiter/login")
+          if (response.status === 201) {
+            navigate("/recruiter_login")
           } else {
             alert("not valid credentials")
           }
