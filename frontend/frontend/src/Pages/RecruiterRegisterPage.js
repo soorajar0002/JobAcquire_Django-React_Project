@@ -7,7 +7,7 @@ const RecruiterRegisterPage = () => {
   return (
     <div>
       <NavBar />
-      <div>
+      <div className=''>
         <RecruiterRegister />
       </div>
       <Footer />

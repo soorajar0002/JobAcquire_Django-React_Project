@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom"
 const initialValues = {
   first_name: "",
   last_name: "",
-  company_name:"",
   email: "",
   phone_number: "",
   password: "",
@@ -27,7 +26,6 @@ const RecruiterRegister = () => {
             first_name: values.first_name,
             last_name: values.last_name,
             email: values.email,
-            company_name: values.company_name,
             phone_number: values.phone_number,
             password: values.password,
             confirm_password: values.confirm_password,
@@ -46,17 +44,17 @@ const RecruiterRegister = () => {
       },
     })
   return (
-    <div>
-      <div className="flex flex-col items-center  recruiter-register mx-6">
+    <div className='container mx-auto '>
+      <div className="flex flex-col items-center  recruiter-register ">
         <form onSubmit={handleSubmit}>
           <h1 className="text-center font-bold text-xl mb-6">
             CREATE YOUR RECRUITER ACCOUNT
           </h1>
-          <div className="mb-4">
+          <div className="mb-4 ">
             <input
               type="text"
               name="first_name"
-              className="form-control block w-full py-3 px-3  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+              className="form-control block w-full py-2 px-3  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
               id="exampleFormControlInput1"
               placeholder="First Name"
               value={values.first_name}
@@ -67,11 +65,11 @@ const RecruiterRegister = () => {
                 <p className="form-error error-font">{errors.first_name}</p>
               ) : null}
           </div>
-          <div className="mb-4">
+          <div className="mb-4 ">
             <input
               type="text"
               name="last_name"
-              className="form-control block w-full py-3 px-3  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+              className="form-control block w-full py-2 px-3  text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
               id="exampleFormControlInput2"
               placeholder="Last Name"
               value={values.last_name}
@@ -82,28 +80,14 @@ const RecruiterRegister = () => {
                 <p className="form-error error-font">{errors.last_name}</p>
               ) : null}
           </div>
-          <div className="mb-4">
-            <input
-              type="text"
-              name="company_name"
-              className="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
-              id="exampleFormControlInput3"
-              placeholder="Company Name"
-              value={values.company_name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-            />
-            {errors.company_name && touched.company_name ? (
-                <p className="form-error error-font">{errors.company_name}</p>
-              ) : null}
-          </div>
-          <div className="mb-4">
+         
+          <div className="mb-4 ">
             <input
               type="email"
               name="email"
-              className="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+              className="form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
               id="exampleFormControlInput4"
-              placeholder="Company Email"
+              placeholder=" Email"
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -112,12 +96,12 @@ const RecruiterRegister = () => {
                 <p className="form-error error-font">{errors.email}</p>
               ) : null}
           </div>
-          <div className="mb-4">
+          <div className="mb-4 ">
               <input
                 type="tel"
                 name="phone_number"
 
-                className="form-control block w-full px-3 py-4 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+                className="form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
                 id="exampleFormControlInput3"
                 placeholder="Phone Number"
                 value={values.phone_number}
@@ -128,11 +112,11 @@ const RecruiterRegister = () => {
                 <p className="form-error error-font">{errors.phone_number}</p>
               ) : null}
             </div>
-          <div className="mb-4">
+          <div className="mb-4 ">
             <input
               type="password"
               name="password"
-              className="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+              className="form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
               id="exampleFormControlInput5"
               placeholder="Password"
               value={values.password}
@@ -143,11 +127,11 @@ const RecruiterRegister = () => {
                 <p className="form-error error-font">{errors.password}</p>
               ) : null}
           </div>
-          <div className="mb-4">
+          <div className="mb-4 ">
             <input
-              type="confirm_password"
+              type="password"
               name="confirm_password"
-              className="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+              className="form-control block w-full px-2 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
               id="exampleFormControlInput6"
               placeholder="Confirm Password"
               value={values.confirm_password}
@@ -160,9 +144,9 @@ const RecruiterRegister = () => {
                 </p>
               ) : null}
           </div>
-          <div className="text-center pt-1 mb-12 pb-1">
+          <div className="text-center pt-1 mb-12 pb-1  ">
             <button
-              className="inline-block login-button  py-4 bg-black text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out  mb-3"
+              className="inline-block px-20 py-3 bg-black text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out  "
               type="submit"
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"

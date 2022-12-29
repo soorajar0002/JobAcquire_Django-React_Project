@@ -7,7 +7,7 @@ function LoginPage() {
   return (
     <div>
       <NavBar />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto ">
         <UserLogin />
       </div>
       <Footer />

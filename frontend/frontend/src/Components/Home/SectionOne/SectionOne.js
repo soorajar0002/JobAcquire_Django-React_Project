@@ -7,11 +7,11 @@ const SectionOne = () => {
   return (
     <div>
       <div className="grid lg:grid-cols-2 gap-10 mx-10 section-one ">
-        <div className="cols-span-1 grid  place-items-center">
+        <div className="cols-span-1 grid  place-items-center img-one">
           <img src={img1} alt="img1" />
         </div>
         <div className="cols-span-1 text-center ">
-          <h1 className="my-4 text-4xl font-bold leading-tight text-center animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-5xl font-black ">
+          <h1 className="my-4  font-bold leading-tight text-center animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent  font-black text-4xl ">
             Make the right choice when choosing your new job.
           </h1>
           <p className="leading-normal text-xl mb-8 text-center ">
