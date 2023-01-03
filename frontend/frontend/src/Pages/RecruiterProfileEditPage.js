@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../Components/Footer/Footer'
 import NavBar from '../Components/NavBar/NavBar'
-import RecruiterProfileEdit from '../Components/RecruiterProfile/RecruiterProfileEdit'
+import RecruiterProfileEdit from '../Components/Recruiter/RecruiterProfile/RecruiterProfileEdit'
 const RecruiterProfileEditPage = () => {
   return (
     <div>

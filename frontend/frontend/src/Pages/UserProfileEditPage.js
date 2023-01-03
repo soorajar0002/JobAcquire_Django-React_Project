@@ -1,13 +1,13 @@
 import React from 'react'
 import Footer from '../Components/Footer/Footer'
 import NavBar from '../Components/NavBar/NavBar'
-import UserProfileEdit from '../Components/UserProfile/UserProfileEdit'
+import UserProfileEditt from '../Components/UserProfile/UserProfileEditt'
 
 const UserProfileEditPage = () => {
   return (
     <div>
         <NavBar/>
-        <UserProfileEdit/>
+        <UserProfileEditt/>
         <Footer/>
 
     </div>

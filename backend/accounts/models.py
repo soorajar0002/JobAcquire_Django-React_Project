@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.utils.translation import gettext_lazy as _
+
+from .views import upload_to
+
 # Create your models here.
+
 
 class MyAccountManager(BaseUserManager):
     def create_user(self, first_name, last_name, username, email, password=None):
@@ -76,13 +81,13 @@ class Account(AbstractBaseUser):
 class UserProfile(models.Model):
     user = models.OneToOneField(Account, on_delete=models.CASCADE)
     title = models.CharField(max_length=30,blank=True,null=True)
-    profile_picture = models.ImageField(blank=True, upload_to="userprofile")
+    profile_picture = models.ImageField(_("Image"), upload_to=upload_to, default='profile/default.jpg')
     bio = models.TextField(max_length=500,blank=True,null=True)
     resume = models.FileField(upload_to='resume',blank=True,null=True)
     skill = models.CharField(max_length=30,blank=True,null=True)
     desired_job = models.CharField(max_length=30,blank=True,null=True)
     desired_location = models.CharField(max_length=30,blank=True,null=True)
-    degree = models.CharField(max_length=30,blank=True,null=True)
+    degree = models.CharField(max_length=50,blank=True,null=True)
     college = models.CharField(max_length=50,blank=True,null=True)
     joining_year = models.IntegerField(blank=True,null=True)
     passout_year = models.IntegerField(blank=True,null=True)
@@ -103,6 +108,7 @@ class UserProfile(models.Model):
 class RecruiterProfile(models.Model):
     user = models.OneToOneField(Account,on_delete=models.CASCADE,unique=True)
     position = models.CharField(max_length=30)
+    profile_picture = models.ImageField(_("Image"), upload_to=upload_to, default='profile/recruiter/default.jpg')
     recruiter_bio = models.TextField(max_length=255)
     location = models.CharField(max_length=30)
     company_name = models.CharField(max_length=30)
@@ -118,4 +124,3 @@ class RecruiterProfile(models.Model):
     
 
 
-    

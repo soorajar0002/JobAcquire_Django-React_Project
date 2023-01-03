@@ -6,11 +6,12 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework.views import APIView
+from recruiter.models import Job
 from accounts.models import Account,UserProfile,RecruiterProfile
 from rest_framework.parsers import JSONParser
-from .serializers import  RegistrationSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken,RecruiterProfileSerializer
-
-
+from .serializers import  JobPostSerializer, RecruiterProfilePicSerializer, RegistrationSerializer, UserProfilePicSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken,RecruiterProfileSerializer
+from rest_framework.parsers import MultiPartParser,FormParser
+from django.contrib.auth import authenticate, login, logout
 #Login
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
@@ -28,7 +29,16 @@ class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
  
 
-
+class LoginView(APIView):
+    def post(self,request):
+        email = request.data["email"]
+        password = request.data["password"]
+        user = authenticate(email=email, password=password)
+        if user is not None:
+            login(request, user)  
+            data = UserSerializerWithToken(user).data  
+            return Response(data)         
+        
 
 #Register
 class RegisterView(APIView):
@@ -49,6 +59,7 @@ class RegisterView(APIView):
     
 #UserProfile    
 class UserProfileView(APIView):
+    parser_classes = [JSONParser, MultiPartParser, FormParser]
     def post(self, request):
          print(request.data)
          user=Account.objects.get(pk=request.data['id'])
@@ -58,15 +69,35 @@ class UserProfileView(APIView):
     
     def put(self, request):
         print(request.data)
-        user=Account.objects.get(pk=request.data["id"])
-        userprofile=UserProfile.objects.get(user=user)
-        serializer = UserProfileUpdateSerializer(userprofile,data=request.data,context={"request": request})   
-        
-        if serializer.is_valid(raise_exception=True):
+        user=Account.objects.get(pk=request.data['id'])
+        userprof=UserProfile.objects.get(user=user)
+        print(userprof)
+        if request.data["is_account"]:
+            serializer = UserSerializer(user, data=request.data)
+        else:
+            serializer = UserProfileSerializer(userprof, data=request.data)
+           
+            
+        if serializer.is_valid():
             serializer.save()
-            print(serializer.data)
+            print(serializer.data,"ser")
             return Response(serializer.data,status=status.HTTP_201_CREATED)
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def patch(self, request, format=None):
+        print("the data", request.data)
+        user = Account.objects.get(pk=request.data["id"])
+        print(user)
+        userprofile = UserProfile.objects.get(user=user)
+
+        print("userprofile", userprofile)
+        serializer = UserProfilePicSerializer(instance=userprofile, data=request.data)
+        if serializer.is_valid():
+
+            serializer.save()
+            print("serializer", serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
              
 
 class RecruiterProfileView(APIView):
@@ -92,6 +123,21 @@ class RecruiterProfileView(APIView):
             print(serializer.data,"ser")
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def patch(self, request, format=None):
+        print("the data", request.data)
+        user = Account.objects.get(pk=request.data["id"])
+        print(user)
+        recprofile = RecruiterProfile.objects.get(user=user)
+
+        print("userprofile", recprofile)
+        serializer = RecruiterProfilePicSerializer(instance=recprofile, data=request.data)
+        if serializer.is_valid():
+
+            serializer.save()
+            print("serializer", serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             
         
        
@@ -101,12 +147,14 @@ class RecruiterProfileView(APIView):
 class AdminUserView(APIView):
      def get(self, request):
         users = Account.objects.all().filter(is_seeker=True)
+        print(users)
         serializer = UserSerializerWithToken(users,many=True)
         return Response(serializer.data)
 
 class AdminRecruiterView(APIView):
      def get(self, request):
         users = Account.objects.all().filter(is_recruiter=True)
+        print(users)
         serializer = UserSerializerWithToken(users,many=True)
         return Response(serializer.data)
     
@@ -123,8 +171,26 @@ class UserBlockview(APIView):
         
         return Response(status=status.HTTP_200_OK)
     
-    
 
+    
+class JobPostView(APIView):
+     def post(self, request):
+         print(request.data)
+         user=Account.objects.get(pk=request.data['id'])
+         print(user)
+         rec_profile=RecruiterProfile.objects.get(user=user)
+         print()
+         jobs=Job.objects.filter(company=rec_profile)
+         print(jobs)
+         
+         serializer = JobPostSerializer(jobs,many=True)
+         print(serializer.data)
+         
+         return Response(serializer.data)
+     
+     
+    
+            
  
     
 @api_view(['GET'])

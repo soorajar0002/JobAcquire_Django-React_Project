@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import UserProfile,RecruiterProfile
 from django.contrib.auth import get_user_model
-
+from recruiter.models import Job
 from accounts.models import Account
 User = get_user_model()
 
@@ -75,13 +75,51 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = "__all__"
+        fields = ['title','profile_picture','bio','skill','desired_job','desired_location','degree','college','joining_year','passout_year','designation','company','start','end','description','percentage']
+    
+    def update(self, instance, validated_data):
+        print(instance,"iam")
         
+        instance.title = validated_data.get('title', instance.title)
+        instance.bio = validated_data.get('bio', instance.bio)
+        instance.skill = validated_data.get('skill', instance.skill)
+        instance.desired_job = validated_data.get('desired_job', instance.desired_job)
+        instance.desired_location = validated_data.get('desired_location', instance.desired_location)
+        instance.degree = validated_data.get('degree', instance.degree)
+        instance.college = validated_data.get('college', instance.college)
+        instance.joining_year = validated_data.get('joining_year', instance.joining_year)
+        instance.passout_year = validated_data.get('passout_year', instance.passout_year)
+        instance.designation = validated_data.get('designation', instance.designation)
+        instance.company = validated_data.get('company', instance.company)
+        instance.start = validated_data.get('start', instance.start)
+        instance.end = validated_data.get('end', instance.end)
+        instance.description = validated_data.get('description', instance.description)
+        instance.percentage = validated_data.get('percentage', instance.percentage)
+        print(instance,"here")
+        instance.save()
+        return instance
+    
+class UserProfilePicSerializer(serializers.ModelSerializer):
+    print("here")
+    profile_picture=serializers.ImageField(required=False)
+    
+    class Meta:
+        model = UserProfile
+        fields = ["profile_picture"]  
+        
+class RecruiterProfilePicSerializer(serializers.ModelSerializer):
+    print("here")
+    profile_picture=serializers.ImageField(required=False)
+    
+    class Meta:
+        model = RecruiterProfile
+        fields = ["profile_picture"]  
+              
 class RecruiterProfileSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = RecruiterProfile
-        fields = ['company_address_line1','company_address_line2','company_email','company_mobile','company_name','company_website','description','location','position','recruiter_bio']
+        fields = ['company_address_line1','company_address_line2','profile_picture','company_email','company_mobile','company_name','company_website','description','location','position','recruiter_bio']
         
     def update(self, instance, validated_data):
         print(instance,"iam")
@@ -143,44 +181,54 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
             return instance
 
             
-                 
+class JobPostSerializer(serializers.ModelSerializer):
     
+    class Meta:
+        model = Job
+        fields = ["id","category","designation","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired"] 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    # first_name = serializers.CharField(source="account.first_name",required=False,allow_null=True,allow_blank=True)
-    # last_name = serializers.CharField(source="account.first_name",required=False,allow_null=True,allow_blank=True)
-    # class Meta:
-    #     model = UserProfile
-    #     fields = [
-    #         "first_name","last_name"
-    #     ]
     # def update(self, instance, validated_data):
-    #     print("Hello")
-    #     print(validated_data)
-    #     instance.first_name = validated_data.get('first_name')
-    #     print(instance)
+    #     print(instance,"iam")
+        
+    #     instance.category = validated_data.get('category', instance.category)
+    #     instance.designation = validated_data.get('designation', instance.designation)
+    #     instance.vacancies = validated_data.get('vacancies', instance.vacancies)
+    #     instance.location = validated_data.get('location', instance.location)
+    #     instance.type = validated_data.get('type', instance.type)
+    #     instance.workmode = validated_data.get('workmode', instance.workmode)
+    #     instance.experience_from = validated_data.get('experience_from', instance.experience_from)
+    #     instance.experience_to = validated_data.get('experience_to', instance.experience_to)
+    #     instance.job_description = validated_data.get('job_description', instance.job_description)
+    #     instance.criteria = validated_data.get('criteria', instance.criteria)
+    #     instance.payscale_from = validated_data.get('payscale_from', instance.payscale_from)
+    #     instance.payscale_to = validated_data.get('payscale_to', instance.payscale_to)
+    #     instance.is_active = validated_data.get('is_active', instance.is_active)
+    #     instance.applicants = validated_data.get('applicants', instance.applicants)
+    #     instance.hired = validated_data.get('hired', instance.hired)
+    #     print(instance,"here")
     #     instance.save()
     #     return instance
-        
+                  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

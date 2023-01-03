@@ -126,3 +126,20 @@ export const RecProfileUpdateSchema = Yup.object({
 })
 
 
+export const UserProfUpdateSchema = Yup.object({
+    title:Yup.string().min(10,"Title field must contain atleast 5 characters."),
+    bio:Yup.string().min(15,"Bio field must contain atleast 15 characters."),
+    skill:Yup.string().min(9,"Skill field must contain atleast 3 skills."),
+    desired_job:Yup.string().min(5,"Desired Job field must contain atleast 10 characters."),
+    desired_location:Yup.string().min(3,"Desired Location field must contain atleast 10 characters."),
+    degree:Yup.string().min(5,"Degree field must contain atleast 5 characters."),
+    college:Yup.string().min(5,"College field must contain atleast 5 characters."),
+    joining_year:Yup.string().max(4,"Joining Year  must be valid."),
+    passout_year:Yup.string().max(4,"Passout Year must be valid."),
+    designation:Yup.string().min(5,"Designation field must contain atleast 5 characters."),
+    company:Yup.string().min(5,"Company field must contain atleast 5 characters."),
+    start:Yup.string().max(4,"Start  field must be valid.."),
+    end:Yup.string().max(4,"End field must be valid."),
+    description:Yup.string().min(10,"Description field must contain atleast 10 characters."),
+    percentage:Yup.string().max(2,"Percentage field must be out of 100."),
+})

@@ -126,6 +126,7 @@ export const userSlice = createSlice({
     const profile = {
       position:action.payload.position,
       recruiter_bio:action.payload.recruiter_bio,
+      profile_picture:action.payload.profile_picture,
       location:action.payload.location,
       company_name:action.payload.company_name,
       company_website:action.payload.company_website,

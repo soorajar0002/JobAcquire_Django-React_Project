@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views
-from . views import AdminRecruiterView, AdminUserView, MyTokenObtainPairView, RegisterView, UserBlockview, UserProfileView,RecruiterProfileView
+from . views import AdminRecruiterView, AdminUserView, JobPostView, MyTokenObtainPairView, RegisterView, UserBlockview, UserProfileView,RecruiterProfileView
 
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -20,7 +22,8 @@ urlpatterns = [
     path('admin/users/',AdminUserView.as_view(), name='user_view'),
     path('admin/recruiter/',AdminRecruiterView.as_view(), name='rec_view'),
     path('block/',UserBlockview.as_view(), name='user_bloack'),
+    path('recruiter/job/post',JobPostView.as_view(), name='user_bloack'),
     
     
    
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

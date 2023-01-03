@@ -17,6 +17,13 @@ import AdminRoutes from './Route/AdminRoutes';
 import RecruiterRouter from './Route/RecruiterRouter';
 import RecruiterProfilePage from './Pages/RecruiterProfilePage';
 import RecruiterProfileEditPage from './Pages/RecruiterProfileEditPage';
+import RecruiterJobListPage from './Pages/RecruiterJobListPage.js';
+import RecruiterJobAddPage from './Pages/RecruiterJobAddPage';
+import RecruiterJobEditPage from './Pages/RecruiterJobEditPage';
+import RecruiterPostBuy from './Components/Recruiter/RecruiterPostBuy/RecruiterPostBuy';
+import RecruiterPostBuyPage from './Pages/RecruiterPostBuyPage';
+import UserJobDiscoverPage from './Pages/UserJobDiscoverPage';
+import UserJobDetailedPage from './Pages/UserJobDetailedPage';
 function App() {
   return (
     <div className="App">
@@ -34,6 +41,8 @@ function App() {
             <Route path="/dashboard" element={<DashBoardPage/>} />
             <Route path="/user_profile" element={<UserProfilePage/>} />
             <Route path="/user_profile_edit" element={<UserProfileEditPage/>} />
+            <Route path="/user_job_discover" element={<UserJobDiscoverPage/>} />
+            <Route path="/user_job_detailed" element={<UserJobDetailedPage/>} />
           </Route>
 
          
@@ -47,6 +56,11 @@ function App() {
           <Route  element={<RecruiterRouter/>}>
           <Route path="/recruiter_profile" element={<RecruiterProfilePage/>}/>
           <Route path="/recruiter_profile_edit" element={<RecruiterProfileEditPage/>}/>
+          <Route path="/recruiter_job_list" element={<RecruiterJobListPage/>}/>
+          <Route path="/recruiter_add_job" element={<RecruiterJobAddPage/>}/>
+          <Route path="/recruiter_job_edit" element={<RecruiterJobEditPage/>}/>
+          <Route path="/recruiter_buy_post" element={<RecruiterPostBuyPage/>}/>
+          
             
           </Route>
           

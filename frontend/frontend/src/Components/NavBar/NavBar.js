@@ -20,7 +20,7 @@ const NavBar = () => {
     <div>
       <nav className="bg-white-800 border-b-2 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between  h-16">
+          <div className="flex items-center justify-between  h-14">
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <Link to="/"><img
@@ -174,10 +174,10 @@ const NavBar = () => {
       </nav>
 
       <main>
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          {/* <!-- Replace with your content --> */}
-          <div className="px-4 py-6 sm:px-0"></div>
-          {/* <!-- /End replace --> */}
+        <div className="max-w-7xl mx-auto  sm:px-6 lg:px-8">
+         
+          <div className="px-4 py-4 sm:px-0"></div>
+          
         </div>
       </main>
     </div>
