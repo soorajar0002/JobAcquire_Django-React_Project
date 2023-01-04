@@ -182,32 +182,33 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
 
             
 class JobPostSerializer(serializers.ModelSerializer):
-    
+    company_name = serializers.ReadOnlyField(source="company.company_name",read_only=True)
+    # jobs=RecruiterProfileSerializer(many=True,read_only=True)
     class Meta:
         model = Job
-        fields = ["id","category","designation","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired"] 
-    
-    # def update(self, instance, validated_data):
-    #     print(instance,"iam")
+        fields = ("id","category","designation","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
         
-    #     instance.category = validated_data.get('category', instance.category)
-    #     instance.designation = validated_data.get('designation', instance.designation)
-    #     instance.vacancies = validated_data.get('vacancies', instance.vacancies)
-    #     instance.location = validated_data.get('location', instance.location)
-    #     instance.type = validated_data.get('type', instance.type)
-    #     instance.workmode = validated_data.get('workmode', instance.workmode)
-    #     instance.experience_from = validated_data.get('experience_from', instance.experience_from)
-    #     instance.experience_to = validated_data.get('experience_to', instance.experience_to)
-    #     instance.job_description = validated_data.get('job_description', instance.job_description)
-    #     instance.criteria = validated_data.get('criteria', instance.criteria)
-    #     instance.payscale_from = validated_data.get('payscale_from', instance.payscale_from)
-    #     instance.payscale_to = validated_data.get('payscale_to', instance.payscale_to)
-    #     instance.is_active = validated_data.get('is_active', instance.is_active)
-    #     instance.applicants = validated_data.get('applicants', instance.applicants)
-    #     instance.hired = validated_data.get('hired', instance.hired)
-    #     print(instance,"here")
-    #     instance.save()
-    #     return instance
+    def update(self, instance, validated_data):
+        
+        
+        instance.category = validated_data.get('category', instance.category)
+        instance.designation = validated_data.get('designation', instance.designation)
+        instance.vacancies = validated_data.get('vacancies', instance.vacancies)
+        instance.location = validated_data.get('location', instance.location)
+        instance.type = validated_data.get('type', instance.type)
+        instance.workmode = validated_data.get('workmode', instance.workmode)
+        instance.experience_from = validated_data.get('experience_from', instance.experience_from)
+        instance.experience_to = validated_data.get('experience_to', instance.experience_to)
+        instance.job_description = validated_data.get('job_description', instance.job_description)
+        instance.criteria = validated_data.get('criteria', instance.criteria)
+        instance.payscale_from = validated_data.get('payscale_from', instance.payscale_from)
+        instance.payscale_to = validated_data.get('payscale_to', instance.payscale_to)
+        instance.is_active = validated_data.get('is_active', instance.is_active)
+        instance.applicants = validated_data.get('applicants', instance.applicants)
+        instance.hired = validated_data.get('hired', instance.hired)
+        print(instance,"here")
+        instance.save()
+        return instance
                   
     
     

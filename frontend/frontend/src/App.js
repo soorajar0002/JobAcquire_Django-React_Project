@@ -24,9 +24,10 @@ import RecruiterPostBuy from './Components/Recruiter/RecruiterPostBuy/RecruiterP
 import RecruiterPostBuyPage from './Pages/RecruiterPostBuyPage';
 import UserJobDiscoverPage from './Pages/UserJobDiscoverPage';
 import UserJobDetailedPage from './Pages/UserJobDetailedPage';
+import Footer from './Components/Footer/Footer';
 function App() {
   return (
-    <div className="App">
+    <div className="App relative ">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage /> } exact/>
@@ -58,7 +59,8 @@ function App() {
           <Route path="/recruiter_profile_edit" element={<RecruiterProfileEditPage/>}/>
           <Route path="/recruiter_job_list" element={<RecruiterJobListPage/>}/>
           <Route path="/recruiter_add_job" element={<RecruiterJobAddPage/>}/>
-          <Route path="/recruiter_job_edit" element={<RecruiterJobEditPage/>}/>
+          
+          <Route path="/recruiter_job_edit/:jobId" element={<RecruiterJobEditPage/>}/>
           <Route path="/recruiter_buy_post" element={<RecruiterPostBuyPage/>}/>
           
             
@@ -68,7 +70,9 @@ function App() {
           
           
         </Routes>
+       
       </BrowserRouter>
+      
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 const UserJobDetailed = () => {
   return (
-    <div className="">
+    <div className="h-screen">
         
         
       <div class="grid grid-cols-8 lg:grid-cols-12 gap-4 mb-10 mx-auto">

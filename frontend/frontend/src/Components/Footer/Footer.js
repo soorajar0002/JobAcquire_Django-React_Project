@@ -7,7 +7,7 @@ import instagram from "../../Images/instagram.png"
 const Footer = () => {
   return (
     <div>
-      <div className="bg-black footer pb-8">
+      <div className="bg-black footer pb-8 ">
         <div className=" text-4sm text-center font-black footer-one py-4">
           <h1>
             JOB<span className="footer-one-color">ACQUIRE</span>

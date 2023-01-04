@@ -173,13 +173,13 @@ class UserBlockview(APIView):
     
 
     
-class JobPostView(APIView):
+class JobPostRecruiterView(APIView):
      def post(self, request):
-         print(request.data)
+         print(request.data,"12345")
          user=Account.objects.get(pk=request.data['id'])
          print(user)
          rec_profile=RecruiterProfile.objects.get(user=user)
-         print()
+         
          jobs=Job.objects.filter(company=rec_profile)
          print(jobs)
          
@@ -189,7 +189,45 @@ class JobPostView(APIView):
          return Response(serializer.data)
      
      
+     def put(self, request):
+        print(request.data)
+        job=Job.objects.get(pk=request.data['id'])
+        print(job)
+        serializer = JobPostSerializer(job, data=request.data)
+        print(serializer,"132")
+        if serializer.is_valid():
+            serializer.save()
+            print(serializer.data,"ser")
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+    
+class SingleJobPostRecruiterView(APIView):
+    def post(self, request):
+        print(request.data)
+        jobs=Job.objects.filter(pk=request.data['id'])
+        print(jobs)
+         
+        serializer = JobPostSerializer(jobs,many=True)
+        print(serializer.data)
+         
+        return Response(serializer.data)
+    
+   
+        
+           
+            
+       
+    
+    
+     
+class UserJobsList(APIView):
+      def get(self, request):
+        jobs = Job.objects.all()
+        serializer = JobPostSerializer(jobs, many=True)
+        print(serializer.data,"here123")
+        
+        return Response(serializer.data)
             
  
     
