@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from . views import AdminRecruiterView, AdminUserView, JobPostRecruiterView, MyTokenObtainPairView, RegisterView, SingleJobPostRecruiterView, UserBlockview, UserJobsList, UserProfileView,RecruiterProfileView
+from . views import JobApplicationView,AdminRecruiterView, AdminUserView, JobPostRecruiterView, JobPostView, MyTokenObtainPairView, RegisterView,  JobPostView, UserBlockview, UserJobsList, UserProfileView,RecruiterProfileView
 
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
@@ -23,8 +23,10 @@ urlpatterns = [
     path('admin/recruiter/',AdminRecruiterView.as_view(), name='rec_view'),
     path('block/',UserBlockview.as_view(), name='user_bloack'),
     path('recruiter/job/post',JobPostRecruiterView.as_view(), name='user_block'),
-    path('recruiter/single/job/post',SingleJobPostRecruiterView.as_view(), name='user_block'),
-    path('user/jobdiscover', UserJobsList.as_view(), name='user_bloack'),
+    path('recruiter/job/post/<str:id>/',JobPostRecruiterView.as_view(), name='user_block'),
+    path('user/job/post',JobPostView.as_view(), name='user_block'),
+    path('user/jobdiscover', UserJobsList.as_view(), name='user_job_discover'),
+    path('user/job/apply', JobApplicationView.as_view(), name='user_job_apply'),
     
    
    

@@ -5,7 +5,7 @@ import UserProfile from '../Components/UserProfile/UserProfile'
 
 const UserProfilePage = () => {
   return (
-    <div>
+    <div className=''>
         <NavBar/>
         <UserProfile/>
         <Footer/>

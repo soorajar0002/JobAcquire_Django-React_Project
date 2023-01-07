@@ -5,15 +5,34 @@ import {useSelector} from 'react-redux';
 const RecruiterJobList = () => {
   const id = useSelector((state) => state.user.user.id);
   console.log(id,"ge")
-  const [jobs, setJobs] = useState();
+  const [jobs, setJobs] = useState([]);
 
  
   const api = useAxios();
+  const delete_post = async (id) => {
+    
+    try {
+      
+      const response = await api.delete(`/recruiter/job/post/${id}/`, {
+      
+        
+        
+      });
+      data();
+      console.log(response.data)
+     
+      
+    
+    }
+     catch (err) {
+      console.log(err);
+    }
+  };
   const data = async () => {
     try {
       
-      const response = await api.post(`/recruiter/job/post`, {
-        id,
+      const response = await api.get(`/recruiter/job/post/${id}`, {
+      
         
         
       });
@@ -46,21 +65,21 @@ const RecruiterJobList = () => {
 
         </div>
         
-      <div className="grid grid-cols-8 lg:grid-cols-12 gap-4 mb-10 mx-auto">
+      <div className="grid  lg:grid-cols-12 gap-4 mb-10 mx-auto">
       {jobs?.map((job)=>(
-        <div className="col-start-2  lg:col-start-4 col-span-6 border rounded-2xl p-4 shadow ">
+        <div className="mx-4 lg:col-start-4 col-span-6 border rounded-2xl p-4 shadow ">
           <div className="flex justify-between mr-4">
             <img
               className="w-8 h-8 rounded-full mt-1 mb-2"
               src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
               alt="Rounded avatar"
             />
-            <h1 className="text-sm  font-bold mt-2 ml-14 ">
+            <h1 className="text-sm text-end font-bold mt-2 ml-14 ">
              {job.designation}
             </h1>
             
           </div>
-          <div className="flex justify-between mr-4 ">
+          <div className="flex justify-between mr-4 mt-4">
             <p className=" text-sm  font-semibold">{job.company_name}</p>
             <p className=" text-sm  font-normal ">{job.location}</p>
           </div>
@@ -104,8 +123,8 @@ const RecruiterJobList = () => {
             
           </div>
           <div className="flex justify-end mr-4">
-          <Link to={`/recruiter_job_edit/${job.id}`}><button type="button" className="text-white bg-gray-800 hover:bg-gray-900   font-medium rounded-md text-sm px-4 py-1  mt-4 dark:bg-gray-800 dark:hover:bg-gray-700  dark:border-gray-700">EDIT</button></Link>
-            
+          <Link to={`/recruiter_job_edit/${job.id}`}><button type="button" className="text-white bg-gray-800 hover:bg-gray-900   font-medium rounded-md text-sm px-4 py-1 mx-2 mt-4 dark:bg-gray-800 dark:hover:bg-gray-700  dark:border-gray-700">EDIT</button></Link>
+         <button onClick={()=>delete_post(job.id)}  className="text-white bg-gray-800 hover:bg-gray-900   font-medium rounded-md text-sm px-4 py-1  mt-4 dark:bg-gray-800 dark:hover:bg-gray-700  dark:border-gray-700">DELETE</button>
           </div>
         </div>
          ))} 

@@ -6,10 +6,11 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework.views import APIView
+from recruiter.models import JobApplication
 from recruiter.models import Job
 from accounts.models import Account,UserProfile,RecruiterProfile
 from rest_framework.parsers import JSONParser
-from .serializers import  JobPostSerializer, RecruiterProfilePicSerializer, RegistrationSerializer, UserProfilePicSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken,RecruiterProfileSerializer
+from .serializers import  JobApplicationSerializer, JobPostSerializer, RecruiterProfilePicSerializer, RegistrationSerializer, UserProfilePicSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken,RecruiterProfileSerializer
 from rest_framework.parsers import MultiPartParser,FormParser
 from django.contrib.auth import authenticate, login, logout
 #Login
@@ -61,7 +62,7 @@ class RegisterView(APIView):
 class UserProfileView(APIView):
     parser_classes = [JSONParser, MultiPartParser, FormParser]
     def post(self, request):
-         print(request.data)
+         print(request.data,"prof")
          user=Account.objects.get(pk=request.data['id'])
          userprofile=UserProfile.objects.get(user=user)
          serializer = UserProfileSerializer(userprofile)
@@ -80,7 +81,7 @@ class UserProfileView(APIView):
             
         if serializer.is_valid():
             serializer.save()
-            print(serializer.data,"ser")
+            print(serializer.data)
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
@@ -174,9 +175,9 @@ class UserBlockview(APIView):
 
     
 class JobPostRecruiterView(APIView):
-     def post(self, request):
-         print(request.data,"12345")
-         user=Account.objects.get(pk=request.data['id'])
+     def get(self, request,id):
+         print(id)
+         user=Account.objects.get(pk=id)
          print(user)
          rec_profile=RecruiterProfile.objects.get(user=user)
          
@@ -188,21 +189,37 @@ class JobPostRecruiterView(APIView):
          
          return Response(serializer.data)
      
-     
+     def post(self,request):
+         serializer = JobPostSerializer(data=request.data, context={'user_id':request.data["id"]})
+         if serializer.is_valid():
+             serializer.save()
+             print(serializer)
+             return Response(status=status.HTTP_201_CREATED)
+         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+         
      def put(self, request):
         print(request.data)
         job=Job.objects.get(pk=request.data['id'])
         print(job)
         serializer = JobPostSerializer(job, data=request.data)
-        print(serializer,"132")
+        print(serializer)
         if serializer.is_valid():
             serializer.save()
-            print(serializer.data,"ser")
+            print(serializer.data)
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+     def delete(self,request,id):
+         print(id,"JOB IDDDDDDDDDDDDD")
+         job = Job.objects.get(pk=id)
+         job.delete()
+         return Response(status=status.HTTP_200_OK)
+        
     
-class SingleJobPostRecruiterView(APIView):
+    
+    
+    
+class JobPostView(APIView):
     def post(self, request):
         print(request.data)
         jobs=Job.objects.filter(pk=request.data['id'])
@@ -214,21 +231,73 @@ class SingleJobPostRecruiterView(APIView):
         return Response(serializer.data)
     
    
-        
-           
+                  
             
        
     
     
      
 class UserJobsList(APIView):
-      def get(self, request):
+    def get(self, request):
         jobs = Job.objects.all()
         serializer = JobPostSerializer(jobs, many=True)
-        print(serializer.data,"here123")
+        print(serializer.data)
         
         return Response(serializer.data)
+    
+    def post(self, request):
+        print(request.data)
+        jobs=Job.objects.filter(pk=request.data['id'])
+        print(jobs)
+         
+        serializer = JobPostSerializer(jobs,many=True)
+        print(serializer.data)
+         
+        return Response(serializer.data)
             
+
+class JobApplicationView(APIView):
+    def post(self,request):
+        data = request.data["ids"]
+        job_id = data["job_id"]
+        user_id = data["user_id"]
+        user = UserProfile.objects.get(pk=user_id)
+        job = Job.objects.get(pk=job_id)
+        apply = JobApplication.objects.create(user=user,job=job,applied=True)
+        print(apply)
+        job.applicants += 1
+        job.save()
+        serializer = JobApplicationSerializer(apply,many=False)
+        return Response(serializer.data)
+    
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
     
 @api_view(['GET'])

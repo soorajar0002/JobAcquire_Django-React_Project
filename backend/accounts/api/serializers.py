@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import UserProfile,RecruiterProfile
 from django.contrib.auth import get_user_model
+from recruiter.models import JobApplication
 from recruiter.models import Job
 from accounts.models import Account
 User = get_user_model()
@@ -182,11 +183,19 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
 
             
 class JobPostSerializer(serializers.ModelSerializer):
+    
     company_name = serializers.ReadOnlyField(source="company.company_name",read_only=True)
-    # jobs=RecruiterProfileSerializer(many=True,read_only=True)
+    first_name = serializers.ReadOnlyField(source="company.user.first_name",read_only=True)
+    last_name = serializers.ReadOnlyField(source="company.user.last_name",read_only=True)
+    company_website = serializers.ReadOnlyField(source="company.company_website",read_only=True)
+    company_email = serializers.ReadOnlyField(source="company.company_email",read_only=True)
+    company_mobile = serializers.ReadOnlyField(source="company.company_mobile",read_only=True)
+    company_address_line1 = serializers.ReadOnlyField(source="company.company_address_line1",read_only=True)
+    company_address_line2 = serializers.ReadOnlyField(source="company.company_address_line2",read_only=True)
+    
     class Meta:
         model = Job
-        fields = ("id","category","designation","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
+        fields = ("id","category","designation","first_name","last_name","company_website","company_email","company_mobile","company_address_line1","company_address_line2","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
         
     def update(self, instance, validated_data):
         
@@ -209,7 +218,40 @@ class JobPostSerializer(serializers.ModelSerializer):
         print(instance,"here")
         instance.save()
         return instance
-                  
+    
+    def create(self,validated_data):
+        
+        id =self.context.get("user_id")
+        user = Account.objects.get(pk=id)
+        rec_profile = RecruiterProfile.objects.get(user=user)
+        job = Job.objects.create(company=rec_profile,
+                                 category = validated_data["category"],
+                                designation = validated_data["designation"],
+                                vacancies = validated_data["vacancies"],
+                                location = validated_data["location"],
+                                type = validated_data['type'],
+                                workmode = validated_data['workmode'],
+                                experience_from = validated_data['experience_from'],
+                                experience_to = validated_data['experience_to'],
+                                job_description = validated_data['job_description'],
+                                criteria = validated_data['criteria'],
+                                payscale_from = validated_data['payscale_from'],
+                                payscale_to = validated_data['payscale_to'])
+        job.save()
+        return job
+       
+       
+            
+    
+class JobApplicationSerializer(serializers.ModelSerializer):
+    user = UserProfile()
+    job = JobPostSerializer()
+    class Meta:
+        model = JobApplication
+        fields = '__all__'
+            
+       
+       
     
     
     

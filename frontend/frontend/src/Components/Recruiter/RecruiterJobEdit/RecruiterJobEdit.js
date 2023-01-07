@@ -32,11 +32,11 @@ const RecruiterJobEdit = () => {
   const api = useAxios()
   const data = async () => {
     try {
-      const response = await api.post(`/recruiter/single/job/post`, {
+      const response = await api.put(`/recruiter/job/post`, {
         id:jobId,
       })
-      setJobs(response.data[0])
-      console.log(response.data[0],"3211")
+      setJobs(response.data)
+      console.log(response.data,"3211")
       console.log("rec321", response.data)
     } catch (err) {
       console.log(err)

@@ -43,7 +43,7 @@ function App() {
             <Route path="/user_profile" element={<UserProfilePage/>} />
             <Route path="/user_profile_edit" element={<UserProfileEditPage/>} />
             <Route path="/user_job_discover" element={<UserJobDiscoverPage/>} />
-            <Route path="/user_job_detailed" element={<UserJobDetailedPage/>} />
+            <Route path="/user_job_detailed/:postId" element={<UserJobDetailedPage/>} />
           </Route>
 
          
