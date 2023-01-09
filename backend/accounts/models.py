@@ -49,6 +49,7 @@ class Account(AbstractBaseUser):
     last_name = models.CharField(max_length=50)
     username = models.CharField(max_length=50, unique=True)
     email = models.CharField(max_length=50, unique=True)
+    otp = models.CharField(max_length=6, null=True, blank=True)
     phone_number = models.CharField(max_length=50)
     
 

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import register_img from "../../../Images/register.png"
 import { useFormik } from "formik"
 import { signUpSchema } from "../../../Schemas"
@@ -16,6 +16,9 @@ const initialValues = {
 }
 const UserRegister = () => {
   const navigate = useNavigate()
+  
+
+  
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -30,9 +33,11 @@ const UserRegister = () => {
             password: values.password,
             confirm_password: values.confirm_password,
             is_seeker:true,
+            verify:false,
           })
           if (response.status === 201) {
-            navigate("/login")
+            
+            navigate(`/otp/${response.data.id}`)
           } else {
             alert("not valid credentials")
           }
@@ -72,7 +77,7 @@ const UserRegister = () => {
                 type="text"
                 name="last_name"
                 className="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
-                id="exampleFormControlInput1"
+                id="exampleFormControlInput11"
                 placeholder="Last Name"
                 value={values.last_name}
                 onChange={handleChange}
@@ -87,7 +92,7 @@ const UserRegister = () => {
                 type="email"
                 name="email"
                 className="form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
-                id="exampleFormControlInput2"
+                id="exampleFormControlInput12"
                 placeholder="Email"
                 value={values.email}
                 onChange={handleChange}

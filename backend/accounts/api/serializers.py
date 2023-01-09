@@ -38,7 +38,7 @@ class UserSerializerWithToken(UserSerializer):
 class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ["first_name", "last_name", "email", "phone_number","password","is_seeker","is_recruiter"]
+        fields = ["id","first_name", "last_name", "email", "phone_number","password","is_seeker","is_recruiter","is_active"]
         extra_kwargs = {"password": {"write_only": True}}
 
     def create(self, validated_data):
@@ -52,7 +52,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
              )
             user.is_seeker = True
             user.set_password(validated_data["password"])
-            user.is_active = True
+            
             user.save()
             UserProfile.objects.create(user=user)
         else:
@@ -70,7 +70,11 @@ class RegistrationSerializer(serializers.ModelSerializer):
             RecruiterProfile.objects.create(user=user)
        
         return user
-    
+
+class VerifyAccountSerailizer(serializers.Serializer):
+
+    model = Account
+    fields = ['id','otp']
     
 
 class UserProfileSerializer(serializers.ModelSerializer):

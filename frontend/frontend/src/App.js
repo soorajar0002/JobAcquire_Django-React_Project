@@ -25,6 +25,8 @@ import RecruiterPostBuyPage from './Pages/RecruiterPostBuyPage';
 import UserJobDiscoverPage from './Pages/UserJobDiscoverPage';
 import UserJobDetailedPage from './Pages/UserJobDetailedPage';
 import Footer from './Components/Footer/Footer';
+import OTPPage from './Pages/OTPPage';
+import AdminPostApprovePage from './Pages/AdminPostApprovePage';
 function App() {
   return (
     <div className="App relative ">
@@ -32,10 +34,13 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage /> } exact/>
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/otp/:id" element={<OTPPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/recruiter_login" element={<RecruiterLogin />} />
           <Route path="/recruiter_register" element={<RecruiterRegister />} />
           <Route path="/admin_login" element={<AdminLoginPage/>}/>
+          <Route path="/admin_approve_post/:id" element={<AdminPostApprovePage/>}/>
+          
 
 
           <Route  element={<PrivateRoute/>}>
