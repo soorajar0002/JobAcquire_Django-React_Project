@@ -20,7 +20,7 @@ JOB ACQUIRE is a job portal website done using React JS as frontend and django a
 * Python 3.7+
 * Other dependencies are listed in `requirements.txt`
 
-##Installation
+## Installation
 
 1. Clone the repository:
   git clone https://github.com/username/job-portal.git
@@ -41,7 +41,7 @@ JOB ACQUIRE is a job portal website done using React JS as frontend and django a
   http://localhost:8000
   Now you should have a running instance of the job portal locally,
 
-##Development
+## Development
 To start developing the project, you can follow the instructions from the previous section to set up the project locally.
 
 When making changes to the frontend code, make sure to run the following command in the frontend directory to start the development server:
