@@ -18,6 +18,7 @@ JOB ACQUIRE is a job portal website done using React JS as frontend and django a
 
 * Django 3.1+
 * Python 3.7+
+* React 
 * Other dependencies are listed in `requirements.txt`
 
 ## Installation
