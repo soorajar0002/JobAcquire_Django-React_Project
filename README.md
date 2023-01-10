@@ -51,6 +51,7 @@ When making changes to the frontend code, make sure to run the following command
 Make sure to run the following command in the backend directory to apply the migration:
 
 python manage.py makemigrations
+
 python manage.py migrate
 
 
