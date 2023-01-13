@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
-from . views import AdminJobPostApproveView, JobApplicationView,AdminRecruiterView, AdminUserView, JobPostRecruiterView, JobPostView, MyTokenObtainPairView, RegisterView,  JobPostView, UserBlockview, UserJobsList, UserProfileView,RecruiterProfileView
-
+from .views import AdminJobPostApproveView, JobApplicationView,AdminRecruiterView, AdminUserView, JobPostRecruiterView, JobPostView, MyTokenObtainPairView, PostListView, RegisterView,  JobPostView, UserBlockview, UserJobsList, UserProfileView,RecruiterProfileView
+from payments.views import RazorpayPaymentView,RazorpayCallback
+from posts.views import PostPlansView
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
@@ -26,9 +27,13 @@ urlpatterns = [
     path('recruiter/job/post/<str:id>/',JobPostRecruiterView.as_view(), name='user_block'),
     path('user/job/post',JobPostView.as_view(), name='user_block'),
     path('user/jobdiscover', UserJobsList.as_view(), name='user_job_discover'),
+    path('jobdiscover', PostListView.as_view(), name='user_job_discover'),
     path('user/job/apply', JobApplicationView.as_view(), name='user_job_apply'),
     path('admin/approve/post/<str:id>/', AdminJobPostApproveView.as_view(), name='user_job_apply'),
     path('admin/approve/post', AdminJobPostApproveView.as_view(), name='user_job_apply'),
+    path('razorpay_order', RazorpayPaymentView.as_view(), name='razorpay_order'),
+    path('razorpay_callback', RazorpayCallback.as_view(), name='razorpay_callback'),
+    path('recruiter/post/plans/', PostPlansView.as_view(), name='post_plan'),
     
    
    

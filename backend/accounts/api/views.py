@@ -15,7 +15,18 @@ from rest_framework.parsers import JSONParser
 from .serializers import JobApplicationSerializer, JobPostSerializer, RecruiterProfilePicSerializer, RegistrationSerializer, UserProfilePicSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken, RecruiterProfileSerializer, VerifyAccountSerailizer
 from rest_framework.parsers import MultiPartParser, FormParser
 from django.contrib.auth import authenticate, login, logout
+from rest_framework.filters import SearchFilter
+from rest_framework.generics import ListAPIView
+from rest_framework.pagination import PageNumberPagination
+
+
+
+
+
 # Login
+
+
+
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -138,14 +149,16 @@ class RecruiterProfileView(APIView):
         return Response(serializer.data)
 
     def put(self, request):
+        print(request.data)
         print(request.data["is_account"])
         user = Account.objects.get(pk=request.data['id'])
         userprof = RecruiterProfile.objects.get(user=user)
         if request.data["is_account"]:
             serializer = UserSerializer(user, data=request.data)
         else:
-            serializer = RecruiterProfileSerializer(
-                userprof, data=request.data)
+            print("here ethi")
+            serializer = RecruiterProfileSerializer(userprof, data=request.data)
+            
 
         if serializer.is_valid():
             serializer.save()
@@ -290,7 +303,18 @@ class UserJobsList(APIView):
         print(serializer.data)
 
         return Response(serializer.data)
-
+    
+class setPagination(PageNumberPagination):
+    page_size=7
+    
+    
+class PostListView(ListAPIView):
+    queryset = Job.objects.all()
+    serializer_class = JobPostSerializer
+    pagination_class = setPagination
+    filter_backends = (SearchFilter,)
+    search_fields=("category","designation","type","workmode")
+    
 
 class JobApplicationView(APIView):
     def post(self, request):

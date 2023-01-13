@@ -135,6 +135,7 @@ export const userSlice = createSlice({
       company_address_line1:action.payload.company_address_line1,
       company_address_line2:action.payload.company_address_line2,
       description:action.payload.description,
+      post_balance:action.payload.post_balance,
 
 
 

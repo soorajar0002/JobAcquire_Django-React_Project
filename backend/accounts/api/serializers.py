@@ -124,7 +124,7 @@ class RecruiterProfileSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = RecruiterProfile
-        fields = ['company_address_line1','company_address_line2','profile_picture','company_email','company_mobile','company_name','company_website','description','location','position','recruiter_bio']
+        fields = ['company_address_line1','company_address_line2','post_balance','profile_picture','company_email','company_mobile','company_name','company_website','description','location','position','recruiter_bio']
         
     def update(self, instance, validated_data):
         print(instance,"iam")
@@ -196,10 +196,11 @@ class JobPostSerializer(serializers.ModelSerializer):
     company_mobile = serializers.ReadOnlyField(source="company.company_mobile",read_only=True)
     company_address_line1 = serializers.ReadOnlyField(source="company.company_address_line1",read_only=True)
     company_address_line2 = serializers.ReadOnlyField(source="company.company_address_line2",read_only=True)
+    post_balance = serializers.ReadOnlyField(source="company.post_balance",read_only=True)
     
     class Meta:
         model = Job
-        fields = ("id","category","designation","first_name","last_name","company_website","company_email","company_mobile","company_address_line1","company_address_line2","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
+        fields = ("id","category","designation","post_balance","first_name","last_name","company_website","company_email","company_mobile","company_address_line1","company_address_line2","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
         
     def update(self, instance, validated_data):
         

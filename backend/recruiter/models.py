@@ -5,7 +5,7 @@ from accounts.models import UserProfile
 
 class Job(models.Model):
     company = models.ForeignKey(RecruiterProfile,related_name='jobs', on_delete=models.CASCADE)
-    category = models.CharField(max_length=30,blank=True,null=True)
+    category = models.CharField(max_length=225,blank=True,null=True)
     designation = models.CharField(max_length=30,blank=True,null=True)
     vacancies = models.CharField(max_length=30,null=True,blank=True)
     location = models.CharField(max_length=30,blank=True,null=True)

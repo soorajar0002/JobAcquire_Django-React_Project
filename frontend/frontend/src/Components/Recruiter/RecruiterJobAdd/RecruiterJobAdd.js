@@ -1,63 +1,54 @@
-
 import { useFormik } from "formik"
 import { useNavigate } from "react-router-dom"
 import useAxios from "../../../Axios/useAxios"
 import { useSelector } from "react-redux"
 const RecruiterJobAdd = () => {
-  
-
   const id = useSelector((state) => state.user.user.id)
-  
-  
-    console.log(id)
- 
+
+  console.log(id)
+
   const initialValues = {
-    category:"",
-    designation:"",
-    criteria:"",
-    experience_from:"",
-    experience_to:"",
-    location:"",
-    job_description:"",
-    type:"",
-    vacancies:"",
-    workmode:"",
-    payscale_from:"",
-    payscale_to:"",
-
-
+    category: "",
+    designation: "",
+    criteria: "",
+    experience_from: "",
+    experience_to: "",
+    location: "",
+    job_description: "",
+    type: "",
+    vacancies: "",
+    workmode: "",
+    payscale_from: "",
+    payscale_to: "",
   }
 
   const api = useAxios()
- 
 
   const navigate = useNavigate()
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
-      enableReinitialize:true,
-      
+      enableReinitialize: true,
+
       onSubmit: async (values, action) => {
-        
         try {
           const response = await api.post(`/recruiter/job/post`, {
-            
-            id:id,
-            company:id,
-            category:values.category,
-            designation:values.designation,
-            criteria:values.criteria,
-            experience_from:values.experience_from,
-            experience_to:values.experience_to,
-            location:values.location,
-            job_description:values.job_description,
-            type:values.type,
-            vacancies:values.vacancies,
-            workmode:values.workmode,
-            payscale_from:values.payscale_from,
-            payscale_to:values.payscale_to,
+            id: id,
+            company: id,
+            category: values.category,
+            designation: values.designation,
+            criteria: values.criteria,
+            experience_from: values.experience_from,
+            experience_to: values.experience_to,
+            location: values.location,
+            job_description: values.job_description,
+            type: values.type,
+            vacancies: values.vacancies,
+            workmode: values.workmode,
+            payscale_from: values.payscale_from,
+            payscale_to: values.payscale_to,
           })
-          
+
           if (response.status === 201) {
             navigate("/recruiter_job_list")
           } else {
@@ -77,7 +68,7 @@ const RecruiterJobAdd = () => {
           <h1 className="text-black font-bold text-xl md:text-3xl  mb-2">
             ADD POST
           </h1>
-          
+
           <div className=" p-4">
             <form onSubmit={handleSubmit}>
               <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -85,7 +76,22 @@ const RecruiterJobAdd = () => {
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     Category
                   </label>
-                  <input
+                  <select
+                    
+                    name="category"
+                    value={values.category}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                  >
+                    <option selected className="text-gray-900">Choose Type</option>
+                    <option value="Development & IT">Development & IT</option>
+                    <option value="Design & Creative">Design & Creative</option>
+                    <option value="Sales & Marketing">Sales & Marketing</option>
+                    <option value="Finance & Accounting">Finance & Accounting</option>
+                    <option value="Writing & Translation">Writing & Translation</option>
+                  </select>
+                  {/* <input
                     type="text"
                     id="first_name"
                     name="category"
@@ -95,7 +101,7 @@ const RecruiterJobAdd = () => {
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="Job Category"
                     required
-                  />
+                  /> */}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
@@ -149,7 +155,21 @@ const RecruiterJobAdd = () => {
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     Type
                   </label>
-                  <input
+
+                  <select
+                    id="countries"
+                    name="type"
+                    value={values.type}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                  >
+                    <option selected className="text-gray-900">Choose Type</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Full Time">Full Time</option>
+                  </select>
+
+                  {/* <input
                     type="text"
                     id="first_name"
                     value={values.type}
@@ -159,24 +179,35 @@ const RecruiterJobAdd = () => {
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="Part Time / Full Time"
                     required
-                  />
+                  /> */}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     Work Mode
                   </label>
-                  <input
+                  <select
+                    
+                    name="workmode"
+                    value={values.workmode}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                  >
+                    <option selected ><p className="text-gray-900">Choose Workmode</p></option>
+                    <option value="On-Site">On-Site</option>
+                    <option value="Remote">Remote</option>
+                  </select>
+                  {/* <input
                     type="text"
                     id="first_name"
                     name="workmode"
                     value={values.workmode}
                     onChange={handleChange}
                     onBlur={handleBlur}
-
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="On-Site / Remote"
                     required
-                  />
+                  /> */}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">

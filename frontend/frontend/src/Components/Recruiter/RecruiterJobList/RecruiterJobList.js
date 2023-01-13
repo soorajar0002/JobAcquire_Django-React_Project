@@ -5,8 +5,13 @@ import {useSelector} from 'react-redux';
 const RecruiterJobList = () => {
   const id = useSelector((state) => state.user.user.id);
   console.log(id,"ge")
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState(null);
+  const balance_1 = useSelector((state) => state.user.profile.post_balance);
+  const balance = jobs ? jobs[0].post_balance : balance_1
 
+  // const balance = jobs==null?balance_1:jobs.post_balance
+  console.log(balance,"22")
+  
  
   const api = useAxios();
   const delete_post = async (id) => {
@@ -51,7 +56,7 @@ const RecruiterJobList = () => {
 
    },[]);
   return (
-    <div className="">
+    <div className="mb- ">
      
         <div className="grid grid-cols-8 lg:grid-cols-12  mb-4 mx-auto">
             <div className="col-start-2 lg:col-start-4 col-span-6  ">
@@ -60,13 +65,13 @@ const RecruiterJobList = () => {
             <Link to="/recruiter_add_job"><button type="button" className="text-white bg-red-800 hover:bg-red-900   font-medium rounded-md text-sm px-4 py-1  mt-4 dark:bg-red-800 dark:hover:bg-red-700  dark:border-gray-700">ADD POST</button></Link>
 
             </div>
-            <p className="text-sm font-semibold mt-2 ml-1">Balance Post:10</p>
+            <p className="text-sm font-semibold text-left mt-2 ">Balance Post :{balance}</p>
             </div>
 
         </div>
         
       <div className="grid  lg:grid-cols-12 gap-4 mb-10 mx-auto">
-      {jobs?.map((job)=>(
+      {jobs?.map((job)=>( 
         <div className="mx-4 lg:col-start-4 col-span-6 border rounded-2xl p-4 shadow ">
           <div className="flex justify-between mr-4">
             <img

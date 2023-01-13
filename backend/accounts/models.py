@@ -119,6 +119,7 @@ class RecruiterProfile(models.Model):
     company_address_line1 = models.CharField(max_length=30)
     company_address_line2 = models.CharField(max_length=30)
     description = models.TextField()
+    post_balance = models.IntegerField(default=0,null=True)
     
     def __str__(self):
         return self.user.first_name

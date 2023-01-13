@@ -9,7 +9,7 @@ const RecruiterProfile = () => {
   const recruiter = useSelector((state)=>state.user.user)
   const recProfile = useSelector((state)=>state.user.profile)
 
-  console.log(recProfile.profile_pictur)
+ 
   const api = useAxios();
   const data = async () => {
     try {
@@ -18,7 +18,7 @@ const RecruiterProfile = () => {
         id,
         
       });
-      console.log("rec",response.data)
+      console.log("receee",response.data)
       dispatch(recProfileData(response.data))
       
     

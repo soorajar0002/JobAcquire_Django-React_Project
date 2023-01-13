@@ -27,6 +27,7 @@ import UserJobDetailedPage from './Pages/UserJobDetailedPage';
 import Footer from './Components/Footer/Footer';
 import OTPPage from './Pages/OTPPage';
 import AdminPostApprovePage from './Pages/AdminPostApprovePage';
+import PaymentPage from './Pages/PaymentPage';
 function App() {
   return (
     <div className="App relative ">
@@ -64,7 +65,7 @@ function App() {
           <Route path="/recruiter_profile_edit" element={<RecruiterProfileEditPage/>}/>
           <Route path="/recruiter_job_list" element={<RecruiterJobListPage/>}/>
           <Route path="/recruiter_add_job" element={<RecruiterJobAddPage/>}/>
-          
+          <Route path="/payment/:planId" element={<PaymentPage/>}/>
           <Route path="/recruiter_job_edit/:jobId" element={<RecruiterJobEditPage/>}/>
           <Route path="/recruiter_buy_post" element={<RecruiterPostBuyPage/>}/>
           

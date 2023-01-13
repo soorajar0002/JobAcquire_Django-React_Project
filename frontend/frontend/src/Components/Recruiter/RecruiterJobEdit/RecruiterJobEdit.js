@@ -96,7 +96,22 @@ const RecruiterJobEdit = () => {
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     Category
                   </label>
-                  <input
+                  <select
+                    
+                    name="category"
+                    value={values.category}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                  >
+                    <option selected className="text-gray-900">Choose Type</option>
+                    <option value="Development & IT">Development & IT</option>
+                    <option value="Design & Creative">Design & Creative</option>
+                    <option value="Sales & Marketing">Sales & Marketing</option>
+                    <option value="Finance & Accounting">Finance & Accounting</option>
+                    <option value="Writing & Translation">Writing & Translation</option>
+                  </select>
+                  {/* <input
                     type="text"
                     id="first_name"
                     name="category"
@@ -106,7 +121,7 @@ const RecruiterJobEdit = () => {
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="Job Category"
                     required
-                  />
+                  /> */}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
@@ -160,7 +175,19 @@ const RecruiterJobEdit = () => {
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     Type
                   </label>
-                  <input
+                  <select
+                    id="countries"
+                    name="type"
+                    value={values.type}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                  >
+                    <option selected className="text-gray-900">Choose Part Time / Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Full Time">Full Time</option>
+                  </select>
+                  {/* <input
                     type="text"
                     id="first_name"
                     value={values.type}
@@ -170,13 +197,24 @@ const RecruiterJobEdit = () => {
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="Part Time / Full Time"
                     required
-                  />
+                  /> */}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     Work Mode
                   </label>
-                  <input
+                  <select
+                    
+                    name="workmode"
+                    value={values.workmode}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 ">
+                    <option selected >Choose Workmode</option>
+                    <option value="On-Site">On-Site</option>
+                    <option value="Remote">Remote</option>
+                  </select>
+                  {/* <input
                     type="text"
                     id="first_name"
                     name="workmode"
@@ -187,7 +225,7 @@ const RecruiterJobEdit = () => {
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="On-Site / Remote"
                     required
-                  />
+                  /> */}
                 </div>
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
@@ -291,7 +329,7 @@ const RecruiterJobEdit = () => {
                   type="submit"
                   className="inline-block px-6 py-2.5 bg-black text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out"
                 >
-                  POST
+                  SAVE
                 </button>
               </div>
             </form>

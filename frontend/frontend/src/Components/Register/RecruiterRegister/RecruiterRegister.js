@@ -30,9 +30,11 @@ const RecruiterRegister = () => {
             password: values.password,
             confirm_password: values.confirm_password,
             is_seeker:false,
+            verify:false,
           })
           if (response.status === 201) {
-            navigate("/recruiter_login")
+            
+            navigate(`/otp/${response.data.id}`)
           } else {
             alert("not valid credentials")
           }

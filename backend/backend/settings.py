@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
      "corsheaders",
      "recruiter",
+     "payments",
+     "posts",
+    
      
     
 ]
@@ -185,3 +188,14 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'jobacquire0002@gmail.com'
 EMAIL_HOST_PASSWORD = 'bzpqbxjqooatxsdv'
+
+
+
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
+RAZOR_KEY_ID=env('RAZOR_KEY_ID')
+RAZOR_KEY_SECRET=env('RAZOR_KEY_SECRET')
