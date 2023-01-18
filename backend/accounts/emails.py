@@ -20,7 +20,7 @@ def send_post_approval_via_email(id):
     subject = "RECRUITER POST APPROVAL"
     message = f'Check the mew job posted  http://localhost:3000/admin_approve_post/{id}'
     email_from = settings.EMAIL_HOST
-    email = 'jobacquire0002@gmail.com'
+    email = 'soorajar0002@gmail.com'
     send_mail(subject,message, email_from, [email])
     print(subject,"S",id,email_from,"V",message,"",email)
     

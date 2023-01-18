@@ -5,6 +5,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from accounts.models import Account, RecruiterProfile
+from accounts.api.serializers import PaymentSerializer
 
 from posts.models import PostPlans
 from payments.constants import PaymentStatus
@@ -29,13 +30,14 @@ class RazorpayPaymentView(APIView):
     @staticmethod
     def post(request, *args, **kwargs):
         print(request.data)
+        user = Account.objects.get(id=request.data["user_id"])
         plan = PostPlans.objects.get(id=request.data["planId"])
         print(plan)
         # Take Order Id from frontend and get all order info from Database.
         # order_id = request.data.get('order_id', None)
 
         # Here We are Using Static Order Details for Demo.
-        name = "Swapnil Pawar"
+        name =  user.first_name +" "+ user.last_name
         amount = plan.amount
 
         # Create Order
@@ -125,3 +127,9 @@ class RazorpayCallback(APIView):
             }
 
             return Response({'error_data': error_status}, status=status.HTTP_401_UNAUTHORIZED)
+
+class PaymentDetailsView(APIView):
+    def get(self, request):
+        payment = RazorpayPayment.objects.all()
+        serializer = PaymentSerializer(payment,many=True)
+        return Response(serializer.data)

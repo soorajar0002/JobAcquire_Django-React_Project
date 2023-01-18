@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 from accounts.models import UserProfile,RecruiterProfile
 from django.contrib.auth import get_user_model
+from payments.models import RazorpayPayment
 from recruiter.models import JobApplication
 from recruiter.models import Job
 from accounts.models import Account
@@ -104,6 +105,16 @@ class UserProfileSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
     
+class RecruiterUserProfileSerializer(serializers.ModelSerializer):
+    first_name = serializers.ReadOnlyField(source="user.first_name",read_only=True)
+    last_name = serializers.ReadOnlyField(source="user.last_name",read_only=True)
+    phone_number = serializers.ReadOnlyField(source="user.phone_number",read_only=True)
+    email = serializers.ReadOnlyField(source="user.email",read_only=True)
+    class Meta:
+        model = UserProfile
+        fields=['first_name','email','last_name','phone_number','title','profile_picture','bio','skill','desired_job','desired_location','degree','college','joining_year','passout_year','designation','company','start','end','description','percentage']    
+
+
 class UserProfilePicSerializer(serializers.ModelSerializer):
     print("here")
     profile_picture=serializers.ImageField(required=False)
@@ -124,7 +135,7 @@ class RecruiterProfileSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = RecruiterProfile
-        fields = ['company_address_line1','company_address_line2','post_balance','profile_picture','company_email','company_mobile','company_name','company_website','description','location','position','recruiter_bio']
+        fields = ['id','company_address_line1','company_address_line2','post_balance','profile_picture','company_email','company_mobile','company_name','company_website','description','location','position','recruiter_bio']
         
     def update(self, instance, validated_data):
         print(instance,"iam")
@@ -187,7 +198,7 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
 
             
 class JobPostSerializer(serializers.ModelSerializer):
-    
+    recruiter_id = serializers.ReadOnlyField(source="company.id",read_only=True)
     company_name = serializers.ReadOnlyField(source="company.company_name",read_only=True)
     first_name = serializers.ReadOnlyField(source="company.user.first_name",read_only=True)
     last_name = serializers.ReadOnlyField(source="company.user.last_name",read_only=True)
@@ -200,7 +211,7 @@ class JobPostSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Job
-        fields = ("id","category","designation","post_balance","first_name","last_name","company_website","company_email","company_mobile","company_address_line1","company_address_line2","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
+        fields = ("id","recruiter_id","category","designation","post_balance","first_name","last_name","company_website","company_email","company_mobile","company_address_line1","company_address_line2","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
         
     def update(self, instance, validated_data):
         
@@ -257,8 +268,22 @@ class JobApplicationSerializer(serializers.ModelSerializer):
             
        
        
-    
-    
+class RecruiterJobApplicationSerializer(serializers.ModelSerializer):
+    user_id = serializers.ReadOnlyField(source="user.user.id",read_only=True)
+    first_name = serializers.ReadOnlyField(source="user.user.first_name",read_only=True)
+    first_name = serializers.ReadOnlyField(source="user.user.first_name",read_only=True)
+    last_name = serializers.ReadOnlyField(source="user.user.last_name",read_only=True)
+    phone_number = serializers.ReadOnlyField(source="user.user.phone_number",read_only=True)
+    job_name = serializers.ReadOnlyField(source="user.designation",read_only=True)
+    class Meta:
+        model = JobApplication
+        fields = ['id','user_id','job','job_name','status','created','first_name','last_name','phone_number']
+            
+           
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RazorpayPayment
+        fields = '__all__'
     
     
     

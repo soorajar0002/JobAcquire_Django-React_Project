@@ -10,14 +10,15 @@ const UserJobDetailed = () => {
   const { postId } = useParams()
   console.log(postId)
   const [jobs, setJobs] = useState(0)
-
+  
   const api = useAxios()
   const user = useSelector((state) => state.user.user);
   console.log(user.id)
   
   const ids={
     job_id:postId,
-    user_id:user.id
+    user_id:user.id,
+    rec_id:jobs.recruiter_id,
   }
   const applyJob = async () => {
     
@@ -63,10 +64,10 @@ const UserJobDetailed = () => {
         
       <div class="grid grid-cols-8 lg:grid-cols-12  mb-10 mx-auto ">
         
-        <div class="col-start-2 lg:col-start-4 col-span-6 border rounded-2xl p-4  ">
+        <div class="col-start-2 lg:col-start-4 col-span-6 border rounded-2xl p-3  ">
           <div className="">
           <div className="flex justify-between mr-4">
-          <h1 className="text-sm font-bold mt-2 ">
+          <h1 className="text-sm font-bold mt-2 text-left ">
               {jobs.designation}
             </h1>
             <img
@@ -91,7 +92,7 @@ const UserJobDetailed = () => {
             
           </div>
          {applied?
-          <div className="flex justify-start mr-4 mt-2">
+          <div className="flex justify-start mr-4 mt-2 ">
           <button  class="text-white bg-blue-700    font-medium rounded-lg text-sm mt-4 px-5 py-1 mr-2 mb-2 dark:bg-black disabled  ">APPLIED</button>
            
             
@@ -105,7 +106,7 @@ const UserJobDetailed = () => {
           
           </div>
           <div>
-            <h1 className="font-semibold mt-4">JOB DESCRIPTION</h1>
+            <h1 className="font-semibold mt-4 ">JOB DESCRIPTION</h1>
             <p className="text-sm text-gray-600 mt-2">{jobs.job_description}</p>
           </div>
           <div>

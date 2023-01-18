@@ -1,6 +1,8 @@
 from django.urls import path
+
+from  payments.views import PaymentDetailsView
 from . import views
-from .views import AdminJobPostApproveView, JobApplicationView,AdminRecruiterView, AdminUserView, JobPostRecruiterView, JobPostView, MyTokenObtainPairView, PostListView, RegisterView,  JobPostView, UserBlockview, UserJobsList, UserProfileView,RecruiterProfileView
+from .views import AdminJobPostApproveView, JobApplicationRecruiterView, JobApplicationView,AdminRecruiterView, AdminUserView, JobPostRecruiterView, JobPostView, MyTokenObtainPairView, PostListView, RecruiterUserProfileView, RegisterView,  JobPostView, UserAppliedJobsView, UserBlockview, UserJobsList, UserProfileView,RecruiterProfileView
 from payments.views import RazorpayPaymentView,RazorpayCallback
 from posts.views import PostPlansView
 from rest_framework_simplejwt.views import (
@@ -34,7 +36,10 @@ urlpatterns = [
     path('razorpay_order', RazorpayPaymentView.as_view(), name='razorpay_order'),
     path('razorpay_callback', RazorpayCallback.as_view(), name='razorpay_callback'),
     path('recruiter/post/plans/', PostPlansView.as_view(), name='post_plan'),
-    
-   
-   
+    path('user/applied_jobs/', UserAppliedJobsView.as_view(), name='post_plan'),
+    path('recruiter/job_applications/',  JobApplicationRecruiterView.as_view(), name='post_plan'),
+    path('recruiter/user_profile',  RecruiterUserProfileView.as_view(), name='user_profile_rec'),
+    path('admin/payment_details',  PaymentDetailsView.as_view(), name='admin_payment_details'),
+    # path('user/applied_jobs/<str:id>/', UserAppliedJobsGeneric.as_view(), name='applied_jobs'),
+       
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

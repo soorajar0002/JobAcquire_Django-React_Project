@@ -1,33 +1,27 @@
-import React, { useEffect } from "react"
-import profile from "../../Images/prof-pp.jpg"
-import useAxios from "../../Axios/useAxios"
-import { useSelector, useDispatch } from "react-redux"
-import { userProfileData } from "../../Redux/Reducers/AuthSlice"
-import { Link } from "react-router-dom"
-const UserProfile = () => {
-  const users = useSelector((state) => state.user.user)
-  const usersProfile = useSelector((state) => state.user.profile)
-  console.log(users)
-  console.log(usersProfile)
-  const id = useSelector((state) => state.user.user.id)
-
-  const dispatch = useDispatch()
-
-  const api = useAxios()
-  const data = async () => {
-    try {
-      const response = await api.post(`/user/profile/`, {
-        id,
-      })
-      console.log(response.data)
-      dispatch(userProfileData(response.data))
-    } catch (err) {
-      console.log(err)
-    }
-  }
-  useEffect(() => {
-    data()
-  }, [])
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import useAxios from "../../../Axios/useAxios"
+const RecruiterUserProfile = () => {
+    const { id } = useParams()
+    const api = useAxios()
+    const [userdata, setuserData] = useState([])
+    const data = async () => {
+        try {
+          const response = await api.post(`/recruiter/user_profile`, {
+            id,
+          })
+          
+          console.log("userdisc321", response.data)
+          setuserData(response.data)
+        } catch (err) {
+          console.log(err)
+        }
+      }
+      useEffect(() => {
+        data()
+       
+      }, [])
+    
   return (
     <div className="container mx-auto mb-20 mt-2">
      <h1 className="text-black text-left ml-6 lg:ml-48 font-bold text-4xl">PROFILE</h1>
@@ -38,37 +32,35 @@ const UserProfile = () => {
           <img
             class="w-20 h-20 rounded-full mx-auto "
             src={
-              usersProfile.profile_picture
-                ? `http://localhost:8000/api${usersProfile.profile_picture}`
-                : profile
+              userdata.profile_picture
+                ? `http://localhost:8000/api${userdata.profile_picture}`
+                : null
             }
             alt="Large avatar"
           ></img>
-          <h1 className="text-2sm font-bold mt-6">{users.username}</h1>
-          <p className="text-2sm  font-medium">{usersProfile.title}</p>
-          <p className="font-normal text-sm   mt-4  mx-10">{usersProfile.bio}</p>
+          <h1 className="text-2sm font-bold mt-6">{userdata.title}</h1>
+          <p className="text-2sm  font-medium">{userdata.bio}</p>
+          
           <div className=" p-4 my-2   ">
             <h1 className="font-extrabold text-2xl mx-6 ">BASIC INFO</h1>
             <div className="mt-6 font-normal text-sm mx-6 uppercase">
               <h1 className="my-2">
                 
-                <span className="pl-2">
-                  {users.firstname} {users.lastname}
-                </span>
+                <span className="pl-2">{userdata.first_name} {userdata.last_name}</span>
               </h1>
               <h1 className="my-2">
-                <span className="pl-2 lowercase">{users.email}</span>
+                <span className="pl-2 lowercase">{userdata.email}</span>
               </h1>
               <h1 className="my-2">
-                <span className="pl-2">{users.phone_number}</span>
+                <span className="pl-2">{userdata.phone_number}</span>
               </h1>
               <h1 className="my-2">
                 
-                <span className="pl-2">{usersProfile.desired_job}</span>
+                <span className="pl-2">{userdata.desired_job}</span>
               </h1>
               <h1 className="my-2">
                
-                <span className="pl-2">{usersProfile.desired_location}</span>
+                <span className="pl-2">{userdata.desired_location}</span>
               </h1>
             </div>
           </div>
@@ -78,20 +70,13 @@ const UserProfile = () => {
           >
             RESUME
           </button>
-          <Link to="/user_profile_edit">
-            <button
-              type="button"
-              class=" bg-white border border-gray-300 focus:outline-none   font-normal rounded-md text-2sm px-5 py-1  mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 "
-            >
-              EDIT
-            </button>
-          </Link>
+          
         </div>
         <div className="lg:col-span-4  p-4 shadow-2xl border-gray-100 rounded-xl bg-gray-100  text-black  text-left">
         <div className=" p-4 my-2 mt-">
             <h1 className="font-extrabold text-2xl mx-6 ">SKILLS</h1>
             <div className="mt-6  mx-6 font-normal text-sm  uppercase">
-              <h1 className="my-2">{usersProfile.skill}</h1>
+              <h1 className="my-2">{userdata.skill}</h1>
             </div>
           </div>
          
@@ -101,14 +86,14 @@ const UserProfile = () => {
             <div className="mt-6 font-normal text-sm mx-6 uppercase">
               <h1 className="my-2">
                 
-                <span className="pl-2">{usersProfile.designation}</span>
+                <span className="pl-2">{userdata.designation}</span>
               </h1>
               <h1 className="my-2">
-               <span className="pl-2">{usersProfile.company}</span>
+               <span className="pl-2">{userdata.company}</span>
               </h1>
 
               <h1 className="my-2">
-                <span className="pl-2">{usersProfile.joining_year}</span> - <span className="">{usersProfile.passout_year}</span>
+                <span className="pl-2">{userdata.joining_year}</span> - <span className="">{userdata.passout_year}</span>
               </h1>
               <h1 className="my-2">
               
@@ -120,20 +105,20 @@ const UserProfile = () => {
             <h1 className="font-extrabold text-2xl mx-6">QUALIFICATION</h1>
             <div className="mt-6  mx-6 font-normal text-sm  uppercase">
               <h1 className="my-2">
-               <span className="pl-2">{usersProfile.degree}</span>{" "}
+               <span className="pl-2">{userdata.degree}</span>{" "}
               </h1>
               <h1 className="my-2">
-                <span className="pl-2">{usersProfile.college}</span>
+                <span className="pl-2">{userdata.college}</span>
               </h1>
               <h1 className="my-2">
-              <span className="pl-2">{usersProfile.start}</span> - <span className="">{usersProfile.end}</span>
+              <span className="pl-2">{userdata.start}</span> - <span className="">{userdata.end}</span>
               </h1>
               <h1 className="my-2">
            
               </h1>
               <h1 className="my-2">
               
-                <span className="pl-2">{usersProfile.percentage}%</span>{" "}
+                <span className="pl-2">{userdata.percentage}%</span>{" "}
               </h1>
             </div>
           </div>
@@ -143,4 +128,4 @@ const UserProfile = () => {
   )
 }
 
-export default UserProfile
+export default RecruiterUserProfile

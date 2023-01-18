@@ -42,6 +42,7 @@ const Payment = () => {
           
           const response = await api.post(`recruiter/post/plans/`, {
             planId,
+            
           
             
             
@@ -92,9 +93,10 @@ const Payment = () => {
       {
         order_id: "Order-5152",
         planId,
+        user_id
       }
     )
-
+      console.log(result.data,"data")
     if (!result) {
       alert("Server error. please check are you onlin?")
       return

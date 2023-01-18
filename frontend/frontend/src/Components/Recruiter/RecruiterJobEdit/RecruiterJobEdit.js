@@ -102,7 +102,7 @@ const RecruiterJobEdit = () => {
                     value={values.category}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                    className="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                   >
                     <option selected className="text-gray-900">Choose Type</option>
                     <option value="Development & IT">Development & IT</option>

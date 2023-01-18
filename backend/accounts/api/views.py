@@ -12,14 +12,15 @@ from recruiter.models import JobApplication
 from recruiter.models import Job
 from accounts.models import Account, UserProfile, RecruiterProfile
 from rest_framework.parsers import JSONParser
-from .serializers import JobApplicationSerializer, JobPostSerializer, RecruiterProfilePicSerializer, RegistrationSerializer, UserProfilePicSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken, RecruiterProfileSerializer, VerifyAccountSerailizer
+from .serializers import JobApplicationSerializer, JobPostSerializer, RecruiterJobApplicationSerializer, RecruiterProfilePicSerializer, RecruiterUserProfileSerializer, RegistrationSerializer, UserProfilePicSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken, RecruiterProfileSerializer, VerifyAccountSerailizer
 from rest_framework.parsers import MultiPartParser, FormParser
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
-
-
+from rest_framework import generics
+from rest_framework.generics import GenericAPIView
+from rest_framework.mixins import ListModelMixin
 
 
 
@@ -321,15 +322,69 @@ class JobApplicationView(APIView):
         data = request.data["ids"]
         job_id = data["job_id"]
         user_id = data["user_id"]
-        user = UserProfile.objects.get(pk=user_id)
+        rec_id = data["rec_id"]
+        user = Account.objects.get(pk=user_id)
+        prof = UserProfile.objects.get(user=user)
+        rec_prof = RecruiterProfile.objects.get(id=rec_id)
         job = Job.objects.get(pk=job_id)
-        apply = JobApplication.objects.create(user=user, job=job, applied=True)
+        apply = JobApplication.objects.create(user=prof,recruiter=rec_prof, job=job, applied=True)
         print(apply)
         job.applicants += 1
         job.save()
         serializer = JobApplicationSerializer(apply, many=False)
         return Response(serializer.data)
 
+
+# class UserAppliedJobsGeneric(generics.RetrieveUpdateDestroyAPIView):
+   
+#     queryset = JobApplication.objects.
+#     serializer_class = JobApplicationSerializer
+#     lookup_field = 'id'
+    
+class UserAppliedJobsView(APIView):
+        def post(self, request):
+            print(request.data,"3211")
+            user = Account.objects.get(id=request.data["id"])
+            prof = UserProfile.objects.get(user=user)
+            print(user)
+            jobs = JobApplication.objects.filter(user=prof)
+            print(jobs)
+
+            serializer = JobApplicationSerializer(jobs, many=True)
+            print(serializer.data)
+
+            return Response(serializer.data)
+    
+    
+class JobApplicationRecruiterView(APIView):
+        def post(self, request):
+            print(request.data,"3211")
+            user = Account.objects.get(id=request.data["id"])
+            prof = RecruiterProfile.objects.get(user=user)
+            print(user)
+            print(prof)
+            jobs = JobApplication.objects.filter(recruiter=prof)
+            print(jobs)
+
+            serializer = RecruiterJobApplicationSerializer(jobs, many=True)
+            print(serializer.data)
+
+            return Response(serializer.data)
+        
+        def patch(self,request):
+            print(request.data)
+            job = JobApplication.objects.get(id=request.data["id"])
+            print(job,"APPLI")
+            job.status=request.data["status"]
+            job.save()
+            return Response(status=status.HTTP_200_OK)
+            
+class RecruiterUserProfileView(APIView):
+    def post(self, request):
+        user = Account.objects.get(id=request.data["id"]) 
+        prof = UserProfile.objects.get(user=user)
+        serializer = RecruiterUserProfileSerializer(prof)  
+        return Response(serializer.data)  
 
 @api_view(['GET'])
 def getRoutes(request):

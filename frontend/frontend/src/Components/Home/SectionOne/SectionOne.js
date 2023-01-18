@@ -6,7 +6,7 @@ import './SectionOne.css';
 const SectionOne = () => {
   return (
     <div>
-      <div className="grid lg:grid-cols-2 gap-10 mx-10 section-one ">
+      <div className="grid lg:grid-cols-2 gap-10 mx-10 section-one mt-10">
         <div className="cols-span-1 grid  place-items-center img-one">
           <img src={img1} alt="img1" />
         </div>

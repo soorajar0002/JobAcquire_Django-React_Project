@@ -28,6 +28,7 @@ class Job(models.Model):
     
 class JobApplication(models.Model):
     user = models.ForeignKey(UserProfile,on_delete=models.CASCADE)
+    recruiter = models.ForeignKey(RecruiterProfile,on_delete=models.CASCADE)
     job = models.ForeignKey(Job,on_delete=models.CASCADE)
     status = models.CharField(max_length=30,default='PENDING')
     applied = models.BooleanField(default=False)
