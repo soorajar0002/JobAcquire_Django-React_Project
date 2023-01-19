@@ -12,7 +12,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-
 urlpatterns = [
     path('', views.getRoutes),
     path('user/login/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),

@@ -53,9 +53,9 @@ class LoginView(APIView):
         user = authenticate(email=email, password=password)
         if user is not None:
             login(request, user)
-            data = UserSerializerWithToken(user).data
-            return Response(data)
-
+            data = UserSerializerWithToken(user)
+            return Response(data,status=status.HTTP_200_OK)
+        return Response( {"msg": "Invalid Credentials"},status=status.HTTP_400_BAD_REQUEST)
 
 # Register
 class RegisterView(APIView):
@@ -103,6 +103,8 @@ class UserProfileView(APIView):
 
     def post(self, request):
         print(request.data, "prof")
+        print(self.request.user)
+        
         user = Account.objects.get(pk=request.data['id'])
         userprofile = UserProfile.objects.get(user=user)
         serializer = UserProfileSerializer(userprofile)
@@ -289,6 +291,7 @@ class JobPostView(APIView):
 
 class UserJobsList(APIView):
     def get(self, request):
+       
         jobs = Job.objects.filter(is_active=True)
         serializer = JobPostSerializer(jobs, many=True)
         print(serializer.data)
@@ -311,6 +314,7 @@ class setPagination(PageNumberPagination):
     
 class PostListView(ListAPIView):
     queryset = Job.objects.all()
+   
     serializer_class = JobPostSerializer
     pagination_class = setPagination
     filter_backends = (SearchFilter,)
