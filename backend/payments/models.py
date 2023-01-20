@@ -7,7 +7,7 @@ from .constants import PaymentStatus
 class RazorpayPayment(models.Model):
     name = CharField(_("Customer Name"), max_length=254, blank=False, null=False)
     amount = models.FloatField(_("Amount"), null=False, blank=False)
-    created_date = models.DateTimeField(_("Created Date"),auto_now_add=True)
+    created_date = models.DateField(_("Created Date"),auto_now_add=True)
     status = CharField(
         _("Payment Status"),
         default=PaymentStatus.PENDING,

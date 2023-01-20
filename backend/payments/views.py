@@ -46,6 +46,7 @@ class RazorpayPaymentView(APIView):
         )
 
         # Save the order in DB
+       
         order = RazorpayPayment.objects.create(
             name=name, amount=amount, provider_order_id=razorpay_order["id"]
         )
@@ -129,7 +130,14 @@ class RazorpayCallback(APIView):
             return Response({'error_data': error_status}, status=status.HTTP_401_UNAUTHORIZED)
 
 class PaymentDetailsView(APIView):
-    def get(self, request):
-        payment = RazorpayPayment.objects.all()
+    def post(self, request):
+        print(request.data["from"]==None)
+        if request.data["from"]==None:
+            payment = RazorpayPayment.objects.all()
+        else:
+            from_date = request.data["from"]
+            end_date = request.data["end"]
+            payment = RazorpayPayment.objects.filter(created_date__range=[from_date,end_date])
+        print(payment)
         serializer = PaymentSerializer(payment,many=True)
         return Response(serializer.data)

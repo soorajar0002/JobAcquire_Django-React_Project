@@ -2,14 +2,38 @@ import React, { useEffect, useState } from "react"
 import useAxios from "../Axios/useAxios"
 import { Link } from "react-router-dom"
 import { BiLogOutCircle } from "react-icons/bi"
+import {useDispatch} from 'react-redux';
+import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
 const AdminPage = () => {
   const api = useAxios()
+  const dispatch = useDispatch();
+  
+  const [from, setFrom] = useState(null)
+  const [end, setEnd] = useState(null)
+  console.log(from)
+  console.log(end)
+  const temp ="hey"
   const [payments, setPayments] = useState([])
   const data = async () => {
     try {
-      const response = await api.get(`/admin/payment_details`, {})
-      console.log(response.data)
+      const response = await api.post(`/admin/payment_details`, {
+        from:from,
+        end:end,
+        temp
+
+      })
+      console.log(response.data,"322")
+      
+      if (response.data[0] == null){
+        setFrom(null)
+        setEnd(null)
+       
+      }
+      
       setPayments(response.data)
+  
+      
+      
     } catch (err) {
       console.log(err)
     }
@@ -17,6 +41,11 @@ const AdminPage = () => {
   useEffect(() => {
     data()
   }, [])
+  const logout = () => {
+    
+    dispatch(logOutAdmin());
+    
+  };
   return (
     <div>
       <div class="grid grid-cols-12  ">
@@ -31,11 +60,14 @@ const AdminPage = () => {
             </div>
             <div className="flex justify-center mt-3 text-sm">
               <Link to="/login">
-                <BiLogOutCircle className="text-white " />
+                <BiLogOutCircle className="text-white " onClick={logout}/>
               </Link>
             </div>
 
-            <p className=" text-xs mt-3 fon-medium text-white">ADMIN</p>
+            <Link to="/admin_dashboard">
+              {" "}
+              <p className=" text-xs mt-3 font-bold text-white">ADMIN</p>
+            </Link>
           </div>
           t
           <div>
@@ -64,6 +96,35 @@ const AdminPage = () => {
               <h1 className="font-bold text-3xl text-left ml-4 mb-6">
                 ADMIN MANAGEMENT
               </h1>
+              <div date-rangepicker class="flex justify-end mr-24  mb-4">
+                <div class="relative">
+                  <input
+                   onChange={(evt) => {setFrom(evt.target.value)}}
+                    name="start"
+                    type="date"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block  px-4 py-2"
+                    placeholder="Select date start"
+                  />
+                </div>
+                <span class="mx-4 mt-1 text-gray-500">to</span>
+                <div class="relative">
+                  <input
+                    name="end"
+                    type="date"
+                    onChange={(evt) => { setEnd(evt.target.value)}}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block  px-4 py-2"
+                    placeholder="Select date end"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={data}
+                  class="py-2.5 px-2 ml-4 mr-2 mb-2 text-sm font-medium text-gray-200 focus:outline-none bg-black rounded-lg border border-gray-200 "
+                >
+                  SEARCH
+                </button>
+              </div>
+
               <div className=" p-4">
                 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                   <table class="w-full text-sm text-left text-black dark:text-black">
@@ -119,6 +180,7 @@ const AdminPage = () => {
           </div>
         </div>
       </div>
+      <script src="../path/to/flatpickr.min.js"></script>
     </div>
   )
 }

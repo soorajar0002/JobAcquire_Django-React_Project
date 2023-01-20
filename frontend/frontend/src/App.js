@@ -1,8 +1,7 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AdminDashboardPage from './Pages/AdminDashboardPage';
 import AdminLoginPage from './Pages/AdminLoginPage';
-import AdminRecruiterManagement from './Pages/AdminRecruiterManagement';
-import AdminUserManagementPage from './Pages/AdminUserManagementPage';
 import HomePage from './Pages/HomePage';
 import LoginPage from './Pages/LoginPage';
 import RecruiterLogin from './Pages/RecruiterLoginPage';
@@ -18,7 +17,6 @@ import RecruiterProfileEditPage from './Pages/RecruiterProfileEditPage';
 import RecruiterJobListPage from './Pages/RecruiterJobListPage.js';
 import RecruiterJobAddPage from './Pages/RecruiterJobAddPage';
 import RecruiterJobEditPage from './Pages/RecruiterJobEditPage';
-
 import RecruiterPostBuyPage from './Pages/RecruiterPostBuyPage';
 import UserJobDiscoverPage from './Pages/UserJobDiscoverPage';
 import UserJobDetailedPage from './Pages/UserJobDetailedPage';
@@ -31,7 +29,7 @@ import RecruiterUserProfilePage from './Pages/RecruiterUserProfilePage';
 import AdminPaymentPage from './Pages/AdminPaymentPage'
 import AdminUserPage from './Pages/AdminUserPage'
 import AdminRecruiterPage from './Pages/AdminRecruiterPage'
-
+// import ChatPage from './Pages/ChatPage';
 function App() {
   return (
     <div className="App relative ">
@@ -44,15 +42,13 @@ function App() {
           <Route path="/recruiter_login" element={<RecruiterLogin />} />
           <Route path="/recruiter_register" element={<RecruiterRegister />} />
           <Route path="/admin_login" element={<AdminLoginPage/>}/>
+          {/* <Route path="/chat" element={<ChatPage/>}/> */}
           
-          <Route path="/admin_payment_page" element={<AdminPaymentPage/>}/>
-          <Route path="/admin_user_page" element={<AdminUserPage/>}/>
-          <Route path="/admin_recruiter_page" element={<AdminRecruiterPage/>}/>
-          
+         
 
 
           <Route  element={<PrivateRoute/>}>
-          
+            
             <Route path="/user_profile" element={<UserProfilePage/>} />
             <Route path="/user_profile_edit" element={<UserProfileEditPage/>} />
             <Route path="user_job_discover" element={<UserJobDiscoverPage/>} />
@@ -63,9 +59,11 @@ function App() {
          
           <Route  element={<AdminRoutes/>}>
             <Route path="/admin_dashboard" element={<AdminDashboardPage/>}/>
-            <Route path="/admin_user" element={<AdminUserManagementPage/>}/>
-            <Route path="/admin_recruiter" element={<AdminRecruiterManagement/>}/>
             <Route path="/admin_approve_post/:id" element={<AdminPostApprovePage/>}/>
+            <Route path="/admin_payment_page" element={<AdminPaymentPage/>}/>
+            <Route path="/admin_user_page" element={<AdminUserPage/>}/>
+            <Route path="/admin_recruiter_page" element={<AdminRecruiterPage/>}/>
+          
           </Route>
 
 

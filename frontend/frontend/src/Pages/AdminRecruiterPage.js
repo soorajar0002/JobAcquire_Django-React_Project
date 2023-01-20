@@ -6,6 +6,7 @@ import axiosInstance from "../Axios/axiosPrivate"
 import { Link } from "react-router-dom"
 import NavBar from "../Components/Admin/NavBar"
 import { BiLogOutCircle } from "react-icons/bi"
+import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
 const AdminRecruiter = () => {
   const dispatch = useDispatch()
   const users = useSelector((state) => state.user.view_user.users)
@@ -36,6 +37,12 @@ const AdminRecruiter = () => {
     data()
   }, [])
 
+  const logout = () => {
+    
+    dispatch(logOutAdmin());
+    
+  };
+
   return (
     <div>
       <div class="grid grid-cols-12  ">
@@ -49,12 +56,12 @@ const AdminRecruiter = () => {
               />
             </div>
             <div className="flex justify-center mt-3 text-sm">
-              <Link to="/login">
-                <BiLogOutCircle className="text-white " />
+              <Link to="">
+                <BiLogOutCircle className="text-white " onClick={logout}/>
               </Link>
             </div>
 
-            <p className=" text-xs mt-3 fon-medium text-white">ADMIN</p>
+            <Link to="/admin_dashboard"> <p className=" text-xs mt-3 font-bold text-white">ADMIN</p></Link>
           </div>
           t
           <div>
@@ -117,20 +124,20 @@ const AdminRecruiter = () => {
                     </thead>
                     <tbody>
                       {users.map((user) => (
-                        <tr class="bg-white border-b dark:bg-gray-200 dark:border-gray-100 hover:bg-gray-1000 dark:hover:bg-gray-300">
-                          <td class="py-4 px-6">{user.id}</td>
-                          <td class="py-4 px-6">{user.username}</td>
-                          <td class="py-4 px-8">{user.first_name}</td>
-                          <td class="py-4 px-7">{user.last_name}</td>
-                          <td class="py-4 px-6">{user.phone_number}</td>
-                          <td class="py-4 px-6">{user.email}</td>
+                        <tr class=" border-b bg-gray-200 ">
+                          <td class="py-2 px-6">{user.id}</td>
+                          <td class="py-2 px-6">{user.username}</td>
+                          <td class="py-2 px-8">{user.first_name}</td>
+                          <td class="py-2 px-7">{user.last_name}</td>
+                          <td class="py-2 px-6">{user.phone_number}</td>
+                          <td class="py-2 px-6">{user.email}</td>
 
                          
-                            <td class="py-4 pl-10">
+                            <td class="py-2 pl-10">
                               {user.is_active ? "Active" : "Blocked"}
                             </td>
                           
-                          <td class="flex items-center py-8 px-8 space-x-3">
+                          <td class="flex items-center py-4 px-8 space-x-3">
                             <a
                               href="#"
                               class="font-medium text-blue-600 dark:text-blue-500 hover:underline"

@@ -1,27 +1,23 @@
-from django.http import HttpResponse, JsonResponse
+from payments.models import RazorpayPayment
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from django.contrib.auth.hashers import make_password
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework.views import APIView
 from accounts.emails import send_otp_via_email
-from accounts.emails import send_post_approval_via_email
 from recruiter.models import JobApplication
 from recruiter.models import Job
 from accounts.models import Account, UserProfile, RecruiterProfile
 from rest_framework.parsers import JSONParser
 from .serializers import JobApplicationSerializer, JobPostSerializer, RecruiterJobApplicationSerializer, RecruiterProfilePicSerializer, RecruiterUserProfileSerializer, RegistrationSerializer, UserProfilePicSerializer, UserProfileSerializer, UserProfileUpdateSerializer, UserSerializer, UserSerializerWithToken, RecruiterProfileSerializer, VerifyAccountSerailizer
 from rest_framework.parsers import MultiPartParser, FormParser
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
-from rest_framework import generics
-from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import ListModelMixin
 
+from django.db.models import Sum
 
 
 # Login
@@ -385,6 +381,24 @@ class RecruiterUserProfileView(APIView):
         prof = UserProfile.objects.get(user=user)
         serializer = RecruiterUserProfileSerializer(prof)  
         return Response(serializer.data)  
+
+
+class AdminDashboardView(APIView):
+    def get(self, request):
+        users = Account.objects.filter(is_seeker=True).count()
+        recruiters = Account.objects.filter(is_recruiter=True).count()
+        print(users,recruiters)
+        total_earnings = RazorpayPayment.objects.all().aggregate(Sum('amount'))
+        content = {
+            "users":users,
+            "recruiters":recruiters,
+            "total":total_earnings
+            
+        }
+  
+        return Response(content,status=status.HTTP_200_OK)
+        
+        
 
 @api_view(['GET'])
 def getRoutes(request):
