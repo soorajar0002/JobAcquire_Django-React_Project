@@ -3,8 +3,6 @@ import AdminDashboardPage from './Pages/AdminDashboardPage';
 import AdminLoginPage from './Pages/AdminLoginPage';
 import AdminRecruiterManagement from './Pages/AdminRecruiterManagement';
 import AdminUserManagementPage from './Pages/AdminUserManagementPage';
-import DashBoardPage from './Pages/DashBoardPage';
-
 import HomePage from './Pages/HomePage';
 import LoginPage from './Pages/LoginPage';
 import RecruiterLogin from './Pages/RecruiterLoginPage';
@@ -20,7 +18,7 @@ import RecruiterProfileEditPage from './Pages/RecruiterProfileEditPage';
 import RecruiterJobListPage from './Pages/RecruiterJobListPage.js';
 import RecruiterJobAddPage from './Pages/RecruiterJobAddPage';
 import RecruiterJobEditPage from './Pages/RecruiterJobEditPage';
-import RecruiterPostBuy from './Components/Recruiter/RecruiterPostBuy/RecruiterPostBuy';
+
 import RecruiterPostBuyPage from './Pages/RecruiterPostBuyPage';
 import UserJobDiscoverPage from './Pages/UserJobDiscoverPage';
 import UserJobDetailedPage from './Pages/UserJobDetailedPage';
@@ -54,7 +52,7 @@ function App() {
 
 
           <Route  element={<PrivateRoute/>}>
-            <Route path="/dashboard" element={<DashBoardPage/>} />
+          
             <Route path="/user_profile" element={<UserProfilePage/>} />
             <Route path="/user_profile_edit" element={<UserProfileEditPage/>} />
             <Route path="user_job_discover" element={<UserJobDiscoverPage/>} />
