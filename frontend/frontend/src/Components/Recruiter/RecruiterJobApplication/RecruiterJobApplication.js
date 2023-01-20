@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import useAxios from "../../../Axios/useAxios"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { BsFillChatRightFill } from 'react-icons/bs';
 const RecruiterJobApplication = () => {
   const id = useSelector((state) => state.user.user.id)
   console.log(id)
@@ -44,12 +45,12 @@ const RecruiterJobApplication = () => {
   }, [])
   return (
     <div className="h-screen">
-      <div className="relative overflow-x-auto  sm:rounded-lg mx-6 md:mx-48 mb-20 ">
-        <h1 className="text-2xl text-left font-extrabold mb-6">
-          APPLICANT DETAILS
+      <div className="relative overflow-x-auto  sm:rounded-md mx-6 md:mx-48 mb-20 mt-10">
+        <h1 className="text-sm text-left font-semibold mb-2">
+         APPLICATIONS DETAILS
         </h1>
-        <table className="w-full text-sm text-left shadow-md text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-200  dark:text-gray-400">
+        <table className="w-full text-sm text-left shadow-md text-gray-500 dark:text-gray-500 ">
+          <thead className="text-xs text-gray-300 uppercase bg-gray-500  dark:text-gray-600">
             <tr className="text-center">
               <th scope="col" className="px-6 py-3 ">
                 APPLICANT
@@ -66,6 +67,9 @@ const RecruiterJobApplication = () => {
               <th scope="col" className="px-6 py-3">
                 STATUS
               </th>
+              <th scope="col" className="px-6 py-3">
+                
+              </th>
               <th scope="col" className="px-6 py-3"></th>
             </tr>
           </thead>
@@ -75,7 +79,7 @@ const RecruiterJobApplication = () => {
               <tr className=" border-b  bg-gray-50 px-2 text-center">
                <Link to={`/recruiter_user_profile/${application.user_id}`}><th
                   scope="row"
-                  className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap "
+                  className="px-6 py-4 capitalize font-medium text-gray-600 whitespace-nowrap  "
 
                 >
                   {application.first_name} {application.last_name}
@@ -90,6 +94,7 @@ const RecruiterJobApplication = () => {
                     .join("-")}</span>
                 </td>
                 <td className="px-6 py-4">{application.status}</td>
+                <td className="px-6 py-4">  <a href="#" className="font-medium   hover:underline"><BsFillChatRightFill/></a></td>
                 <td className="px-6 ">
                   <select
                   

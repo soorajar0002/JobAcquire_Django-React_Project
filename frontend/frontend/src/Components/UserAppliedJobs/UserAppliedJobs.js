@@ -30,7 +30,7 @@ const UserAppliedJobs = () => {
     
        },[]);
   return (
-    <div className='mx-16 lg:mx-48 mb-20'>
+    <div className='mx-16 lg:mx-48 mb-20 min-h-screen'>
         <h1 className='text-2xl text-left font-extrabold my-4'>JOB APPLICATIONS</h1>
 <div className="relative overflow-x-auto shadow-md sm:rounded-lg text-center">
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

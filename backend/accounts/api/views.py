@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from accounts.emails import send_otp_via_email
 from accounts.emails import send_post_approval_via_email
+from payments.models import RazorpayPayment
 from recruiter.models import JobApplication
 from recruiter.models import Job
 from accounts.models import Account, UserProfile, RecruiterProfile
@@ -21,7 +22,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework import generics
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
-
+from django.db.models import Sum
 
 
 # Login
@@ -385,6 +386,26 @@ class RecruiterUserProfileView(APIView):
         prof = UserProfile.objects.get(user=user)
         serializer = RecruiterUserProfileSerializer(prof)  
         return Response(serializer.data)  
+
+class AdminDashboardView(APIView):
+    def get(self, request):
+        users = Account.objects.filter(is_seeker=True).count()
+        recruiters = Account.objects.filter(is_recruiter=True).count()
+        print(users,recruiters)
+        total_earnings = RazorpayPayment.objects.all().aggregate(Sum('amount'))
+        content = {
+            "users":users,
+            "recruiters":recruiters,
+            "total":total_earnings
+            
+        }
+  
+        return Response(content,status=status.HTTP_200_OK)
+        
+        
+
+
+
 
 @api_view(['GET'])
 def getRoutes(request):

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { usersView } from "../Redux/Reducers/AuthSlice"
 import { Link } from "react-router-dom"
 import { BiLogOutCircle } from "react-icons/bi"
+import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
 const AdminUser = () => {
   const dispatch = useDispatch()
   const users = useSelector((state) => state.user.view_user.users)
@@ -34,6 +35,11 @@ const AdminUser = () => {
   useEffect(() => {
     data()
   }, [])
+  const logout = () => {
+    
+    dispatch(logOutAdmin());
+    
+  };
   return (
     <div>
      
@@ -49,11 +55,11 @@ const AdminUser = () => {
             </div>
             <div className="flex justify-center mt-3 text-sm">
               <Link to="/login">
-                <BiLogOutCircle className="text-white " />
+                <BiLogOutCircle className="text-white " onClick={logout} />
               </Link>
             </div>
 
-            <p className=" text-xs mt-3 fon-medium text-white">ADMIN</p>
+            <Link to="/admin_dashboard"> <p className=" text-xs mt-3 font-bold text-white">ADMIN</p></Link>
           </div>
 t
           <div>

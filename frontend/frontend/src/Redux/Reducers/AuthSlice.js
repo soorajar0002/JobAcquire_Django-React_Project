@@ -57,12 +57,38 @@ export const userSlice = createSlice({
       ...state,user
     };
   },
-  logOut: (state)=>{
+  logOutUser: (state)=>{
     const user={
       
       token:{},
       profile:{},
       isLoggedIn:false,
+    };
+    
+ 
+    return {
+      ...state,user
+    };
+  },
+  logOutRecruiter: (state)=>{
+    const user={
+      
+      token:{},
+      profile:{},
+      isRecLoggedIn:false,
+    };
+    
+ 
+    return {
+      ...state,user
+    };
+  },
+  logOutAdmin: (state)=>{
+    const user={
+      
+      token:{},
+      profile:{},
+      isAdmLoggedIn:false,
     };
     
  
@@ -153,7 +179,7 @@ export const userSlice = createSlice({
 }); 
 
 // this is for dispatch
-export const { userData,adminLogin,setToken,logOut, userProfileData, usersView,recLogin,recProfileData} = userSlice.actions;
+export const { userData,adminLogin,setToken,logOutUser,logOutRecruiter,logOutAdmin, userProfileData, usersView,recLogin,recProfileData} = userSlice.actions;
 
 // this is for configureStore
 export default userSlice.reducer;

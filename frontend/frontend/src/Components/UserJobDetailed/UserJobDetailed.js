@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react"
 import useAxios from "../../Axios/useAxios"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import {useSelector} from 'react-redux';
  
 const UserJobDetailed = () => {
-  const [jobStatus, setJobStatus] = useState()
+  const [jobStatus, setJobStatus] = useState([])
   console.log(jobStatus,"dd")
-  const applied =jobStatus?.applied
+  // const applied =jobStatus?.applied
   const { postId } = useParams()
   console.log(postId)
-  const [jobs, setJobs] = useState(0)
+  const [jobs, setJobs] = useState([])
   
   const api = useAxios()
   const user = useSelector((state) => state.user.user);
@@ -91,7 +91,7 @@ const UserJobDetailed = () => {
             </p>
             
           </div>
-         {applied?
+         {/* {applied? */}
           <div className="flex justify-start mr-4 mt-2 ">
           <button  class="text-white bg-blue-700    font-medium rounded-lg text-sm mt-4 px-5 py-1 mr-2 mb-2 dark:bg-black disabled  ">APPLIED</button>
            
@@ -102,7 +102,7 @@ const UserJobDetailed = () => {
             
              
            </div>
-          }
+          {/* } */}
           
           </div>
           <div>

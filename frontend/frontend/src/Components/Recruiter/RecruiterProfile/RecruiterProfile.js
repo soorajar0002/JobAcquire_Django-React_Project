@@ -35,7 +35,7 @@ const RecruiterProfile = () => {
     <div className='container  mb-20'>
       
       <div class="flex  justify-between mx-4 lg:mx-36">
-      <h1 className='font-extrabold  text-3xl  '>PROFILE</h1>
+      <h1 className='font-extrabold  text-3xl  '></h1>
       <Link to="/recruiter_profile_edit">
         <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none  font-medium  text-sm px-6 py-1 rounded mr-2 mb-5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700">EDIT</button>
       </Link>

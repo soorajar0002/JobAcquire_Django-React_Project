@@ -5,7 +5,7 @@ import useAxios from "../../../Axios/useAxios"
 import { useSelector } from "react-redux"
 const RecruiterJobEdit = () => {
   
-  const [jobs, setJobs] = useState(0)
+  const [jobs, setJobs] = useState()
   console.log(jobs,"4")
   const id = useSelector((state) => state.user.user.id)
   const { jobId } = useParams()

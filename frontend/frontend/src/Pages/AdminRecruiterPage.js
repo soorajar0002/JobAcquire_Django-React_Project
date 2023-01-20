@@ -6,6 +6,7 @@ import axiosInstance from "../Axios/axiosPrivate"
 import { Link } from "react-router-dom"
 import NavBar from "../Components/Admin/NavBar"
 import { BiLogOutCircle } from "react-icons/bi"
+import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
 const AdminRecruiter = () => {
   const dispatch = useDispatch()
   const users = useSelector((state) => state.user.view_user.users)
@@ -36,6 +37,12 @@ const AdminRecruiter = () => {
     data()
   }, [])
 
+  const logout = () => {
+    
+    dispatch(logOutAdmin());
+    
+  };
+
   return (
     <div>
       <div class="grid grid-cols-12  ">
@@ -49,12 +56,12 @@ const AdminRecruiter = () => {
               />
             </div>
             <div className="flex justify-center mt-3 text-sm">
-              <Link to="/login">
-                <BiLogOutCircle className="text-white " />
+              <Link to="">
+                <BiLogOutCircle className="text-white " onClick={logout}/>
               </Link>
             </div>
 
-            <p className=" text-xs mt-3 fon-medium text-white">ADMIN</p>
+            <Link to="/admin_dashboard"> <p className=" text-xs mt-3 font-bold text-white">ADMIN</p></Link>
           </div>
           t
           <div>

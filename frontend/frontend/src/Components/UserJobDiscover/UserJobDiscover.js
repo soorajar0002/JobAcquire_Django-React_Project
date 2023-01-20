@@ -204,7 +204,7 @@ const UserJobDiscover = () => {
                   <a
                     href="#"
                     
-                    class="  px-4 py-2 mr-3 text-sm font-medium text-white bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-black dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                    class="  px-4 py-2 mr-3 text-sm font-medium text-gray-100 bg-black border border-gray-300 rounded-lg "
                   >
                     
                       
@@ -214,7 +214,7 @@ const UserJobDiscover = () => {
                   <a
                     href="#"
                     
-                    class=" px-6 py-2  text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-black dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                    class=" px-6 py-2  text-sm font-medium text-gray-100 bg-black border border-gray-300 rounded-lg "
                   >
                     Next
                     
