@@ -7,6 +7,7 @@ const UserAppliedJobs = () => {
     const [jobs, setJobs] = useState([])
     console.log(jobs,"ans")
     const api = useAxios();
+    const user = useSelector((state) => state.user.user)
     const id = useSelector((state) => state.user.user.id)
     const data = async () => {
         try {
@@ -29,6 +30,10 @@ const UserAppliedJobs = () => {
         data();
     
        },[]);
+       function createConversationName(first_name) {
+        const namesAlph = [user?.firstname, first_name].sort();
+        return `${namesAlph[0]}__${namesAlph[1]}`;
+      }
   return (
     <div className='mx-16 lg:mx-48 mb-20 min-h-screen'>
         <h1 className='text-2xl text-left font-extrabold my-4'>JOB APPLICATIONS</h1>
@@ -77,7 +82,7 @@ const UserAppliedJobs = () => {
                     {job.created.slice(0,10).split('-').reverse().join('-')}
                 </td>
                 <td className="px-6 py-4">
-                    <a href="#" className="font-medium   hover:underline"><BsFillChatRightFill/></a>
+                <td className="px-6 py-4"> <Link to={`chat/${createConversationName(job.job.first_name)}`}><a href="#" className="font-medium   hover:underline"><BsFillChatRightFill/></a></Link> </td>
                 </td>
             </tr>
               ))}

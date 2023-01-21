@@ -29,6 +29,9 @@ import RecruiterUserProfilePage from './Pages/RecruiterUserProfilePage';
 import AdminPaymentPage from './Pages/AdminPaymentPage'
 import AdminUserPage from './Pages/AdminUserPage'
 import AdminRecruiterPage from './Pages/AdminRecruiterPage'
+import ChatPage from './Pages/ChatPage';
+import Test from './Pages/Test';
+
 // import ChatPage from './Pages/ChatPage';
 function App() {
   return (
@@ -42,7 +45,8 @@ function App() {
           <Route path="/recruiter_login" element={<RecruiterLogin />} />
           <Route path="/recruiter_register" element={<RecruiterRegister />} />
           <Route path="/admin_login" element={<AdminLoginPage/>}/>
-          {/* <Route path="/chat" element={<ChatPage/>}/> */}
+          <Route path="/test" element={<Test/>}/>
+        
           
          
 
@@ -54,6 +58,8 @@ function App() {
             <Route path="user_job_discover" element={<UserJobDiscoverPage/>} />
             <Route path="/user_job_detailed/:postId" element={<UserJobDetailedPage/>} />
             <Route path="/user_applied_jobs" element={<UserAppliedJobsPage/>} />
+            <Route path="/user_applied_jobs/chat/:conversationName" element={<ChatPage/>}/>
+            
           </Route>
 
          
@@ -63,6 +69,7 @@ function App() {
             <Route path="/admin_payment_page" element={<AdminPaymentPage/>}/>
             <Route path="/admin_user_page" element={<AdminUserPage/>}/>
             <Route path="/admin_recruiter_page" element={<AdminRecruiterPage/>}/>
+           
           
           </Route>
 
@@ -77,7 +84,7 @@ function App() {
           <Route path="/recruiter_buy_post" element={<RecruiterPostBuyPage/>}/>
           <Route path="/recruiter_job_application" element={<RecruiterJobApplicationPage/>}/>
           <Route path="/recruiter_user_profile/:id" element={<RecruiterUserProfilePage/>}/>
-          
+          <Route path="/chat/:conversationName" element={<ChatPage/>}/>
           
             
           </Route>

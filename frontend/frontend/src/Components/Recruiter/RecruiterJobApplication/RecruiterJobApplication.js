@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react"
 import useAxios from "../../../Axios/useAxios"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { BsFillChatRightFill } from 'react-icons/bs';
 const RecruiterJobApplication = () => {
   const id = useSelector((state) => state.user.user.id)
+  const user = useSelector((state) => state.user.user)
+  console.log(user.firstname)
   console.log(id)
   const [applications, setApplication] = useState([])
   console.log(applications)
@@ -42,6 +45,10 @@ const RecruiterJobApplication = () => {
   useEffect(() => {
     data()
   }, [])
+  function createConversationName(first_name) {
+    const namesAlph = [user?.firstname, first_name].sort();
+    return `${namesAlph[0]}__${namesAlph[1]}`;
+  }
   return (
     <div className="h-screen">
       <div className="relative overflow-x-auto  sm:rounded-lg mx-6 md:mx-48 mb-20 ">
@@ -67,6 +74,7 @@ const RecruiterJobApplication = () => {
                 STATUS
               </th>
               <th scope="col" className="px-6 py-3"></th>
+              <th scope="col" className="px-6 py-3"></th>
             </tr>
           </thead>
          
@@ -90,6 +98,7 @@ const RecruiterJobApplication = () => {
                     .join("-")}</span>
                 </td>
                 <td className="px-6 py-4">{application.status}</td>
+                <td className="px-6 py-4"> <Link to={`/chat/${createConversationName(application.first_name)}`}><a href="" className="font-medium   hover:underline"><BsFillChatRightFill/></a></Link> </td>
                 <td className="px-6 ">
                   <select
                   

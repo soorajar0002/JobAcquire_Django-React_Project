@@ -260,6 +260,7 @@ class JobPostSerializer(serializers.ModelSerializer):
             
     
 class JobApplicationSerializer(serializers.ModelSerializer):
+    user_data = Account()
     user = UserProfile()
     job = JobPostSerializer()
     class Meta:
@@ -286,7 +287,11 @@ class PaymentSerializer(serializers.ModelSerializer):
         fields = '__all__'
     
     
+class MessageUserSerializer(serializers.ModelSerializer):
     
+    class Meta:
+        model = Account
+        fields = ['first_name','username']    
     
     
     
