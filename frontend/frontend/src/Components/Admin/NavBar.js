@@ -30,7 +30,7 @@ const NavBar = () => {
   return (
     <div>
       <div className="grid grid-cols-12  ">
-        <div className="bg-black  sm:col-span-2 h-screen invisible sm:visible">
+        <div className="bg-black  sm:col-span-2 h-screen invisible sm:visible ">
           <div className="bg-gray-700 mt- pb-12  ">
             <div className="flex justify-center">
               <img
@@ -50,8 +50,8 @@ const NavBar = () => {
               <p className="  mt-3 font-bold text-xs text-white">ADMIN</p>
             </Link>
           </div>
-
-          <div>
+        <div className="">
+          <div className="">
             <Link to="/admin_user_page">
               <h1 className="text-white font-semibold text-md mt-16">USERS</h1>
             </Link>
@@ -71,6 +71,14 @@ const NavBar = () => {
               </h1>
             </Link>
           </div>
+          <div>
+          <Link to="/admin_report_page">
+            <h1 className="text-white font-semibold text-md mt-6">
+              REPORT
+            </h1>
+          </Link>
+        </div>
+        </div>
         </div>
         <div className="col-span-10  lg:col-span-10 mt-20 ">
           <div>

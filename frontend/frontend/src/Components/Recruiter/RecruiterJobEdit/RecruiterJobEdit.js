@@ -15,6 +15,7 @@ const RecruiterJobEdit = () => {
   const initialValues = {
     category:jobs.category,
     designation:jobs.designation,
+    skills:jobs.skills,
     criteria:jobs.criteria,
     experience_from:jobs.experience_from,
     experience_to:jobs.experience_to,
@@ -58,6 +59,7 @@ const RecruiterJobEdit = () => {
             id: jobId,
             category:values.category,
             designation:values.designation,
+            skills:values.skills,
             criteria:values.criteria,
             experience_from:values.experience_from,
             experience_to:values.experience_to,
@@ -136,6 +138,22 @@ const RecruiterJobEdit = () => {
                     onBlur={handleBlur}
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="Designation"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-gray-900 ">
+                    Skill
+                  </label>
+                  <input
+                    type="text"
+                    id="first_name"
+                    name="skills"
+                    value={values.skills}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                    placeholder="Skill"
                     required
                   />
                 </div>

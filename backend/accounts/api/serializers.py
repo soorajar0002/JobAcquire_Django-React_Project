@@ -79,6 +79,7 @@ class VerifyAccountSerailizer(serializers.Serializer):
     
 
 class UserProfileSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = UserProfile
         fields = ['title','profile_picture','bio','skill','desired_job','desired_location','degree','college','joining_year','passout_year','designation','company','start','end','description','percentage']
@@ -211,7 +212,7 @@ class JobPostSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Job
-        fields = ("id","recruiter_id","category","designation","post_balance","first_name","last_name","company_website","company_email","company_mobile","company_address_line1","company_address_line2","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
+        fields = ("id","recruiter_id","category","skills","designation","post_balance","first_name","last_name","company_website","company_email","company_mobile","company_address_line1","company_address_line2","company_name","vacancies","location","type","workmode","experience_from","experience_to","job_description","criteria","payscale_from","payscale_to","is_active","applicants","hired")
         
     def update(self, instance, validated_data):
         
@@ -221,6 +222,7 @@ class JobPostSerializer(serializers.ModelSerializer):
         instance.vacancies = validated_data.get('vacancies', instance.vacancies)
         instance.location = validated_data.get('location', instance.location)
         instance.type = validated_data.get('type', instance.type)
+        instance.skills = validated_data.get('skills', instance.skills)
         instance.workmode = validated_data.get('workmode', instance.workmode)
         instance.experience_from = validated_data.get('experience_from', instance.experience_from)
         instance.experience_to = validated_data.get('experience_to', instance.experience_to)
@@ -245,6 +247,7 @@ class JobPostSerializer(serializers.ModelSerializer):
                                 designation = validated_data["designation"],
                                 vacancies = validated_data["vacancies"],
                                 location = validated_data["location"],
+                                skills = validated_data["skills"],
                                 type = validated_data['type'],
                                 workmode = validated_data['workmode'],
                                 experience_from = validated_data['experience_from'],
@@ -293,7 +296,15 @@ class MessageUserSerializer(serializers.ModelSerializer):
         model = Account
         fields = ['first_name','username']    
     
-    
+class JobApplicationReportSerializer(serializers.ModelSerializer):
+    user_first_name = serializers.ReadOnlyField(source="user.user.first_name",read_only=True)
+    user_last_name = serializers.ReadOnlyField(source="user.user.last_name",read_only=True)
+    phone_number = serializers.ReadOnlyField(source="user.user.phone_number",read_only=True)
+    job = JobPostSerializer()
+    class Meta:
+        model = JobApplication
+        fields = '__all__'
+                
     
     
     

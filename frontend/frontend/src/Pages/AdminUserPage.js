@@ -81,6 +81,13 @@ t
               </h1>
             </Link>
           </div>
+          <div>
+          <Link to="/admin_report_page">
+            <h1 className="text-white font-semibold text-md mt-6">
+              REPORT
+            </h1>
+          </Link>
+        </div>
         </div>
         <div class="col-span-10  lg:col-span-10 mt-20 ">
           

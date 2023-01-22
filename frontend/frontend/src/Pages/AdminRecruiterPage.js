@@ -83,12 +83,19 @@ const AdminRecruiter = () => {
               </h1>
             </Link>
           </div>
+          <div>
+          <Link to="/admin_report_page">
+            <h1 className="text-white font-semibold text-md mt-6">
+              REPORT
+            </h1>
+          </Link>
+        </div>
         </div>
         <div class="col-span-10  lg:col-span-10 mt-20 ">
           <div>
             <div className="container mx-auto">
               <h1 className="font-bold text-3xl text-left ml-4 mb-6">
-                ADMIN MANAGEMENT
+                RECRUITER MANAGEMENT
               </h1>
               <div className=" p-4">
                 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">

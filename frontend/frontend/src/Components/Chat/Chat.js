@@ -55,6 +55,10 @@ const Chat = () => {
       },
     }
   )
+  function formatMessageTimestamp(timestamp) {
+    const date = new Date(timestamp);
+    return date.toLocaleTimeString().slice(0, 4);
+  }
   function handleChangeMessage(e) {
     setMessage(e.target.value)
   }
@@ -90,15 +94,18 @@ const Chat = () => {
         
            message.from_user.first_name === user.firstname?
           <div className="  py-3 px-3 flex justify-end " >
-            <div className="bg-white rounded   text-left pr-24 sm:pr-64 p-1 sm:p-2"> 
-            <p className="text-xs font-semibold "> {message.from_user.username}</p>
-             <p className="text-md ">{message.content}</p> 
+            <div className="bg-white rounded-2xl shadow-2xl  text-left pr-24  p-1 sm:p-2"> 
+            <p className="text-xs font-bold "> {message.from_user.username}</p>
+            <p className=" text-sm ">{message.content}  <span className="text-xs font-semibold ml-10">{formatMessageTimestamp(message.timestamp)}</span></p> 
+         
               </div>
            
           </div>:<div className=" py-3 px-3 flex justify-start" >
-            <div className="bg-white rounded text-left pr-16 sm:pr-48 p-1 sm:p-2">
-            <p className="text-xs font-semibold "> {message.from_user.username}</p>
-             <p className=" text-md">{message.content}</p> 
+            <div className="bg-white rounded-2xl  shadow-2xl text-left pr-16  p-1 sm:p-2">
+            <p className="text-xs font-bold "> {message.from_user.username}</p>
+             <p className=" text-sm ">{message.content} <span className="text-xs mx-4  font-semibold ">{formatMessageTimestamp(message.timestamp)}</span></p> 
+             <p>  </p>
+             
             </div>
           </div>
           

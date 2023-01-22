@@ -31,6 +31,8 @@ import AdminUserPage from './Pages/AdminUserPage'
 import AdminRecruiterPage from './Pages/AdminRecruiterPage'
 import ChatPage from './Pages/ChatPage';
 import Test from './Pages/Test';
+import AdminReportPage from './Pages/AdminReportPage';
+import RecruiterReportPage from './Pages/RecruiterReportPage';
 
 // import ChatPage from './Pages/ChatPage';
 function App() {
@@ -69,6 +71,7 @@ function App() {
             <Route path="/admin_payment_page" element={<AdminPaymentPage/>}/>
             <Route path="/admin_user_page" element={<AdminUserPage/>}/>
             <Route path="/admin_recruiter_page" element={<AdminRecruiterPage/>}/>
+            <Route path="/admin_report_page" element={<AdminReportPage/>}/>
            
           
           </Route>
@@ -84,7 +87,8 @@ function App() {
           <Route path="/recruiter_buy_post" element={<RecruiterPostBuyPage/>}/>
           <Route path="/recruiter_job_application" element={<RecruiterJobApplicationPage/>}/>
           <Route path="/recruiter_user_profile/:id" element={<RecruiterUserProfilePage/>}/>
-          <Route path="/chat/:conversationName" element={<ChatPage/>}/>
+          <Route path="/chats/:conversationName" element={<ChatPage/>}/>
+          <Route path="/recruiter_application_report" element={<RecruiterReportPage/>}/>
           
             
           </Route>

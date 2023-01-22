@@ -5,9 +5,9 @@ import {useSelector} from 'react-redux';
 const RecruiterJobList = () => {
   const id = useSelector((state) => state.user.user.id);
   console.log(id,"ge")
-  const [jobs, setJobs] = useState(null);
+  const [jobs, setJobs] = useState([]);
   const balance_1 = useSelector((state) => state.user.profile.post_balance);
-  const balance = jobs ? jobs[0].post_balance : balance_1
+  const balance =  jobs[0]?jobs[0].post_balance : balance_1
 
   // const balance = jobs==null?balance_1:jobs.post_balance
   console.log(balance,"22")
@@ -56,7 +56,7 @@ const RecruiterJobList = () => {
 
    },[]);
   return (
-    <div className="mb- ">
+    <div className="min-h-screen ">
      
         <div className="grid grid-cols-8 lg:grid-cols-12  mb-4 mx-auto">
             <div className="col-start-2 lg:col-start-4 col-span-6  ">

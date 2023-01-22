@@ -7,6 +7,7 @@ class Job(models.Model):
     company = models.ForeignKey(RecruiterProfile,related_name='jobs', on_delete=models.CASCADE)
     category = models.CharField(max_length=225,blank=True,null=True)
     designation = models.CharField(max_length=30,blank=True,null=True)
+    skills = models.CharField(max_length=30,blank=True,null=True)
     vacancies = models.CharField(max_length=30,null=True,blank=True)
     location = models.CharField(max_length=30,blank=True,null=True)
     type =models.CharField(max_length=30,default="Full Time")
@@ -36,4 +37,4 @@ class JobApplication(models.Model):
     modified = models.DateTimeField(auto_now=True)
         
     def __str__(self):
-        return self.user.user.first_name
+        return self.job.designation

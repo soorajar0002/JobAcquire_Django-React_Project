@@ -16,6 +16,7 @@ const RecruiterJobAdd = () => {
     location: "",
     job_description: "",
     type: "",
+    skills: "",
     vacancies: "",
     workmode: "",
     payscale_from: "",
@@ -43,6 +44,7 @@ const RecruiterJobAdd = () => {
             location: values.location,
             job_description: values.job_description,
             type: values.type,
+            skills:values.skills,
             vacancies: values.vacancies,
             workmode: values.workmode,
             payscale_from: values.payscale_from,
@@ -116,6 +118,22 @@ const RecruiterJobAdd = () => {
                     onBlur={handleBlur}
                     className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
                     placeholder="Designation"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-gray-900 ">
+                    Skills
+                  </label>
+                  <input
+                    type="text"
+                    id="first_name"
+                    name="skills"
+                    value={values.skills}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500  block w-full p-2.5   dark:placeholder-gray-400 dark:text-gray-900 "
+                    placeholder="Skill"
                     required
                   />
                 </div>
