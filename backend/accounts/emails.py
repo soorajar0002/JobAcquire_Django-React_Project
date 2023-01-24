@@ -4,16 +4,16 @@ from django.conf import settings
 from .models import Account
 
 
-def send_otp_via_email(email):
-    subject = "YOUR ACCOUNT VERIFICATION E-MAIL"
-    otp = random.randint(1000, 9999)
-    message = f'YOUR ONE TIME PASSWORD IS {otp}'
-    email_from = settings.EMAIL_HOST
-    send_mail(subject,message, email_from, [email])
-    print(subject,"S",otp,"D",email_from,"V",message,"",email)
-    user_obj = Account.objects.get(email=email)
-    user_obj.otp = otp
-    user_obj.save()
+# def send_otp_via_email(email):
+#     subject = "YOUR ACCOUNT VERIFICATION E-MAIL"
+#     otp = random.randint(1000, 9999)
+#     message = f'YOUR ONE TIME PASSWORD IS {otp}'
+#     email_from = settings.EMAIL_HOST
+#     send_mail(subject,message, email_from, [email])
+#     print(subject,"S",otp,"D",email_from,"V",message,"",email)
+#     user_obj = Account.objects.get(email=email)
+#     user_obj.otp = otp
+#     user_obj.save()
     
     
 def send_post_approval_via_email(id):

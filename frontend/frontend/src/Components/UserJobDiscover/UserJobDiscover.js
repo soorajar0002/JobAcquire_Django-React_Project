@@ -111,17 +111,13 @@ const UserJobDiscover = () => {
                 </div>
                 <hr className="mt-4" />
                 <h1 className="font-bold text-lg mt-4 ">SKILL</h1>
-                <div className="flex justify-evenly">
+                <div className="flex justify-evenly ">
                   <Link>
                     <p className="text-xs  mt-2" onClick={handleChange}>
                       Django
                     </p>
                   </Link>
-                  <Link>
-                    <p className="text-xs  mt-2" onClick={handleChange}>
-                      Flutter
-                    </p>
-                  </Link>
+                 
                   <Link>
                     <p className="text-xs  mt-2" onClick={handleChange}>
                       Web Designing
@@ -144,11 +140,7 @@ const UserJobDiscover = () => {
                       DevOps
                     </p>
                   </Link>
-                  <Link>
-                    <p className="text-xs  mt-2" onClick={handleChange}>
-                      Node
-                    </p>
-                  </Link>
+                  
                   <Link>
                     <p className="text-xs  mt-2" onClick={handleChange}>
                       React

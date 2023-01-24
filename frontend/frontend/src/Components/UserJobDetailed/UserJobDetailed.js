@@ -59,7 +59,7 @@ const UserJobDetailed = () => {
   }, [])
 
   return (
-    <div className="">
+    <div className="mt-10">
         
         
       <div class="grid grid-cols-8 lg:grid-cols-12  mb-10 mx-auto ">

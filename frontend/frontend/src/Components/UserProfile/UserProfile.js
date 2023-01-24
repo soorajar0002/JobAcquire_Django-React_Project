@@ -10,7 +10,7 @@ const UserProfile = () => {
   console.log(users)
   console.log(usersProfile)
   const id = useSelector((state) => state.user.user.id)
-
+  const nodata = "NIL"
   const dispatch = useDispatch()
 
   const api = useAxios()
@@ -29,12 +29,12 @@ const UserProfile = () => {
     data()
   }, [])
   return (
-    <div className="container mx-auto mb-20 mt-2">
-     <h1 className="text-black text-left ml-6 lg:ml-48 font-bold text-4xl">PROFILE</h1>
+    <div className="container mx-auto mb-20 mt-10">
+     <h1 className="text-black text-left ml-6 lg:ml-48 font-bold text-4xl"></h1>
 
       <div className="grid gap-6 lg:grid-cols-9  mx-4 mt-5  ">
         
-        <div className="p-4 lg:col-start-2 lg:col-span-3 rounded-xl border  border-gray-100 bg-gray-100  text-black  text-center shadow-2xl ">
+        <div className="p-4 lg:col-start-2 lg:col-span-3 rounded-xl border  border-gray-100   text-black  text-center shadow-2xl ">
           <img
             class="w-20 h-20 rounded-full mx-auto "
             src={
@@ -87,11 +87,11 @@ const UserProfile = () => {
             </button>
           </Link>
         </div>
-        <div className="lg:col-span-4  p-4 shadow-2xl border-gray-100 rounded-xl bg-gray-100  text-black  text-left">
+        <div className="lg:col-span-4  p-4 shadow-2xl border-gray-100 rounded-xl   text-black  text-left">
         <div className=" p-4 my-2 mt-">
             <h1 className="font-extrabold text-2xl mx-6 ">SKILLS</h1>
             <div className="mt-6  mx-6 font-normal text-sm  uppercase">
-              <h1 className="my-2">{usersProfile.skill}</h1>
+              <h1 className="my-2">{usersProfile.skill?usersProfile.skill:nodata}</h1>
             </div>
           </div>
          
@@ -101,14 +101,14 @@ const UserProfile = () => {
             <div className="mt-6 font-normal text-sm mx-6 uppercase">
               <h1 className="my-2">
                 
-                <span className="pl-2">{usersProfile.designation}</span>
+                <span className="pl-2">{usersProfile.designation?usersProfile.designation:nodata}</span>
               </h1>
               <h1 className="my-2">
-               <span className="pl-2">{usersProfile.company}</span>
+               <span className="pl-2">{usersProfile.company?usersProfile.company:nodata}</span>
               </h1>
 
               <h1 className="my-2">
-                <span className="pl-2">{usersProfile.joining_year}</span> - <span className="">{usersProfile.passout_year}</span>
+                <span className="pl-2">{usersProfile.joining_year?usersProfile.joining_year:nodata}</span> {usersProfile.joining_year?"-":""} <span className="">{usersProfile.passout_year}</span>
               </h1>
               <h1 className="my-2">
               
@@ -120,20 +120,20 @@ const UserProfile = () => {
             <h1 className="font-extrabold text-2xl mx-6">QUALIFICATION</h1>
             <div className="mt-6  mx-6 font-normal text-sm  uppercase">
               <h1 className="my-2">
-               <span className="pl-2">{usersProfile.degree}</span>{" "}
+               <span className="pl-2">{usersProfile.degree?usersProfile.degree:nodata}</span>{" "}
               </h1>
               <h1 className="my-2">
-                <span className="pl-2">{usersProfile.college}</span>
+                <span className="pl-2">{usersProfile.college?usersProfile.college:nodata}</span>
               </h1>
               <h1 className="my-2">
-              <span className="pl-2">{usersProfile.start}</span> - <span className="">{usersProfile.end}</span>
+              <span className="pl-2">{usersProfile.start?usersProfile.start:nodata}</span> {usersProfile.start?"-":" "} <span className="">{usersProfile.end}</span>
               </h1>
               <h1 className="my-2">
            
               </h1>
               <h1 className="my-2">
               
-                <span className="pl-2">{usersProfile.percentage}%</span>{" "}
+                <span className="pl-2">{usersProfile.percentage?usersProfile.percentage:nodata}{UserProfile.percentage?" ":" %"}</span>{" "}
               </h1>
             </div>
           </div>

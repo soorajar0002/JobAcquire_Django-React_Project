@@ -5,7 +5,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework.views import APIView
-from accounts.emails import send_otp_via_email
+from accounts.tasks import send_otp_via_email
 from recruiter.models import JobApplication
 from recruiter.models import Job
 from accounts.models import Account, UserProfile, RecruiterProfile
@@ -78,7 +78,7 @@ class RegisterView(APIView):
 
             if serializer.is_valid():
                 serializer.save()
-                send_otp_via_email(serializer.data['email'])
+                send_otp_via_email.delay(serializer.data['email'])
                 data = serializer.data
 
                 return Response(data, status=status.HTTP_201_CREATED)
@@ -392,10 +392,23 @@ class AdminDashboardView(APIView):
         recruiters = Account.objects.filter(is_recruiter=True).count()
         print(users, recruiters)
         total_earnings = RazorpayPayment.objects.all().aggregate(Sum('amount'))
+        pending_count = JobApplication.objects.filter(status="PENDING").count()
+        shortlisted_count = JobApplication.objects.filter(status="SHORTLISTED").count()
+        interviwed_count = JobApplication.objects.filter(status="INTERVIEWED").count()
+        selected_count = JobApplication.objects.filter(status="SELECTED").count()
+        data={
+            "pending":pending_count,
+            "shortlisted":shortlisted_count,
+            "interviwed":interviwed_count,
+            "selected":selected_count
+            
+            
+        }
         content = {
             "users": users,
             "recruiters": recruiters,
-            "total": total_earnings
+            "total": total_earnings,
+            "data":data
 
         }
 

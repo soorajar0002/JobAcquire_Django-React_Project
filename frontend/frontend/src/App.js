@@ -33,6 +33,7 @@ import ChatPage from './Pages/ChatPage';
 import Test from './Pages/Test';
 import AdminReportPage from './Pages/AdminReportPage';
 import RecruiterReportPage from './Pages/RecruiterReportPage';
+import CareerTipsPage from './Pages/CareerTipsPage';
 
 // import ChatPage from './Pages/ChatPage';
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/recruiter_register" element={<RecruiterRegister />} />
           <Route path="/admin_login" element={<AdminLoginPage/>}/>
           <Route path="/test" element={<Test/>}/>
+          <Route path="/career_tips" element={<CareerTipsPage/>}/>
         
           
          

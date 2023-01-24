@@ -4,6 +4,7 @@ import useAxios from "../../Axios/useAxios"
 import { BiLogOutCircle } from "react-icons/bi"
 import { useDispatch } from "react-redux"
 import { logOutAdmin } from "../../Redux/Reducers/AuthSlice"
+import ChartData from "./ChartData"
 const NavBar = () => {
   const [datas, setDatas] = useState(0)
   const value = 0
@@ -28,9 +29,9 @@ const NavBar = () => {
     dispatch(logOutAdmin())
   }
   return (
-    <div>
+    <div className="">
       <div className="grid grid-cols-12  ">
-        <div className="bg-black  sm:col-span-2 h-screen invisible sm:visible ">
+        <div className="bg-black  sm:col-span-2  invisible sm:visible ">
           <div className="bg-gray-700 mt- pb-12  ">
             <div className="flex justify-center">
               <img
@@ -101,6 +102,10 @@ const NavBar = () => {
                   </div>
                 
               </div>
+              <div className="flex justify-center mt-20 ">
+              <ChartData datas={datas}/>
+              </div>
+             
             </div>
           </div>
         </div>

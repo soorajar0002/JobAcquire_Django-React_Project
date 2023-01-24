@@ -8,7 +8,7 @@ const RecruiterProfile = () => {
   const dispatch = useDispatch();
   const recruiter = useSelector((state)=>state.user.user)
   const recProfile = useSelector((state)=>state.user.profile)
-
+  const noData = "-"
  
   const api = useAxios();
   const data = async () => {
@@ -35,10 +35,8 @@ const RecruiterProfile = () => {
     <div className='container  mb-20'>
       
       <div class="flex  justify-between mx-4 lg:mx-36">
-      <h1 className='font-extrabold  text-3xl  '>PROFILE</h1>
-      <Link to="/recruiter_profile_edit">
-        <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none  font-medium  text-sm px-6 py-1 rounded mr-2 mb-5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700">EDIT</button>
-      </Link>
+      <h1 className='font-extrabold  text-3xl  '></h1>
+      
 </div>
         <div className='grid lg:grid-cols-12  mx-6'>
           
@@ -46,7 +44,12 @@ const RecruiterProfile = () => {
               <div className='p-10  my-8 shadow-2xl  text-center '>
               <img class="inline object-cover w-28 h-28 mr-2 rounded-full " src={`http://localhost:8000/api${recProfile.profile_picture}`} alt="Profile image"/>
               <h1 className='my-2 font-semibold'>{recruiter.firstname} {recruiter.lastname}</h1>
-              <h1 className='mt-2 font-normalmx-8'>{recProfile.recruiter_bio}</h1>
+              <h1 className='my-2'>{recruiter.email}</h1>
+            <h1 className='my-2 '>{recruiter.phone_number}</h1>
+              <h1 className='mt-2 font-normalmx-8'>{recProfile.recruiter_bio?recProfile.recruiter_bio:noData}</h1>
+              <Link to="/recruiter_profile_edit">
+        <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none  font-medium  text-sm px-6 py-1 rounded mr-2 mb-5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700">EDIT</button>
+      </Link>
               </div>
             
             </div>
@@ -56,20 +59,19 @@ const RecruiterProfile = () => {
             
             <div className='mt-6 font-normal mx-8 '>
            
-            <h1 className='my-2'>{recProfile.position}</h1>
-            <h1 className='my-2'>{recProfile.location}</h1>
-            <h1 className='my-2'>{recProfile.company_name}</h1>
-            <h1 className='my-2'>{recruiter.email}</h1>
-            <h1 className='my-2 '>{recruiter.phone_number}</h1>
+            <h1 className='my-2'>{recProfile.position?recProfile.position:noData}</h1>
+            <h1 className='my-2'>{recProfile.location?recProfile.location:noData}</h1>
+            <h1 className='my-2'>{recProfile.company_name?recProfile.company_name:noData}</h1>
+           
             <hr className='mt-10'/>
             <h1 className='font-extrabold text-2xl mx-6 text-center mt-4'> COMPANY INFO</h1>
             <div className='mt-6 font-normal mx-8 text-center '>
-            <h1 className='my-2 '>{recProfile.description}</h1>
-            <h1 className='my-2'>{recProfile.company_address_line1}</h1>
-            <h1 className='my-2'>{recProfile.company_address_line2}</h1>
-            <h1 className='my-2'>{recProfile.company_mobile}</h1>
-            <h1 className='my-2'>{recProfile.company_website}</h1>
-            <h1 className='my-2'>{recProfile.company_email}</h1>
+            <h1 className='my-2 '>{recProfile.description?recProfile.description:noData}</h1>
+            <h1 className='my-2'>{recProfile.company_address_line1?recProfile.company_address_line1:noData}</h1>
+            <h1 className='my-2'>{recProfile.company_address_line2?recProfile.company_address_line2:noData}</h1>
+            <h1 className='my-2'>{recProfile.company_mobile?recProfile.company_mobile:noData}</h1>
+            <h1 className='my-2'>{recProfile.company_website?recProfile.company_website:noData}</h1>
+            <h1 className='my-2'>{recProfile.company_email?recProfile.company_email:noData}</h1>
             
             
             

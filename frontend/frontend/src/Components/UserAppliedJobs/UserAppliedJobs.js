@@ -85,8 +85,9 @@ const UserAppliedJobs = () => {
                 <td className="px-6 py-4"> <Link to={`chat/${createConversationName(job.job.first_name)}`}><a href="#" className="font-medium   hover:underline"><BsFillChatRightFill/></a></Link> </td>
                 </td>
             </tr>
+            
               ))}
-           
+          
         </tbody>
     </table>
 </div>

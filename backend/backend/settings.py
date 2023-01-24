@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2ht4_=dl+m^!2j%v_qfytd_fcrkq^3e6)+^=2(e3*7uzkbvp*+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+# DEBUG = True
+DEBUG = config("DEBUG", default=0)
 ALLOWED_HOSTS = []
 
 
@@ -50,13 +50,25 @@ INSTALLED_APPS = [
      "payments",
      "posts",
      'chat',
+     'django_celery_beat',
+    'django_celery_results',
      
     
      
     
 ] 
 
+# save Celery task results in Django's database
+CELERY_RESULT_BACKEND = "django-db"
 
+# This configures Redis as the datastore between Django + Celery
+CELERY_BROKER_URL = config('CELERY_BROKER_REDIS_URL', default='redis://localhost:6379')
+# if you out to use os.environ the config is:
+# CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_REDIS_URL', 'redis://localhost:6379')
+
+
+# this allows you to schedule items in the Django admin.
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
 # Daphne
 ASGI_APPLICATION = "backend.asgi.application"
 
@@ -208,6 +220,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'jobacquire0002@gmail.com'
 EMAIL_HOST_PASSWORD = 'gdwygmbtorrczdiu'
+
 
 
 

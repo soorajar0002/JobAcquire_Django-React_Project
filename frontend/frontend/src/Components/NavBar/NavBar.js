@@ -40,7 +40,7 @@ const NavBar = () => {
                 to="/user_job_discover"
                 className="text-dark-300  px-3 py-2 rounded-md text-xs font-semibold"
               >
-                DISCOVER JOB
+                JOBS
               </Link>
               <Link
                 to="/user_applied_jobs"
@@ -135,7 +135,7 @@ const NavBar = () => {
               to="/user_job_discover"
               className="text-dark-300  block px-3 py-2 rounded-md text-xs font-semibold"
             >
-              DISCOVER JOB
+              JOBS
             </Link>
             <Link
               to="/user_applied_jobs"
@@ -319,10 +319,10 @@ const NavBar = () => {
             to="/user_job_discover"
             className="text-dark-300  px-3 py-2 rounded-md text-xs font-semibold"
           >
-            DISCOVER JOB
+            JOBS
           </Link>
           <Link
-            to="/"
+            to="/career_tips"
             className="text-dark-300  px-3 py-2 rounded-md text-xs font-semibold"
           >
             CAREER TIPS
@@ -407,10 +407,10 @@ const NavBar = () => {
           to="/"
           className="text-dark-300  block px-3 py-2 rounded-md text-xs font-semibold"
         >
-          DISCOVER JOB
+          JOBS
         </Link>
         <Link
-          to="/"
+          to="/career_tips"
           className="text-dark-300  block px-3 py-2 rounded-md text-xs font-semibold"
         >
           CAREER TIPS
