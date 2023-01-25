@@ -15,6 +15,11 @@ from pathlib import Path
 from datetime import timedelta
 import os
 from decouple import config
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2ht4_=dl+m^!2j%v_qfytd_fcrkq^3e6)+^=2(e3*7uzkbvp*+'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -218,17 +223,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'jobacquire0002@gmail.com'
-EMAIL_HOST_PASSWORD = 'gdwygmbtorrczdiu'
-
-
-
-
-
-import environ
-
-env = environ.Env()
-environ.Env.read_env()
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 RAZOR_KEY_ID=env('RAZOR_KEY_ID')
 RAZOR_KEY_SECRET=env('RAZOR_KEY_SECRET')
