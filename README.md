@@ -4,7 +4,7 @@ JOB ACQUIRE is a job portal website done using React JS as frontend and django a
 
 * User, Recruiter and Admin Dashboard
 * View Job Post and Apply
-* Chat and Video Call 
+* Chat 
 * Post Management
 * Payment Integration
 * Email account verification 
