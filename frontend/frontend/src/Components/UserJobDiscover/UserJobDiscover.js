@@ -7,18 +7,17 @@ const UserJobDiscover = () => {
   const [message, setMessage] = useState("")
   console.log(message, "ass")
 
-  const [jobs, setJobs] = useState()
+  const [jobs, setJobs] = useState([])
   const [count, setCount] = useState(1)
- const nextPage = () => {
-    
-    setCount(count + 1 );
-    data();
-    
-}
+
+  const nextPage = () => {
+    setCount(count + 1)
+    data()
+  }
   const prevPage = () => {
-    setCount(count - 1 );
-    data();
-}
+    setCount(count - 1)
+    data()
+  }
   console.log(count)
   console.log(jobs)
   let { user } = useSelector((state) => state.user)
@@ -29,15 +28,29 @@ const UserJobDiscover = () => {
     console.log(event.target.value, "222")
     data()
   }
-  
-  
+  const [value, setValue] = useState("");
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const onSearch = (searchTerm) => {
+    setValue(searchTerm);
+    // our api to fetch the search result
+    console.log("search ", searchTerm);
+  };
   const api = useAxios()
   const search = message
   const data = async () => {
     try {
-      const response = await api.get(`/jobdiscover?page=${count}&search=${search}`, {})
+      const response = await api.get(
+        `/jobdiscover?page=${count}&search=${search}`,
+        {}
+      )
       setJobs(response.data.results)
       console.log("userdisc", response.data)
+      search=""
+      value=""
     } catch (err) {
       console.log(err)
     }
@@ -49,8 +62,55 @@ const UserJobDiscover = () => {
   return (
     <div>
       {user.isLoggedIn ? (
-        <div>
-          <div className="grid lg:grid-cols-6 container mx-auto lg:px-48 sm:order-first">
+        <div className="mt-6">
+          <div className=" flex justify-center sm:justify-end sm:mr-56">
+                <div className=" flex justify-center sm:justify-end items-center  ">
+                  <div className="relative border rounded-md">
+                    <input
+                      type="text"
+                      name="search"
+                      value={value} 
+                      onChange={onChange} 
+                    
+                      className="h-10 w-72 pr-8 pl-5 rounded z-0 shadow focus:outline-none text-sm font-normal"
+                      placeholder="Search Job"
+                    />
+                    <div className=" border border-gray-50">
+                      {jobs.filter((job)=>{
+                        const searchTerm = value.toLowerCase();
+                        const Designation = job.designation.toLowerCase();
+                        return (
+                          searchTerm &&
+                          Designation.startsWith(searchTerm) &&
+                          Designation !== searchTerm
+                        );
+                      }).slice(0,10).map((job) => (
+                        <div className=" text-gray-500 text-sm my-2" type="button" onClick={handleChange}>{job.designation}</div>
+                      ))}
+                    </div>
+                    <div className="absolute top-3 right-3 btn">
+                      <svg
+                        aria-hidden="true"
+                        className="w-5 h-5 text-gray-200"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        ></path>
+                      </svg>
+                      <span className="sr-only">Search </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div className="grid lg:grid-cols-6 container mx-auto lg:px-48 sm:order-first ">
+            
             <div className="lg:col-span-2 px-16  sm:px-4  invisible sm:visible ">
               <div className="border bg-gray-100 border-gray-300 text-center rounded-md shadow-2xl sm:mt-20 p-4">
                 <h1 className="font-bold text-lg mb-2 ">CATEGORIES</h1>
@@ -117,7 +177,7 @@ const UserJobDiscover = () => {
                       Django
                     </p>
                   </Link>
-                 
+
                   <Link>
                     <p className="text-xs  mt-2" onClick={handleChange}>
                       Web Designing
@@ -140,7 +200,7 @@ const UserJobDiscover = () => {
                       DevOps
                     </p>
                   </Link>
-                  
+
                   <Link>
                     <p className="text-xs  mt-2" onClick={handleChange}>
                       React
@@ -149,39 +209,8 @@ const UserJobDiscover = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-4 p-4 order-first sm:order-last">
-              <div className="mb-6">
-                <div className=" flex justify-center sm:justify-end items-center  ">
-                  <div className="relative border rounded-md">
-                    <input
-                      type="text"
-                      name="search"
-                      onChange={handleChange}
-                      className="h-10 w-72 pr-8 pl-5 rounded z-0 shadow focus:outline-none text-sm font-normal"
-                      placeholder="Search Job"
-                    />
-
-                    <div className="absolute top-3 right-3 btn">
-                      <svg
-                        aria-hidden="true"
-                        className="w-5 h-5 text-gray-200"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        ></path>
-                      </svg>
-                      <span className="sr-only">Search </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="lg:col-span-4 p-4 order-first sm:order-last mt-16">
+              
 
               <div class="grid gap-4 mb-10 mx-auto">
                 {jobs?.map((job) => (
@@ -236,27 +265,22 @@ const UserJobDiscover = () => {
                   </div>
                 ))}
                 <div className="flex justify-center  col-span-4 mt-10">
-                  <span onClick={() => 
-                    prevPage()
-                    }>
-                  <a
-                    href="#"
-                    
-                    class="  px-4 py-2 mr-3 text-sm font-medium text-white bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-black dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
-                  >
-                    
-                      
-                    Previous
-                  </a></span>
+                  <span onClick={() => prevPage()}>
+                    <a
+                      href="#"
+                      class="  px-4 py-2 mr-3 text-sm font-medium text-white bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-black dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Previous
+                    </a>
+                  </span>
                   <span onClick={() => nextPage()}>
-                  <a
-                    href="#"
-                    
-                    class=" px-6 py-2  text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-black dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
-                  >
-                    Next
-                    
-                  </a></span>
+                    <a
+                      href="#"
+                      class=" px-6 py-2  text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-black dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                    >
+                      Next
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>

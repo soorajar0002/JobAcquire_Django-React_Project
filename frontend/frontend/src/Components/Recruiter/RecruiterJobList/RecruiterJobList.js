@@ -59,20 +59,21 @@ const RecruiterJobList = () => {
     <div className="min-h-screen ">
      
         <div className="grid grid-cols-8 lg:grid-cols-12  mb-4 mx-auto">
-            <div className="col-start-2 lg:col-start-4 col-span-6  ">
-            <div className="flex justify-between">
-            <Link to="/recruiter_buy_post"><button type="button" className="text-white bg-red-800 hover:bg-red-900   font-medium rounded-md text-sm px-4 py-1  mt-4 dark:bg-red-800 dark:hover:bg-red-700  dark:border-gray-700">BUY POST</button></Link>
-            <Link to="/recruiter_add_job"><button type="button" className="text-white bg-red-800 hover:bg-red-900   font-medium rounded-md text-sm px-4 py-1  mt-4 dark:bg-red-800 dark:hover:bg-red-700  dark:border-gray-700">ADD POST</button></Link>
+            <div className="col-start-1 col-span-8 lg:col-start-3 lg:col-span-8  ">
+            <div className="flex justify-between ">
+            <Link to="/recruiter_buy_post"><button type="button" className="text-white bg-black hover:bg-black   font-medium rounded-md text-sm px-4 py-1  mt-4 ">BUY POST</button></Link>
+            <p className="text-sm font-bold text-left mt-5 ">BALANCE : {balance} POST</p>
+            <Link to="/recruiter_add_job"><button type="button" className="text-white bg-black hover:bg-black  font-medium rounded-md text-sm px-4 py-1  mt-4 ">ADD POST</button></Link>
 
             </div>
-            <p className="text-sm font-semibold text-left mt-2 ">Balance Post :{balance}</p>
+         
             </div>
 
         </div>
         
       <div className="grid  lg:grid-cols-12 gap-4 mb-10 mx-auto">
       {jobs?.map((job)=>( 
-        <div className="mx-4 lg:col-start-4 col-span-6 border rounded-2xl p-4 shadow ">
+        <div className="mx-4 lg:col-start-3 col-span-8 border rounded-2xl p-4 shadow ">
           <div className="flex justify-between mr-4">
             <img
               className="w-8 h-8 rounded-full mt-1 mb-2"

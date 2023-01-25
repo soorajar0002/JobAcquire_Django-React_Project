@@ -278,7 +278,7 @@ class RecruiterJobApplicationSerializer(serializers.ModelSerializer):
     first_name = serializers.ReadOnlyField(source="user.user.first_name",read_only=True)
     last_name = serializers.ReadOnlyField(source="user.user.last_name",read_only=True)
     phone_number = serializers.ReadOnlyField(source="user.user.phone_number",read_only=True)
-    job_name = serializers.ReadOnlyField(source="user.designation",read_only=True)
+    job_name = serializers.ReadOnlyField(source="job.designation",read_only=True)
     class Meta:
         model = JobApplication
         fields = ['id','user_id','job','job_name','status','created','first_name','last_name','phone_number']

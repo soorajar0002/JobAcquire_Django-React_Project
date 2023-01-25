@@ -59,10 +59,10 @@ const RecruiterJobApplication = () => {
     return `${namesAlph[0]}__${namesAlph[1]}`
   }
   return (
-    <div className="">
+    <div className=" mb-48">
       <div className="relative overflow-x-auto  sm:rounded-lg mx-6 md:mx-48 mb-20 ">
         <h1 className="text-2xl text-left font-extrabold mb-6">
-          APPLICANT DETAILS
+          
         </h1>
         <div className="mb-6">
           <div className=" flex justify-between sm:justify-between items-center  ">
@@ -105,7 +105,7 @@ const RecruiterJobApplication = () => {
             </div>
           </div>
         </div>
-        <table className="w-full text-sm text-left shadow-md text-gray-500 dark:text-gray-400">
+        <table className="w-full text-sm text-left overflow-y-auto  shadow-md text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-200  dark:text-gray-400">
             <tr className="text-center">
               <th scope="col" className="px-6 py-3 ">

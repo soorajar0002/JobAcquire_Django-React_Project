@@ -81,13 +81,15 @@ const Chat = () => {
     [ReadyState.UNINSTANTIATED]: "Uninstantiated",
   }[readyState]
   return (
-    <div className="h-screen">
+    <div className="mb-36">
      
       <div className="grid grid-cols-12 gap-4 my-16 ">
         <div className=" col-start-2 col-span-10 md:col-start-5 md:col-span-4 bg-gray-200 rounded-xl border shadow-xl ">
           <div className="bg-gray-600 py-3 rounded-md mb-6 flex justify-between">
             <p className="text-white text-sm text-left ml-6">{user_name}</p>
-            <Link to="/user_applied_jobs"><ImCross className="text-white mr-4 mt-1 h-3 "/></Link>
+            {user.isLoggedIn? <Link to="/user_applied_jobs"><ImCross className="text-white mr-4 mt-1 h-3 "/></Link>:  <Link to="/recruiter_job_application"><ImCross className="text-white mr-4 mt-1 h-3 "/></Link>}
+           
+      
           </div>
        <div className="py- px-2 overflow-y-auto h-96">
         {messageHistory.map((message) => (

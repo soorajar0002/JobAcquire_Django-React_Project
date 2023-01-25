@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { BiLogOutCircle } from "react-icons/bi"
 import {useDispatch} from 'react-redux';
 import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
+import NavBar1 from '../Components/NavBar/NavBar'
 const AdminPage = () => {
   const api = useAxios()
   const dispatch = useDispatch();
@@ -97,13 +98,14 @@ const AdminPage = () => {
           </Link>
         </div>
         </div>
-        <div class="col-span-10  lg:col-span-10 mt-20 ">
-          <div>
-            <div className="container mx-auto">
+        <div class="col-span-10  lg:col-span-10  ">
+        <NavBar1 className=""/>
+        <div className=" mt-6 sm:mt-20">
+            <div className="container mx-auto ">
               <h1 className="font-bold text-3xl text-left ml-4 mb-6">
                 PAYMENT DETAILS
               </h1>
-              <div date-rangepicker class="flex justify-end mr-24  mb-4">
+              <div date-rangepicker class="flex justify-end mr-24  mb-4 invisible sm:visible">
                 <div class="relative">
                   <input
                    onChange={(evt) => {setFrom(evt.target.value)}}

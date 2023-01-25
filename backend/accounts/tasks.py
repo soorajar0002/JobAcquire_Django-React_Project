@@ -10,7 +10,7 @@ from .models import Account
 def send_otp_via_email(email):
     subject = "JOBACQUIRE ACCOUNT VERIFICATION "
     otp = random.randint(1000, 9999)
-    message = f'YOUR ONE TIME PASSWORD IS {otp}'
+    message = f'DEAR CUSTOMER,YOUR OTP FOR REGISTRATION IS {otp}. USE THIS TO VALIDATE YOUR ACCOUNT.'
     email_from = settings.EMAIL_HOST
     send_mail(subject,message, email_from, [email])
     print(subject,"S",otp,"D",email_from,"V",message,"",email)

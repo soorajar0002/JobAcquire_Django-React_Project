@@ -1,5 +1,5 @@
 import React from "react"
-import bgImage from "../../Images/careertip.png"
+import bgImage from "../../Images/bg1.jpg"
 const CareerTips = () => {
   return (
     <div className="container mx-auto mb-36">

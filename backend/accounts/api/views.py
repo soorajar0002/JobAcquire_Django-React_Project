@@ -235,15 +235,18 @@ class JobPostRecruiterView(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = JobPostSerializer(data=request.data, context={'user_id': request.data["id"]})
-        if serializer.is_valid():
-            serializer.save()
-            print(serializer)
-            
-
-            return Response(status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+        user =request.user
+        profile = RecruiterProfile.objects.get(user=user)
+        print(profile)
+        if profile.post_balance > 0:
+            serializer = JobPostSerializer(data=request.data, context={'user_id': request.data["id"]})
+            if serializer.is_valid():
+                serializer.save()
+                print(serializer)
+                return Response(status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response("POST BALANCE NOT AVAILABLE", status=status.HTTP_400_BAD_REQUEST)
+    
     def put(self, request):
         print(request.data)
         job = Job.objects.get(pk=request.data['id'])

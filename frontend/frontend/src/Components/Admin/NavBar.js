@@ -5,6 +5,7 @@ import { BiLogOutCircle } from "react-icons/bi"
 import { useDispatch } from "react-redux"
 import { logOutAdmin } from "../../Redux/Reducers/AuthSlice"
 import ChartData from "./ChartData"
+import NavBar1 from '../../Components/NavBar/NavBar'
 const NavBar = () => {
   const [datas, setDatas] = useState(0)
   const value = 0
@@ -81,8 +82,10 @@ const NavBar = () => {
         </div>
         </div>
         </div>
-        <div className="col-span-10  lg:col-span-10 mt-20 ">
-          <div>
+       
+        <div className="col-span-10  lg:col-span-10 h-screen ">
+        <NavBar1 className=""/>
+        <div className=" mt-6 sm:mt-20">
             <div className="container mx-auto">
               <h1 className="font-bold text-3xl text-left ml-4 mb-6">
                 

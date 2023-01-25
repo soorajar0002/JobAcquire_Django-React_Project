@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { usersView } from "../Redux/Reducers/AuthSlice"
 import axiosInstance from "../Axios/axiosPrivate"
 import { Link } from "react-router-dom"
-import NavBar from "../Components/Admin/NavBar"
+import NavBar1 from "../Components/NavBar/NavBar"
 import { BiLogOutCircle } from "react-icons/bi"
 import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
 const AdminRecruiter = () => {
@@ -91,8 +91,9 @@ const AdminRecruiter = () => {
           </Link>
         </div>
         </div>
-        <div class="col-span-10  lg:col-span-10 mt-20 ">
-          <div>
+        <div class="col-span-10  lg:col-span-10  ">
+        <NavBar1 className=""/>
+        <div className=" mt-6 sm:mt-20">
             <div className="container mx-auto">
               <h1 className="font-bold text-3xl text-left ml-4 mb-6">
                 RECRUITER MANAGEMENT

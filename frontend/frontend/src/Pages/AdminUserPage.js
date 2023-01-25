@@ -6,6 +6,7 @@ import { usersView } from "../Redux/Reducers/AuthSlice"
 import { Link } from "react-router-dom"
 import { BiLogOutCircle } from "react-icons/bi"
 import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
+import NavBar1 from "../Components/NavBar/NavBar"
 const AdminUser = () => {
   const dispatch = useDispatch()
   const users = useSelector((state) => state.user.view_user.users)
@@ -89,9 +90,9 @@ t
           </Link>
         </div>
         </div>
-        <div class="col-span-10  lg:col-span-10 mt-20 ">
-          
-          <div className="">
+        <div class="col-span-10  lg:col-span-10 ">
+        <NavBar1 className=""/>
+        <div className=" mt-6 sm:mt-20">
             <h1 className="font-bold text-left text-3xl ml-4 mb-6">USER MANAGEMENT</h1>
             <div className=" p-4">
              

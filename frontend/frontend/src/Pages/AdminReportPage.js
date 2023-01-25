@@ -5,7 +5,7 @@ import { ReactToPrint } from "react-to-print"
 import { Link } from "react-router-dom"
 import { BiLogOutCircle } from "react-icons/bi"
 import { logOutAdmin } from "../Redux/Reducers/AuthSlice"
-
+import NavBar1 from "../Components/NavBar/NavBar"
 const AdminReportPage = () => {
   const api = useAxios()
   const [datas, setDatas] = useState([])
@@ -85,9 +85,10 @@ const AdminReportPage = () => {
             </Link>
           </div>
         </div>
-        <div class="col-span-10  lg:col-span-10 mt-20 ">
-          <div>
-            <div className="  flex justify-between">
+        <div class="col-span-10  lg:col-span-10 ">
+        <NavBar1 className=""/>
+          <div className=" mt-6 sm:mt-20">
+            <div className="  flex justify-between ">
               <h1 className="font-bold text-3xl text-left ml-4 mb-6">REPORT</h1>
 
             </div>

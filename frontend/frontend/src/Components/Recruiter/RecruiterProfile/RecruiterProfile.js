@@ -48,7 +48,7 @@ const RecruiterProfile = () => {
             <h1 className='my-2 '>{recruiter.phone_number}</h1>
               <h1 className='mt-2 font-normalmx-8'>{recProfile.recruiter_bio?recProfile.recruiter_bio:noData}</h1>
               <Link to="/recruiter_profile_edit">
-        <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none  font-medium  text-sm px-6 py-1 rounded mr-2 mb-5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700">EDIT</button>
+        <button type="button" class="text-white bg-gray-800 mt-6 hover:bg-gray-900 focus:outline-none  font-medium  text-sm px-6 py-1 rounded mr-2 mb-5  dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700">EDIT</button>
       </Link>
               </div>
             
