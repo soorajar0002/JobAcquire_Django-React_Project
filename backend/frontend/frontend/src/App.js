@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import AdminDashboardPage from './Pages/AdminDashboardPage';
 import AdminLoginPage from './Pages/AdminLoginPage';
 import HomePage from './Pages/HomePage';
@@ -39,7 +39,7 @@ import CareerTipsPage from './Pages/CareerTipsPage';
 function App() {
   return (
     <div className="App relative ">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<HomePage /> } exact/>
           <Route path="/register" element={<RegisterPage />} />
@@ -100,7 +100,7 @@ function App() {
           
         </Routes>
        
-      </BrowserRouter>
+      </HashRouter>
       
     </div>
   );
