@@ -26,11 +26,11 @@ JOB ACQUIRE is a job portal website done using React JS as frontend and django a
 1. Clone the repository:
   git clone https://github.com/soorajar0002/JobAcquire_Django-React_Project.git
 2. Navigate to the frontend directory:
-  cd job-portal/frontend
+  cd JobAcquire_Django-React_Project/frontend/frontend
 3. Install the required packages:
   npm install
 4. In a new terminal window, navigate to the backend directory:
-  cd job-portal/backend
+  cd JobAcquire_Django-React_Project/backend
 5. Create a virtual environment and activate it:
    python3 -m venv venv
    source venv/bin/activate
