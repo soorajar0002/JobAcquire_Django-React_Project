@@ -1,0 +1,20 @@
+[0;1;32m●[0m daphne.service - Daphne service
+     Loaded: loaded (]8;;file://ubuntu-s-1vcpu-1gb-blr1-01/etc/systemd/system/daphne.service/etc/systemd/system/daphne.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Fri 2023-01-27 08:09:54 UTC; 21min ago
+   Main PID: 4094 (python)
+      Tasks: 2 (limit: 4661)
+     Memory: 71.1M
+        CPU: 1.702s
+     CGroup: /system.slice/daphne.service
+             └─[0;38;5;245m4094 /root/JobAcquire_Django-React_Project/backend/venv/bin/python /root/JobAcquire_Django-React_Project/backend/venv/bin/daphne -e ssl:8001:privateKey=/etc/letsencrypt/live/jobacquire.online/privkey.pem:certKey=/etc/letsencrypt/live/jobacquire.online/fullchain.pem backend.asgi:application[0m
+
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:     self.receive_json(self.decode_json(text_data), **kwargs)
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:   File "/root/JobAcquire_Django-React_Project/backend/chat/consumers.py", line 63, in receive_json
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:     to_user=self.get_receiver(),
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:   File "/root/JobAcquire_Django-React_Project/backend/chat/consumers.py", line 83, in get_receiver
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:     return Account.objects.get(first_name=firstname)
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:   File "/root/JobAcquire_Django-React_Project/backend/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:     return getattr(self.get_queryset(), name)(*args, **kwargs)
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:   File "/root/JobAcquire_Django-React_Project/backend/venv/lib/python3.10/site-packages/django/db/models/query.py", line 653, in get
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]:     raise self.model.MultipleObjectsReturned(
+Jan 27 08:20:08 ubuntu-s-1vcpu-1gb-blr1-01 python[4094]: accounts.models.Account.MultipleObjectsReturned: get() returned more than one Account -- it returned 2!

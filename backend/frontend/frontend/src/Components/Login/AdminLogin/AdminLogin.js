@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useState }  from 'react';
+import Modal from '../../Modal/Modal';
 import './AdminLogin.css';
 import { logInSchema } from '../../../Schemas';
 import { useFormik } from 'formik';
@@ -12,6 +12,7 @@ const initialValues = {
     password: '',
   };
 const AdminLogin = () => {
+  const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
@@ -29,17 +30,18 @@ const AdminLogin = () => {
               dispatch(adminLogin())
               navigate('/admin_dashboard');
             } else {
-              alert('not valid credentials');
+              setErrorMessage("INCORRECT EMAIL OR PASSWORD");
             }
             console.log(response.data);
           } catch {
-            alert('something went wrong');
+            setErrorMessage("INCORRECT EMAIL OR PASSWORD");
           }
           action.resetForm();
         },
       });
     return (
       <div>
+ {errorMessage && <Modal errorMessage={errorMessage} setErrorMessage={setErrorMessage} />}
         <div className="flex flex-col items-center  recruiter-login">
           <form onSubmit={handleSubmit}>
             <h1 className="text-center font-bold text-xl mb-10 mx-28">

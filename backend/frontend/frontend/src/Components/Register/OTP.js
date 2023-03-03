@@ -55,7 +55,7 @@ const OTP = () => {
             We have sent a code to your email{" "}
           </p>
           <p className="text-xs font-semibold text-center text-gray-400 ">
-            soorajar31@gmail.com
+            xxxxxxxxxxx@gmail.com
           </p>
           <form onSubmit={handleSubmit}>
           <div className="">

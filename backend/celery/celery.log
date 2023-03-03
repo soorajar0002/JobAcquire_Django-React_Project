@@ -1,0 +1,1448 @@
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-23-generic-x86_64-with-glibc2.36 2023-01-26 14:32:44
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f4d5daad840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-23-generic-x86_64-with-glibc2.36 2023-01-26 15:22:12
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f28e07a1840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-23-generic-x86_64-with-glibc2.36 2023-01-26 16:11:41
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f5baefa9840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-23-generic-x86_64-with-glibc2.36 2023-01-26 17:01:10
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fe491eb1840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-23-generic-x86_64-with-glibc2.36 2023-01-26 17:50:41
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fe2b0da5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 18:24:51
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f4e6ada1840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 19:14:02
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fe0b01a1840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 20:03:30
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f0ed4cb5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 20:52:57
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f08358a9840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 21:42:24
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f9d068b5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 22:18:37
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f91e71a1840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 23:08:05
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fa619ba5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-26 23:57:33
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f074f0b5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 00:47:01
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f05768b5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 01:36:30
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f965eeb5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 02:25:58
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7feabc7a1840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 03:15:25
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fc5ba69d840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 04:04:53
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f92ff9ad840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 04:10:06
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f53c149d840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 04:25:41
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fd3358a9840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 05:10:46
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f5a3809d840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 05:48:17
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fef322b5840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 06:37:45
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f0b5689d840
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 08:34:19
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fe57e0a6170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 09:15:28
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f0f164b6170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 11:59:53
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7ff2283ae170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-27 22:02:17
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f7ded69e170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-28 04:34:50
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f8ba3e9e170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-28 08:08:27
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f4f5c4b2170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-28 08:36:55
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f2c8a9a6170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-28 11:03:10
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7fde1ed9a170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-28 13:00:36
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7ff5f72b6170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-29 12:39:05
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f065dfae170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-29 15:01:50
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f241eca6170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-29 17:35:40
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f14291b2170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+
+here
+here
+ 
+ -------------- celery@ubuntu-s-1vcpu-1gb-blr1-01 v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Linux-5.19.0-29-generic-x86_64-with-glibc2.36 2023-01-29 17:46:26
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x7f06f619a170
+- ** ---------- .> transport:   redis://localhost:6379//
+- ** ---------- .> results:     
+- *** --- * --- .> concurrency: 2 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . accounts.tasks.send_otp_via_email
+

@@ -89,7 +89,7 @@ const Payment = () => {
 
     // creating a new order and sending order ID to backend
     const result = await axios.post(
-      "http://127.0.0.1:8000/api/razorpay_order",
+      "https://jobacquire.online/api/razorpay_order",
       {
         order_id: "Order-5152",
         planId,
@@ -143,7 +143,7 @@ const Payment = () => {
   }
 
   return (
-    <div className="mb-36">
+    <div className="my-36">
       <div className=" grid lg:grid-cols-4 container mx-auto">
         <div className=" lg:col-start-2 lg:col-span-2 p-4  mx-10 border shadow-2xl">
           <h1 className="text-2xl font-bold mb-8">ORDER DETAILS</h1>

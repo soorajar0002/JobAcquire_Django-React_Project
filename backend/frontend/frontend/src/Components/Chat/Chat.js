@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState,useEffect,useRef } from "react"
 import useWebSocket, { ReadyState } from "react-use-websocket"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
@@ -13,6 +13,7 @@ const Chat = () => {
 
 
   const [message, setMessage] = useState("")
+  const messageEl = useRef(null);
   const [name, setName] = useState("")
   const [welcomeMessage, setWelcomeMessage] = useState("")
   
@@ -23,7 +24,7 @@ const Chat = () => {
   console.log(conversationName)
   // const {sendJsonMessage  } = useWebSocket("ws://127.0.0.1:8000/");
   const { readyState, sendJsonMessage } = useWebSocket(
-    token ? `ws://127.0.0.1:8000/${conversationName}/` : null,
+    token ? `wss://jobacquire.online:8001/${conversationName}/` : null,
     {
       queryParams: {
         token: token ? token : "",
@@ -80,18 +81,27 @@ const Chat = () => {
     [ReadyState.CLOSED]: "Closed",
     [ReadyState.UNINSTANTIATED]: "Uninstantiated",
   }[readyState]
+  
+useEffect(() => {
+    if (messageEl) {
+      messageEl.current.addEventListener('DOMNodeInserted', event => {
+        const { currentTarget: target } = event;
+        target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
+      });
+    }
+  }, [])
   return (
     <div className="mb-36">
      
       <div className="grid grid-cols-12 gap-4 my-16 ">
         <div className=" col-start-2 col-span-10 md:col-start-5 md:col-span-4 bg-gray-200 rounded-xl border shadow-xl ">
-          <div className="bg-gray-600 py-3 rounded-md mb-6 flex justify-between">
+          <div className="bg-gray-900 py-3 rounded-md mb-6 flex justify-between">
             <p className="text-white text-sm text-left ml-6">{user_name}</p>
             {user.isLoggedIn? <Link to="/user_applied_jobs"><ImCross className="text-white mr-4 mt-1 h-3 "/></Link>:  <Link to="/recruiter_job_application"><ImCross className="text-white mr-4 mt-1 h-3 "/></Link>}
            
       
           </div>
-       <div className="py- px-2 overflow-y-auto h-96">
+       <div className="py- px-2 overflow-y-auto h-96" ref={messageEl}>
         {messageHistory.map((message) => (
         
            message.from_user.first_name === user.firstname?
@@ -125,8 +135,8 @@ const Chat = () => {
           className="ml-2 pl-2 shadow-sm sm:text-sm border-gray-300 w-full bg-white rounded-md py-2"
         />
 
-        <button className="ml-3 bg-gray-300 text-sm  px-2" onClick={handleSubmit}>
-        <AiOutlineSend/>
+        <button className="ml-3 bg-gray-900 text-sm rounded-md px-2" onClick={handleSubmit}>
+        <AiOutlineSend className="text-white"/>
         </button>
         </div>
       </div>

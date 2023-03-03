@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import './RecruiterRegister.css';
 import { useFormik } from "formik"
 import { signUpSchemaRec } from "../../../Schemas"
 import axiosInstance from "../../../Axios/axiosPrivate"
 import { useNavigate } from "react-router-dom"
-
+import Modal from '../../Modal/Modal';
 const initialValues = {
   first_name: "",
   last_name: "",
@@ -16,6 +16,7 @@ const initialValues = {
 }
 const RecruiterRegister = () => {
   const navigate = useNavigate()
+  const [errorMessage, setErrorMessage] = useState("");
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -36,10 +37,10 @@ const RecruiterRegister = () => {
             
             navigate(`/otp/${response.data.id}`)
           } else {
-            alert("not valid credentials")
+             setErrorMessage('USER WITH THIS EMAIL ID ALREADY EXISTS !');
           }
         } catch (error) {
-          alert(error)
+           setErrorMessage('USER WITH THIS EMAIL ID ALREADY EXISTS !');
           console.log(error)
         }
         action.resetForm()   
@@ -47,6 +48,7 @@ const RecruiterRegister = () => {
     })
   return (
     <div className='container mx-auto '>
+      {errorMessage && <Modal errorMessage={errorMessage} setErrorMessage={setErrorMessage} />}
       <div className="flex flex-col items-center  recruiter-register ">
         <form onSubmit={handleSubmit}>
           <h1 className="text-center font-bold text-xl mb-6">

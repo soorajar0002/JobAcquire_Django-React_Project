@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState }  from 'react';
+import Modal from '../../Modal/Modal';
 import { Link } from 'react-router-dom';
 import './RecruiterLogin.css';
 import { logInSchema } from '../../../Schemas';
@@ -14,6 +15,7 @@ const initialValues = {
 const RecruiterLogin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+const [errorMessage, setErrorMessage] = useState("");
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -30,11 +32,11 @@ const RecruiterLogin = () => {
             dispatch(setToken(response.data))
             navigate('/recruiter_profile');
           } else {
-            alert('not valid credentials');
+            setErrorMessage("INCORRECT EMAIL OR PASSWORD");
           }
           console.log(response.data);
         } catch {
-          alert('something went wrong');
+          setErrorMessage("INCORRECT EMAIL OR PASSWORD");
         }
         
         action.resetForm();
@@ -42,6 +44,7 @@ const RecruiterLogin = () => {
     });
   return (
     <div>
+ {errorMessage && <Modal errorMessage={errorMessage} setErrorMessage={setErrorMessage} />}
       <div className="flex flex-col items-center  recruiter-login ">
         <form onSubmit={handleSubmit}>
           <h1 className="text-center font-bold text-xl mb-10 mx-24">

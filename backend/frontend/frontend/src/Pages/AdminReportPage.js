@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import useAxios from "../Axios/useAxios"
 import { useDispatch, useSelector } from "react-redux"
-import { ReactToPrint } from "react-to-print"
 import { Link } from "react-router-dom"
 import { BiLogOutCircle } from "react-icons/bi"
 import { logOutAdmin } from "../Redux/Reducers/AuthSlice"
+import ReactToPrint from 'react-to-print';
 import NavBar1 from "../Components/NavBar/NavBar"
+
+
 const AdminReportPage = () => {
   const api = useAxios()
   const [datas, setDatas] = useState([])
@@ -27,14 +29,8 @@ const AdminReportPage = () => {
   const logout = () => {
     dispatch(logOutAdmin())
   }
-  const Print = () =>{     
-    //console.log('print');  
-    let printContents = document.getElementById('printablediv').innerHTML;
-    let originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-   document.body.innerHTML = originalContents; 
-  }
+
+ const componentRef = useRef();
 
   return (
     <div>
@@ -94,11 +90,13 @@ const AdminReportPage = () => {
             </div>
            <div className="flex justify-between sm:mx-20">
             <p></p>
-            <button type="button" onClick={Print} className="text-gray-100 bg-black border  border-gray-300  font-medium rounded-lg text-sm px-5 py-1 mr-2 mb-2 ">PDF</button>
+     <ReactToPrint
+        trigger={() =>  <button type="button"  className="text-gray-100 bg-black border  border-gray-300  font-medium rounded-lg text-sm px-5 py-1 mr-2 mb-2 ">PDF</button>}
+        content={() => componentRef.current}
+      />
             </div>
-            <div className="sm:mx-10 rounded-lg">
+            <div className="sm:mx-10 rounded-lg" ref={componentRef} pageStyle="@page { size: 2.5in 4in }">
               <div class="relative overflow-x-auto">
-               
                 <div id="printablediv">
                   <table class="w-full text-sm text-left text-gray-500 bg-gray-50">
                     <thead class="text-xs text-gray-700 uppercase">

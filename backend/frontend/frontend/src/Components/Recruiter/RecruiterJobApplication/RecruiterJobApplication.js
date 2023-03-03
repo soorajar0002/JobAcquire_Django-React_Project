@@ -59,7 +59,7 @@ const RecruiterJobApplication = () => {
     return `${namesAlph[0]}__${namesAlph[1]}`
   }
   return (
-    <div className=" mb-48">
+    <div className=" mb-96">
       <div className="relative overflow-x-auto  sm:rounded-lg mx-6 md:mx-48 mb-20 ">
         <h1 className="text-2xl text-left font-extrabold mb-6">
           

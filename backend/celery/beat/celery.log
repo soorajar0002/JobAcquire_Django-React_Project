@@ -1,0 +1,1429 @@
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-26 14:32:44
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-26 18:24:51
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-26 19:14:20
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-26 22:18:37
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 04:10:06
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 04:25:41
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 05:10:46
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 05:48:17
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 08:34:19
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 09:15:28
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 11:59:53
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-27 22:02:17
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-28 04:34:50
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-28 08:08:28
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-28 08:36:53
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-28 11:03:10
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-28 13:00:36
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-29 12:39:05
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-29 15:01:50
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)
+celery beat v5.2.7 (dawn-chorus) is starting.
+here
+here
+__    -    ... __   -        _
+LocalTime -> 2023-01-29 17:35:40
+Configuration ->
+    . broker -> redis://localhost:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> django_celery_beat.schedulers.DatabaseScheduler
+
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 seconds (5s)

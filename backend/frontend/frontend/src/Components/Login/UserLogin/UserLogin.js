@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useState }  from 'react';
+import Modal from '../../Modal/Modal';
 import { Link } from 'react-router-dom';
 import loginimg from '../../../Images/userlogin.png';
 import './UserLogin.css';
@@ -19,6 +19,7 @@ function UserLogin() {
  
   const dispatch = useDispatch();
   const navigate = useNavigate();
+ const [errorMessage, setErrorMessage] = useState("");
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -35,11 +36,11 @@ function UserLogin() {
             
             navigate('/user_profile');
           } else {
-            alert('not valid credentials');
+            setErrorMessage("INCORRECT EMAIL OR PASSWORD");
           }
-          console.log(response.data);
+          
         } catch {
-          alert('something went wrong');
+          setErrorMessage("INCORRECT EMAIL OR PASSWORD");
         }
         
         action.resetForm();
@@ -48,6 +49,7 @@ function UserLogin() {
 
   return (
     <div>
+	 {errorMessage && <Modal errorMessage={errorMessage} setErrorMessage={setErrorMessage} />}
       <div className=" px-6  h-full mx-6 recruiter-login">
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">

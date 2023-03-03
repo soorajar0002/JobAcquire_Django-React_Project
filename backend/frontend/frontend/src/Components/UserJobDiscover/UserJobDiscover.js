@@ -8,8 +8,9 @@ const UserJobDiscover = () => {
   console.log(message, "ass")
 
   const [jobs, setJobs] = useState([])
+  const [allJobs, setAllJobs] = useState([])
   const [count, setCount] = useState(1)
-
+  const [flag,setFlag] = useState(true)
   const nextPage = () => {
     setCount(count + 1)
     data()
@@ -49,8 +50,13 @@ const UserJobDiscover = () => {
       )
       setJobs(response.data.results)
       console.log("userdisc", response.data)
-      search=""
-      value=""
+       if (flag===true) {
+        setAllJobs(response.data.results)
+        setFlag(false)
+      } else {
+        console.log("false")
+
+      }
     } catch (err) {
       console.log(err)
     }
@@ -62,8 +68,8 @@ const UserJobDiscover = () => {
   return (
     <div>
       {user.isLoggedIn ? (
-        <div className="mt-6">
-          <div className=" flex justify-center sm:justify-end sm:mr-56">
+        <div className="mt-6 mb-10 relative">
+          <div className=" flex justify-center sm:justify-end sm:mr-56 z-20 absolute right-0 mr-5">
                 <div className=" flex justify-center sm:justify-end items-center  ">
                   <div className="relative border rounded-md">
                     <input
@@ -75,8 +81,8 @@ const UserJobDiscover = () => {
                       className="h-10 w-72 pr-8 pl-5 rounded z-0 shadow focus:outline-none text-sm font-normal"
                       placeholder="Search Job"
                     />
-                    <div className=" border border-gray-50">
-                      {jobs.filter((job)=>{
+                    <div className=" border border-gray-50 bg-white rounded-lg">
+                      {allJobs.filter((job)=>{
                         const searchTerm = value.toLowerCase();
                         const Designation = job.designation.toLowerCase();
                         return (

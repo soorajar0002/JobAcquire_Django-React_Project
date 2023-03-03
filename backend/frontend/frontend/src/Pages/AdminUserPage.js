@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect,useState } from "react"
 import useAxios from "../Axios/useAxios"
 import axiosInstance from "../Axios/axiosPrivate"
 import { useDispatch, useSelector } from "react-redux"
@@ -9,7 +9,8 @@ import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
 import NavBar1 from "../Components/NavBar/NavBar"
 const AdminUser = () => {
   const dispatch = useDispatch()
-  const users = useSelector((state) => state.user.view_user.users)
+  const [users, setUsers] = useState([])
+  //const users = useSelector((state) => state.user.view_user.users)
   console.log(users, "2111")
   const api = useAxios()
   const handleBlockUser = async (id) => {
@@ -28,7 +29,8 @@ const AdminUser = () => {
     try {
       const response = await api.get(`/admin/users/`, {})
       console.log("response.data")
-      dispatch(usersView(response.data))
+      setUsers(response.data)
+      //dispatch(usersView(response.data))
     } catch (err) {
       console.log(err)
     }
@@ -128,7 +130,7 @@ t
                     </tr>
                   </thead>
                   <tbody>
-                    {users.map((user) => (
+                    {users?users.map((user) => (
                       <tr class=" border-b bg-gray-200 ">
                         <td class="py-2 px-6">{user.id}</td>
                         <td class="py-2 px-6">{user.username}</td>
@@ -165,7 +167,7 @@ t
                           </a>
                         </td>
                       </tr>
-                    ))}
+                    )):" "}
                   </tbody>
                 </table>
               </div>

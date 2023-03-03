@@ -8,7 +8,7 @@ const RecruiterProfile = () => {
   const dispatch = useDispatch();
   const recruiter = useSelector((state)=>state.user.user)
   const recProfile = useSelector((state)=>state.user.profile)
-  const noData = "-"
+  const noData = "--------------------------------------------"
  
   const api = useAxios();
   const data = async () => {
@@ -42,7 +42,7 @@ const RecruiterProfile = () => {
           
             <div className='lg:col-start-2 lg:col-span-3  order-2 sm:order-2 text-center'>
               <div className='p-10  my-8 shadow-2xl  text-center '>
-              <img class="inline object-cover w-28 h-28 mr-2 rounded-full " src={`http://localhost:8000/api${recProfile.profile_picture}`} alt="Profile image"/>
+              <img class="inline object-cover w-28 h-28 mr-2 rounded-full " src={`https://jobacquire.online/api${recProfile.profile_picture}`} alt="Profile image"/>
               <h1 className='my-2 font-semibold'>{recruiter.firstname} {recruiter.lastname}</h1>
               <h1 className='my-2'>{recruiter.email}</h1>
             <h1 className='my-2 '>{recruiter.phone_number}</h1>

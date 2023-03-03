@@ -4,6 +4,7 @@ import { useFormik } from "formik"
 import { signUpSchema } from "../../../Schemas"
 import "./UserRegister.css"
 import axiosInstance from "../../../Axios/axiosPrivate"
+import Modal from '../../Modal/Modal';
 import { useNavigate } from "react-router-dom"
 const initialValues = {
   first_name: "",
@@ -16,7 +17,7 @@ const initialValues = {
 }
 const UserRegister = () => {
   const navigate = useNavigate()
-  
+  const [errorMessage, setErrorMessage] = useState("");
 
   
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
@@ -39,10 +40,10 @@ const UserRegister = () => {
             
             navigate(`/otp/${response.data.id}`)
           } else {
-            alert("not valid credentials")
+            setErrorMessage('USER WITH THIS EMAIL ID ALREADY EXISTS !');
           }
         } catch (error) {
-          alert(error)
+          setErrorMessage('USER WITH THIS EMAIL ID ALREADY EXISTS !');
           console.log(error)
         }
         action.resetForm()   
@@ -51,7 +52,9 @@ const UserRegister = () => {
 
   return (
     <div>
+{errorMessage && <Modal errorMessage={errorMessage} setErrorMessage={setErrorMessage} />}
       <div className="grid grid-cols-6">
+	
         <div className="col-start-2 col-span-4 sm:col-start-2  sm:col-span-2">
           <form onSubmit={handleSubmit}>
             <h1 className="text-center font-bold text-xl mb-10">

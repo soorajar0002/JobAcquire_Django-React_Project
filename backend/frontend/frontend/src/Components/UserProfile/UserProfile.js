@@ -10,7 +10,7 @@ const UserProfile = () => {
   console.log(users)
   console.log(usersProfile)
   const id = useSelector((state) => state.user.user.id)
-  const nodata = "NIL"
+  const nodata = "--------------------------------------------"
   const dispatch = useDispatch()
 
   const api = useAxios()
@@ -39,7 +39,7 @@ const UserProfile = () => {
             class="w-20 h-20 rounded-full mx-auto "
             src={
               usersProfile.profile_picture
-                ? `http://localhost:8000/api${usersProfile.profile_picture}`
+                ? `https://jobacquire.online/api${usersProfile.profile_picture}`
                 : profile
             }
             alt="Large avatar"
@@ -72,12 +72,7 @@ const UserProfile = () => {
               </h1>
             </div>
           </div>
-          <button
-            type="button"
-            class=" bg-white border border-gray-300 focus:outline-none   font-normal rounded-md text-2sm px-2 py-1 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 "
-          >
-            RESUME
-          </button>
+          
           <Link to="/user_profile_edit">
             <button
               type="button"
@@ -133,7 +128,7 @@ const UserProfile = () => {
               </h1>
               <h1 className="my-2">
               
-                <span className="pl-2">{usersProfile.percentage?usersProfile.percentage:nodata}{UserProfile.percentage?" ":" %"}</span>{" "}
+                <span className="pl-2">{usersProfile.percentage?usersProfile.percentage+"%":nodata}</span>{" "}
               </h1>
             </div>
           </div>

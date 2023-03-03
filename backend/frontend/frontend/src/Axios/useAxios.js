@@ -6,7 +6,7 @@ import dayjs from 'dayjs';
 import { useSelector, useDispatch } from 'react-redux';
 import { setToken } from '../Redux/Reducers/AuthSlice';
 
-const baseURL = 'http://127.0.0.1:8000/api/';
+const baseURL = 'https://jobacquire.online/api/';
 
 const useAxios = () => {
   const authTokens = useSelector((state) => state.user.token.access_token);

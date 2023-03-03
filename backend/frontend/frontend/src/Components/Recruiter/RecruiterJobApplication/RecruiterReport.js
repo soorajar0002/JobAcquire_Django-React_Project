@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import useAxios from ".././../../Axios/useAxios"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-
+import ReactToPrint from 'react-to-print';
 
 const RecruiterReport = () => {
     const api = useAxios()
   const [datas, setDatas] = useState([])
+  const componentRef = useRef();
 
   const response = async () => {
     try {
@@ -34,16 +35,19 @@ const RecruiterReport = () => {
    document.body.innerHTML = originalContents; 
   }
   return (
-    <div className="my-20">
+    <div className="my-20 mb-96">
     <div className="  flex justify-between mx-16">
       <h1 className="font-bold text-3xl text-left ml-4 ">APPLICATIONS REPORT</h1>
 
     </div>
    <div className="flex justify-between sm:mx-20">
     <p></p>
-    <button type="button" onClick={Print} className="text-gray-100 bg-black border  border-gray-300  font-medium rounded-lg text-sm px-5 py-1 mr-2 mb-2 ">PDF</button>
-    </div>
-    <div className="sm:mx-20 rounded-lg">
+      <ReactToPrint
+        trigger={() =>  <button type="button"  className="text-gray-100 bg-black border  border-gray-300  font-medium rounded-lg text-sm px-5 py-1 mr-2 mb-2 ">PDF</button>}
+        content={() => componentRef.current}
+      />
+</div>
+    <div className="sm:mx-20 rounded-lg" ref={componentRef} pageStyle="@page { size: 2.5in 4in }">
       <div class="relative overflow-x-auto">
        
         <div id="printablediv">

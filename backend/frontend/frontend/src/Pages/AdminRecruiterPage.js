@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect,useState } from "react"
 import useAxios from "../Axios/useAxios"
 import { useDispatch, useSelector } from "react-redux"
 import { usersView } from "../Redux/Reducers/AuthSlice"
@@ -9,7 +9,8 @@ import { BiLogOutCircle } from "react-icons/bi"
 import { logOutAdmin } from '../Redux/Reducers/AuthSlice'
 const AdminRecruiter = () => {
   const dispatch = useDispatch()
-  const users = useSelector((state) => state.user.view_user.users)
+  //const users = useSelector((state) => state.user.view_user.users)
+  const [users, setUsers] = useState([])
   console.log(users)
   const api = useAxios()
   const handleBlockUser = async (id) => {
@@ -27,8 +28,9 @@ const AdminRecruiter = () => {
   const data = async () => {
     try {
       const response = await api.get(`/admin/recruiter/`, {})
-      console.log(response.data)
-      dispatch(usersView(response.data))
+      	console.log(response.data)
+	setUsers(response.data)
+      //dispatch(usersView(response.data))
     } catch (err) {
       console.log(err)
     }
@@ -131,7 +133,7 @@ const AdminRecruiter = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {users.map((user) => (
+                      {users?users.map((user) => (
                         <tr class=" border-b bg-gray-200 ">
                           <td class="py-2 px-6">{user.id}</td>
                           <td class="py-2 px-6">{user.username}</td>
@@ -168,7 +170,7 @@ const AdminRecruiter = () => {
                             </a>
                           </td>
                         </tr>
-                      ))}
+                      )):" "}
                     </tbody>
                   </table>
                 </div>
