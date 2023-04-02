@@ -47190,3 +47190,81 @@ User information: uid=0 euid=0 gid=0 egid=0
 [2023-03-02 04:00:00,027: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[793c02ce-5a0a-4151-a9ab-a2246e9a3d63] succeeded in 0.018092944752424955s: None
 [2023-03-03 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[3a4bfd36-238d-4d04-abcd-78fbe6662128] received
 [2023-03-03 04:00:00,025: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[3a4bfd36-238d-4d04-abcd-78fbe6662128] succeeded in 0.016358669381588697s: None
+[2023-03-04 04:00:00,005: INFO/MainProcess] Task celery.backend_cleanup[426005a1-0ef3-4bb8-80b3-dc909c50455f] received
+[2023-03-04 04:00:00,023: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[426005a1-0ef3-4bb8-80b3-dc909c50455f] succeeded in 0.016185231041163206s: None
+[2023-03-05 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[b2600b05-aa9b-44a7-9bda-97a1f043b831] received
+[2023-03-05 04:00:00,020: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[b2600b05-aa9b-44a7-9bda-97a1f043b831] succeeded in 0.015251426957547665s: None
+[2023-03-06 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[7dc97159-a2d9-4393-a065-a57d70d847ac] received
+[2023-03-06 04:00:00,025: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[7dc97159-a2d9-4393-a065-a57d70d847ac] succeeded in 0.016287989914417267s: None
+[2023-03-07 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[7f6ad152-88fd-4c75-b3c5-b83933e067b6] received
+[2023-03-07 04:00:00,024: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[7f6ad152-88fd-4c75-b3c5-b83933e067b6] succeeded in 0.015163470059633255s: None
+[2023-03-08 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[8394369d-1f24-4f23-a873-81a746b0649b] received
+[2023-03-08 04:00:00,030: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[8394369d-1f24-4f23-a873-81a746b0649b] succeeded in 0.024474240839481354s: None
+[2023-03-09 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[43c337d2-9b51-488b-99e3-5af22b8ddc28] received
+[2023-03-09 04:00:00,021: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[43c337d2-9b51-488b-99e3-5af22b8ddc28] succeeded in 0.015987982042133808s: None
+[2023-03-10 04:00:00,008: INFO/MainProcess] Task celery.backend_cleanup[2f75117e-06ce-4db1-89b8-13a5ef6b7a6a] received
+[2023-03-10 04:00:00,034: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[2f75117e-06ce-4db1-89b8-13a5ef6b7a6a] succeeded in 0.024854027666151524s: None
+[2023-03-11 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[6926c588-46dc-4592-b769-b3ec5c404b39] received
+[2023-03-11 04:00:00,027: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[6926c588-46dc-4592-b769-b3ec5c404b39] succeeded in 0.022006060928106308s: None
+[2023-03-12 04:00:00,003: INFO/MainProcess] Task celery.backend_cleanup[b99aa360-c5bc-467d-ad66-2f2f2a4001d3] received
+[2023-03-12 04:00:00,024: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[b99aa360-c5bc-467d-ad66-2f2f2a4001d3] succeeded in 0.017102861776947975s: None
+[2023-03-13 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[f629fde2-9714-4b32-bab2-68ea7a05ca7f] received
+[2023-03-13 04:00:00,027: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[f629fde2-9714-4b32-bab2-68ea7a05ca7f] succeeded in 0.018780902959406376s: None
+[2023-03-14 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[f7352252-c627-4a10-b3d6-3710849203f0] received
+[2023-03-14 04:00:00,025: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[f7352252-c627-4a10-b3d6-3710849203f0] succeeded in 0.016435992904007435s: None
+[2023-03-15 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[c29ef0e5-1d3b-4807-b5d6-43923e05e927] received
+[2023-03-15 04:00:00,026: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[c29ef0e5-1d3b-4807-b5d6-43923e05e927] succeeded in 0.020724399015307426s: None
+[2023-03-15 06:25:23,676: INFO/MainProcess] Task accounts.tasks.send_otp_via_email[ea0ec516-adf3-4287-a030-52ab8cfd6e80] received
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2] JOBACQUIRE ACCOUNT VERIFICATION 
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2] S
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2] 8033
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2] D
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2] smtp.gmail.com
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2] V
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2] DEAR CUSTOMER,YOUR OTP FOR REGISTRATION IS 8033. USE THIS TO VALIDATE YOUR ACCOUNT.
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,360: WARNING/ForkPoolWorker-2]  
+[2023-03-15 06:25:27,361: WARNING/ForkPoolWorker-2] anfaspv.igdhebnfo@gmail.com
+[2023-03-15 06:25:27,379: INFO/ForkPoolWorker-2] Task accounts.tasks.send_otp_via_email[ea0ec516-adf3-4287-a030-52ab8cfd6e80] succeeded in 3.702478865161538s: True
+[2023-03-16 04:00:00,010: INFO/MainProcess] Task celery.backend_cleanup[0f441294-b5b8-4e14-9b97-495f1fc8d947] received
+[2023-03-16 04:00:00,037: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[0f441294-b5b8-4e14-9b97-495f1fc8d947] succeeded in 0.02608507266268134s: None
+[2023-03-17 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[b2a3bcfd-e5ae-46e1-bc5d-a781a4080c70] received
+[2023-03-17 04:00:00,031: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[b2a3bcfd-e5ae-46e1-bc5d-a781a4080c70] succeeded in 0.02368842624127865s: None
+[2023-03-18 04:00:00,003: INFO/MainProcess] Task celery.backend_cleanup[61689495-9b5e-46f4-8923-bd83831e24fb] received
+[2023-03-18 04:00:00,027: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[61689495-9b5e-46f4-8923-bd83831e24fb] succeeded in 0.022066248580813408s: None
+[2023-03-19 04:00:00,005: INFO/MainProcess] Task celery.backend_cleanup[da3a34f8-f69c-455a-831c-87c9034bf121] received
+[2023-03-19 04:00:00,026: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[da3a34f8-f69c-455a-831c-87c9034bf121] succeeded in 0.019962255842983723s: None
+[2023-03-20 04:00:00,005: INFO/MainProcess] Task celery.backend_cleanup[5cc100fe-1223-4ff7-9ab8-49fab2473e50] received
+[2023-03-20 04:00:00,023: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[5cc100fe-1223-4ff7-9ab8-49fab2473e50] succeeded in 0.01707169972360134s: None
+[2023-03-21 04:00:00,005: INFO/MainProcess] Task celery.backend_cleanup[654318e9-3fa1-4a54-9dd0-1e6c2a257ca4] received
+[2023-03-21 04:00:00,041: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[654318e9-3fa1-4a54-9dd0-1e6c2a257ca4] succeeded in 0.03313263598829508s: None
+[2023-03-22 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[3e7e53b5-553b-4dee-8d06-d69be6b308cf] received
+[2023-03-22 04:00:00,026: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[3e7e53b5-553b-4dee-8d06-d69be6b308cf] succeeded in 0.020182943902909756s: None
+[2023-03-23 04:00:00,005: INFO/MainProcess] Task celery.backend_cleanup[382a2fb1-99a4-4fcf-8f30-432f9ac67741] received
+[2023-03-23 04:00:00,023: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[382a2fb1-99a4-4fcf-8f30-432f9ac67741] succeeded in 0.016638671047985554s: None
+[2023-03-24 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[c3b2db76-b95d-4e80-a717-2d88cd6dde09] received
+[2023-03-24 04:00:00,068: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[c3b2db76-b95d-4e80-a717-2d88cd6dde09] succeeded in 0.061999017372727394s: None
+[2023-03-25 04:00:00,005: INFO/MainProcess] Task celery.backend_cleanup[06053f78-0c34-4628-8189-3a4683606dc8] received
+[2023-03-25 04:00:00,021: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[06053f78-0c34-4628-8189-3a4683606dc8] succeeded in 0.014163803309202194s: None
+[2023-03-26 04:00:00,006: INFO/MainProcess] Task celery.backend_cleanup[be9e0472-73db-49ea-ac47-e5a3a71e80de] received
+[2023-03-26 04:00:00,029: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[be9e0472-73db-49ea-ac47-e5a3a71e80de] succeeded in 0.021422328427433968s: None
+[2023-03-27 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[c891eb50-587e-4cba-8f9a-2b98b75b193d] received
+[2023-03-27 04:00:00,024: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[c891eb50-587e-4cba-8f9a-2b98b75b193d] succeeded in 0.015074916183948517s: None
+[2023-03-28 04:00:00,005: INFO/MainProcess] Task celery.backend_cleanup[48691b45-efad-43e0-a173-8c019a11b416] received
+[2023-03-28 04:00:00,024: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[48691b45-efad-43e0-a173-8c019a11b416] succeeded in 0.018121366389095783s: None
+[2023-03-29 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[ca1c35cc-7400-47d2-9b39-e37deeebcd92] received
+[2023-03-29 04:00:00,024: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[ca1c35cc-7400-47d2-9b39-e37deeebcd92] succeeded in 0.015894826501607895s: None
+[2023-03-30 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[6259566b-5909-460e-9806-10eab681b63b] received
+[2023-03-30 04:00:00,021: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[6259566b-5909-460e-9806-10eab681b63b] succeeded in 0.016296114772558212s: None
+[2023-03-31 04:00:00,004: INFO/MainProcess] Task celery.backend_cleanup[83c3608c-7e05-4d59-a4bc-b7e440ee4524] received
+[2023-03-31 04:00:00,022: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[83c3608c-7e05-4d59-a4bc-b7e440ee4524] succeeded in 0.015902113169431686s: None
+[2023-04-01 04:00:00,008: INFO/MainProcess] Task celery.backend_cleanup[b5acea8f-6845-4650-9b84-8561835b27b9] received
+[2023-04-01 04:00:00,026: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[b5acea8f-6845-4650-9b84-8561835b27b9] succeeded in 0.017182870768010616s: None
+[2023-04-02 04:00:00,007: INFO/MainProcess] Task celery.backend_cleanup[b83209d8-6b21-46c4-b256-b4345abcfa18] received
+[2023-04-02 04:00:00,077: INFO/ForkPoolWorker-2] Task celery.backend_cleanup[b83209d8-6b21-46c4-b256-b4345abcfa18] succeeded in 0.06856999918818474s: None
